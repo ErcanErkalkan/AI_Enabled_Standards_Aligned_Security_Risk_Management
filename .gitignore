@@ -34,7 +34,7 @@ var/
 *.synctex.gz
 *.toc
 # Ignore compiled PDFs depending on your release strategy (optional)
-# paper/*.pdf
+paper/
 
 # Project outputs
 software/out/

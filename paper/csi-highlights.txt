@@ -1,5 +1,0 @@
-- UML/XMI artifact captures standards-traceable cybersecurity risk evidence
-- GQM mappings structurally cover 93 ISO and 106 NIST CSF 2.0 entries
-- Executable validators check coverage, links, duplicates, and schema integrity
-- Public profile demonstrates telemetry evidence with explicit risk-factor scope
-- Reporting exports preserve traceability from evidence to standards artifacts

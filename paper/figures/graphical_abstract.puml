@@ -1,0 +1,26 @@
+@startuml
+!pragma layout smetana
+left to right direction
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam linetype ortho
+skinparam defaultFontName Arial
+skinparam dpi 220
+
+rectangle "Standards inputs\n\nISO/IEC 27001:2022\nNIST CSF 2.0\nofficial crosswalk context" as standards #E3F2FD
+rectangle "Machine-readable model\n\nUML/XMI classes for asset,\nevent, threat, vulnerability,\ncontrol, metric, and provenance" as model #E8F5E9
+rectangle "Validation layer\n\nGQM mappings\n93 ISO entries\n106 NIST entries\ncoverage and integrity checks" as validation #F3E5F5
+rectangle "Operational evidence\n\nflow-only IDS telemetry path\ncalibrated EP + AV x IL\nstrict public-data profile" as evidence #FFF8E1
+rectangle "Reporting outputs\n\nresidual-risk summaries\ncontrol TCO trade-offs\nportfolio comparison\nCSV and LaTeX exports" as outputs #FFF3E0
+
+standards --> model
+model --> validation
+validation --> evidence
+evidence --> outputs
+
+legend bottom
+Machine-readable standards traceability from IoT telemetry evidence to governance-facing reporting
+endlegend
+@enduml

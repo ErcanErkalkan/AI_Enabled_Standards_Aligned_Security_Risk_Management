@@ -1,0 +1,94 @@
+id,title,domain
+A.5.1,Policies for Information Security,Organizational
+A.5.2,Information Security Roles and Responsibilities,Organizational
+A.5.3,Segregation of Duties,Organizational
+A.5.4,Management Responsibilities,Organizational
+A.5.5,Contact With Authorities,Organizational
+A.5.6,Contact With Special Interest Groups,Organizational
+A.5.7,Threat Intelligence,Organizational
+A.5.8,Information Security in Project Management,Organizational
+A.5.9,Inventory of Information and Other Associated Assets,Organizational
+A.5.10,Acceptable Use of Information and Other Associated Assets,Organizational
+A.5.11,Return of Assets,Organizational
+A.5.12,Classification of Information,Organizational
+A.5.13,Labelling of Information,Organizational
+A.5.14,Information Transfer,Organizational
+A.5.15,Access Control,Organizational
+A.5.16,Identity Management,Organizational
+A.5.17,Authentication Information,Organizational
+A.5.18,Access Rights,Organizational
+A.5.19,Information Security in Supplier Relationships,Organizational
+A.5.20,Addressing Information Security Within Supplier Agreements,Organizational
+A.5.21,Managing Information Security in the ICT Supply Chain,Organizational
+A.5.22,"Monitoring, Review and Change Management of Supplier Services",Organizational
+A.5.23,Information Security for Use of Cloud Services,Organizational
+A.5.24,Information Security Incident Management Planning and Preparation,Organizational
+A.5.25,Assessment and Decision on Information Security Events,Organizational
+A.5.26,Response to Information Security Incidents,Organizational
+A.5.27,Learning From Information Security Incidents,Organizational
+A.5.28,Collection of Evidence,Organizational
+A.5.29,Information Security During Disruption,Organizational
+A.5.30,ICT Readiness for Business Continuity,Organizational
+A.5.31,"Legal, Statutory, Regulatory and Contractual Requirements",Organizational
+A.5.32,Intellectual Property Rights,Organizational
+A.5.33,Protection of Records,Organizational
+A.5.34,Privacy and Protection of PII,Organizational
+A.5.35,Independent Review of Information Security,Organizational
+A.5.36,"Compliance With Policies, Rules and Standards for Information Security",Organizational
+A.5.37,Documented Operating Procedures,Organizational
+A.6.1,Screening,People
+A.6.2,Terms and Conditions of Employment,People
+A.6.3,"Information Security Awareness, Education and Training",People
+A.6.4,Disciplinary Process,People
+A.6.5,Responsibilities After Termination or Change of Employment,People
+A.6.6,Confidentiality or Non-Disclosure Agreements,People
+A.6.7,Remote Working,People
+A.6.8,Information Security Event Reporting,People
+A.7.1,Physical Security Perimeters,Physical
+A.7.2,Physical Entry,Physical
+A.7.3,"Securing Offices, Rooms and Facilities",Physical
+A.7.4,Physical Security Monitoring,Physical
+A.7.5,Protecting Against Physical and Environmental Threats,Physical
+A.7.6,Working In Secure Areas,Physical
+A.7.7,Clear Desk and Clear Screen,Physical
+A.7.8,Equipment Siting and Protection,Physical
+A.7.9,Security of Assets Off-Premises,Physical
+A.7.10,Storage Media,Physical
+A.7.11,Supporting Utilities,Physical
+A.7.12,Cabling Security,Physical
+A.7.13,Equipment Maintenance,Physical
+A.7.14,Secure Disposal or Re-Use of Equipment,Physical
+A.8.1,User Endpoint Devices,Technological
+A.8.2,Privileged Access Rights,Technological
+A.8.3,Information Access Restriction,Technological
+A.8.4,Access to Source Code,Technological
+A.8.5,Secure Authentication,Technological
+A.8.6,Capacity Management,Technological
+A.8.7,Protection Against Malware,Technological
+A.8.8,Management of Technical Vulnerabilities,Technological
+A.8.9,Configuration Management,Technological
+A.8.10,Information Deletion,Technological
+A.8.11,Data Masking,Technological
+A.8.12,Data Leakage Prevention,Technological
+A.8.13,Information Backup,Technological
+A.8.14,Redundancy of Information Processing Facilities,Technological
+A.8.15,Logging,Technological
+A.8.16,Monitoring Activities,Technological
+A.8.17,Clock Synchronization,Technological
+A.8.18,Use of Privileged Utility Programs,Technological
+A.8.19,Installation of Software on Operational Systems,Technological
+A.8.20,Network Security,Technological
+A.8.21,Security of Network Services,Technological
+A.8.22,Segregation of Networks,Technological
+A.8.23,Web Filtering,Technological
+A.8.24,Use of Cryptography,Technological
+A.8.25,Secure Development Life Cycle,Technological
+A.8.26,Application Security Requirements,Technological
+A.8.27,Secure System Architecture and Engineering Principles,Technological
+A.8.28,Secure Coding,Technological
+A.8.29,Security Testing in Development and Acceptance,Technological
+A.8.30,Outsourced Development,Technological
+A.8.31,"Separation of Development, Test and Production Environments",Technological
+A.8.32,Change Management,Technological
+A.8.33,Test Information,Technological
+A.8.34,Protection of Information Systems During Audit Testing,Technological

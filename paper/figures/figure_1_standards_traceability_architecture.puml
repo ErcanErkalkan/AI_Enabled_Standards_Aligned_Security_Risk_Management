@@ -1,0 +1,36 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam roundcorner 16
+skinparam linetype ortho
+skinparam defaultFontName Arial
+skinparam dpi 170
+
+title Four-layer standards-traceable architecture and public-run boundary
+
+top to bottom direction
+
+rectangle "External inputs\n\nPublic CIC IoT 2023 flow telemetry\n(source-file cohorts)\n\nISO/IEC 27001:2022: 93 Annex A controls\nNIST CSF 2.0: 106 subcategories\nand official informative references" as inputs #F8F8F8
+
+rectangle "Layer 1: Machine-readable representation\n\nUML/XMI knowledge model for Asset, Event, Threat,\nVulnerability, Control, Metric, and provenance fields" as l1 #E1F5FE
+
+rectangle "Layer 2: Standards mapping and validation\n\nGQM matrix links metrics to ISO/NIST entries.\nValidator checks coverage, broken links, duplicates,\ndangling rows, and official informative-reference consistency.\nBlank templates support future human semantic adjudication." as l2 #F3E5F5
+
+rectangle "Layer 3: Telemetry-derived evidence and risk transformation\n\nFlow-only IDS path, pre-test thresholding,\nisotonic calibration, EP from likelihood plus exploitability prior,\nBR = AV x EP x IL x (1 + wH x HF).\nDeployment enrichment remains an extension hook." as l3 #FFFDE7
+
+rectangle "Layer 4: Portfolio analysis and reporting exports\n\nGordon-Loeb budget, NSGA-II, Greedy-prefix,\nExact-ILP frontiers, artifact-default selector,\nCSV, LaTeX, plots, validator logs." as l4 #E8F5E9
+
+rectangle "Strict public-profile boundary\n\nActivated: telemetry-only evidence path, coverage/integrity/crosswalk validation,\nand frontier-producing portfolio comparison.\n\nNot established: independent semantic correctness, row-varying CVSS exploitability,\nobserved HF effects, auditor/user/tool-level governance reuse." as boundary #FFEBEE
+
+inputs --> l1 : evidence instances
+l1 --> l2 : UML class links
+l2 --> l3 : validated mapping context
+l3 --> l4 : base and residual risk
+l4 --> boundary : reported evidence scope
+
+legend bottom
+  Solid arrows: activated artifact path in the reported run
+  Deployment-only enrichment is documented as an extension hook.
+endlegend
+@enduml

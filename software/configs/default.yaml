@@ -1,0 +1,124 @@
+global:
+  seed: 42
+  output_dir: "out/demo"
+  figures_dpi: 180
+
+profiles:
+  demo:
+    output_dir: "out/demo"
+    mode: "demo"
+    window_size: 12
+    test_fraction: 0.15
+    validation_fraction: 0.15
+    cv_folds: 5
+    demo:
+      n_assets: 24
+      steps_per_asset: 280
+      benign_attack_burst_prob: 0.08
+    models:
+      coarse_search: true
+      epochs_lstm_detector: 8
+      epochs_lstm_autoencoder: 8
+      epochs_cnn: 8
+      batch_size: 64
+      hidden_size: 24
+    optimization:
+      population_size: 80
+      generations: 80
+      gamma: 0.37
+      max_controls: 14
+      exact_limit: 18
+      min_detection_rate: null
+      max_false_positive_rate: null
+
+  real:
+    output_dir: "out/real"
+    mode: "real"
+    window_size: 25
+    test_fraction: 0.15
+    validation_fraction: 0.15
+    cv_folds: 5
+    data:
+      raw_ciciot_dir: "data/raw/ciciot2023"
+      attack_taxonomy_path: "data/attack_taxonomy.csv"
+      cve_map_path: "data/cve_map.csv"
+      nvd_cache_path: "data/nvd_cache.json"
+      allow_event_type_cve_map: false
+      max_total_rows: 63000
+    models:
+      coarse_search: true
+      epochs_lstm_detector: 8
+      epochs_lstm_autoencoder: 8
+      epochs_cnn: 8
+      batch_size: 128
+      hidden_size: 48
+    optimization:
+      population_size: 120
+      generations: 120
+      gamma: 0.37
+      max_controls: 18
+      exact_limit: 18
+      min_detection_rate: null
+      max_false_positive_rate: null
+
+  real_full:
+    output_dir: "out/real_full"
+    mode: "real"
+    window_size: 50
+    test_fraction: 0.15
+    validation_fraction: 0.15
+    cv_folds: 5
+    data:
+      raw_ciciot_dir: "data/raw/ciciot2023"
+      attack_taxonomy_path: "data/attack_taxonomy.csv"
+      cve_map_path: "data/cve_map.csv"
+      nvd_cache_path: "data/nvd_cache.json"
+      allow_event_type_cve_map: false
+    models:
+      coarse_search: false
+      epochs_lstm_detector: 20
+      epochs_lstm_autoencoder: 20
+      epochs_cnn: 20
+      batch_size: 128
+      hidden_size: 64
+    optimization:
+      population_size: 200
+      generations: 200
+      gamma: 0.37
+      max_controls: 24
+      exact_limit: 22
+      min_detection_rate: null
+      max_false_positive_rate: null
+
+  real_smoke:
+    output_dir: "out/real_smoke"
+    mode: "real"
+    window_size: 25
+    test_fraction: 0.15
+    validation_fraction: 0.15
+    cv_folds: 5
+    data:
+      raw_ciciot_dir: "data/raw/ciciot2023"
+      attack_taxonomy_path: "data/attack_taxonomy.csv"
+      cve_map_path: "data/cve_map.csv"
+      nvd_cache_path: "data/nvd_cache.json"
+      allow_event_type_cve_map: false
+      max_input_files: 12
+      rows_per_input_file: 4000
+      sample_fraction: 0.5
+      sample_random_state: 42
+    models:
+      coarse_search: true
+      epochs_lstm_detector: 6
+      epochs_lstm_autoencoder: 6
+      epochs_cnn: 6
+      batch_size: 128
+      hidden_size: 32
+    optimization:
+      population_size: 80
+      generations: 80
+      gamma: 0.37
+      max_controls: 18
+      exact_limit: 18
+      min_detection_rate: null
+      max_false_positive_rate: null

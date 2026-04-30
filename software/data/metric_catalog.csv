@@ -1,0 +1,13 @@
+metric_id,description
+AV_MONETARY,Normalized asset monetary value
+EP_FREQ,Telemetry-derived event frequency
+EP_EXPLOIT,CVSS-based exploitability
+IL_CIA,Confidentiality/integrity/availability impact
+HF_AWARENESS,Human-factor awareness and culture
+DR,Detection rate / recall
+FPR,False-positive rate
+AUROC,Area under ROC curve
+PR_AUC,Area under precision-recall curve
+CAL_BRIER,Brier score
+RRL_PORTFOLIO,Risk-reduction level
+TCO_3Y,Three-year total cost of ownership

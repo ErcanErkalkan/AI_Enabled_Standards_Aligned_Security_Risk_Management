@@ -1,0 +1,24 @@
+{
+  "title": "AI-Enabled Standards-Aligned Security Risk Management",
+  "description": "Reproducible research artifact for leakage-safe IoT telemetry evaluation, standards traceability, auditable security risk scoring, and cost-aware control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0. Separated into two modular packages: paper and software.",
+  "creators": [
+    {
+      "name": "Erkalkan, Ercan",
+      "affiliation": "Marmara University"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "cybersecurity",
+    "risk-management",
+    "intrusion-detection",
+    "iot",
+    "iso-27001",
+    "nist-csf",
+    "nsga-ii"
+  ],
+  "version": "0.1.0",
+  "publication_date": "2026-04-11",
+  "upload_type": "software"
+}

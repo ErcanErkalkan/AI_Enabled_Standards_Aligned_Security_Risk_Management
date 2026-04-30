@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the software metadata below."
+title: "AI-Enabled Standards-Aligned Security Risk Management"
+version: "0.1.0"
+date-released: 2026-04-11
+license: MIT
+authors:
+  - family-names: Erkalkan
+    given-names: Ercan
+    email: ercan.erkalkan@marmara.edu.tr
+abstract: >-
+  Reproducible research artifact for leakage-safe IoT telemetry evaluation,
+  standards traceability, auditable security risk scoring, and cost-aware
+  control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0.
+keywords:
+  - cybersecurity
+  - risk-management
+  - intrusion-detection
+  - iot
+  - iso-27001
+  - nist-csf
+  - nsga-ii
+

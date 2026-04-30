@@ -1,0 +1,47 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam linetype ortho
+skinparam defaultFontName Arial
+
+title Strict public-data execution pipeline
+
+start
+:Ingest CIC IoT 2023 merged CSV members;
+:Build source-file cohorts and synthesize ordering;
+note right
+Public rows lack row-level victim/device ids
+and observed timestamps.
+end note
+
+:Split raw rows before windowing\n(train/validation/test);
+:Window telemetry and infer flow features;
+:Train evidence-generation baselines and artifact-default scorer\nusing flow-derived telemetry only;
+note right
+Downstream CVE/CVSS, asset-value, and HF
+fields are excluded from IDS features.
+end note
+
+:Select thresholds on pre-test window;
+:Calibrate attack likelihood by isotonic calibration;
+:Compute EP from calibrated likelihood\nplus exploitability prior;
+note right
+Strict public run uses global neutral CVSS prior.
+No row-varying exploitability claim.
+end note
+
+:Construct risk frame\nAV proxy, EP, IL, HF:none;
+:Evaluate base and residual risk;
+:Apply scenario-analytic control catalog\n(effectiveness, DR/FPR deltas, TCO terms);
+:Run portfolio comparators\nNSGA-II, Greedy-prefix, Exact-ILP;
+:Choose artifact-default advisory point\nif a single portfolio is needed;
+note right
+Selector weights are reporting defaults,
+not elicited governance utilities.
+end note
+
+:Export tables, plots, validator logs,\nLaTeX summaries, and review templates;
+stop
+@enduml

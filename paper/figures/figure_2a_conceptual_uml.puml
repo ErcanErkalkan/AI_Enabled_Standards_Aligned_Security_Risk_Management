@@ -1,0 +1,131 @@
+@startuml
+!pragma layout smetana
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam defaultFontName Arial
+
+title Conceptual UML: standards-traceable evidence model
+
+class StandardsArtifact {
+  +artifact_id: string
+  +version: string
+  +profile: string
+}
+
+class ISOControl {
+  +iso_id: string
+  +title: string
+  +annex: string
+}
+
+class NISTSubcategory {
+  +csf_id: string
+  +title: string
+  +function: string
+}
+
+class InformativeReference {
+  +source: string
+  +linked_iso_ids: string
+  +linked_csf_ids: string
+}
+
+class GQMGoal {
+  +goal_id: string
+  +description: string
+}
+
+class GQMQuestion {
+  +question_id: string
+  +description: string
+}
+
+class MetricDefinition {
+  +metric_id: string
+  +name: string
+  +uml_class: string
+  +aggregation_rule: string
+}
+
+class EvidenceItem {
+  +evidence_id: string
+  +source: string
+  +profile: string
+  +cohort_or_asset_id: string
+}
+
+class Asset {
+  +asset_id: string
+  +asset_value_source: string
+}
+
+class Event {
+  +event_id: string
+  +event_type: string
+  +timestamp_source: string
+}
+
+class Threat {
+  +threat_id: string
+  +name: string
+}
+
+class Vulnerability {
+  +cve_id: string
+  +cvss_source: string
+  +exploitability: float
+}
+
+class Control {
+  +control_id: string
+  +name: string
+  +linked_standard_ids: string
+}
+
+class RiskEstimate {
+  +estimate_id: string
+  +base_risk: float
+  +residual_risk: float
+  +provenance: string
+}
+
+class ValidationRun {
+  +run_id: string
+  +iso_coverage: int
+  +nist_coverage: int
+  +broken_links: int
+  +crosswalk_mismatches: int
+}
+
+class ReviewerPacket {
+  +packet_id: string
+  +status: string
+  +semantic_adjudication: string
+}
+
+StandardsArtifact "1" o-- "93" ISOControl
+StandardsArtifact "1" o-- "106" NISTSubcategory
+NISTSubcategory "*" -- "*" ISOControl : official informative references
+InformativeReference .. ISOControl
+InformativeReference .. NISTSubcategory
+
+GQMGoal "1" o-- "*" GQMQuestion
+GQMQuestion "1" o-- "*" MetricDefinition
+MetricDefinition "*" --> "*" ISOControl : maps to
+MetricDefinition "*" --> "*" NISTSubcategory : maps to
+MetricDefinition "*" --> "1" Control : operationalizes
+
+EvidenceItem "*" --> "0..1" Asset
+EvidenceItem "*" --> "1" Event
+Event "*" --> "0..*" Threat
+Threat "*" --> "0..*" Vulnerability
+RiskEstimate "*" --> "1" EvidenceItem
+RiskEstimate "*" --> "0..*" Control : residualized by
+
+ValidationRun --> StandardsArtifact : validates
+ValidationRun --> MetricDefinition : checks links
+ReviewerPacket ..> MetricDefinition : future human fit review
+ReviewerPacket ..> Control : evidence-control semantics
+@enduml

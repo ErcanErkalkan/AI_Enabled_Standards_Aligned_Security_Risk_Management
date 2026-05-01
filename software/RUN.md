@@ -6,6 +6,12 @@ The strict public profile is a representation-level and telemetry-evidence demon
 
 This guide describes how to reproduce the artifact in `ai_risk/`.
 
+## Project identifiers
+
+- Zenodo DOI: <https://doi.org/10.5281/zenodo.19928296>
+- GitHub repository: <https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management>
+- Author ORCID: <https://orcid.org/0000-0001-9259-7112>
+
 ## 1. Set up the environment
 
 ```powershell

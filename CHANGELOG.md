@@ -2,6 +2,12 @@
 
 All notable changes to this repository will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+
+- Added Zenodo DOI, GitHub repository URL, and author ORCID metadata across citation, archive, package, and documentation files
+
 ## [0.1.0] - 2026-04-11
 
 ### Added
@@ -15,4 +21,3 @@ All notable changes to this repository will be documented in this file.
 
 - Professionalized repository and package documentation in English
 - Updated package metadata for public repository use
-

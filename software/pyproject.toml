@@ -52,6 +52,12 @@ dependencies = [
   "torch>=2.8"
 ]
 
+[project.urls]
+Homepage = "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
+Repository = "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
+"Zenodo DOI" = "https://doi.org/10.5281/zenodo.19928296"
+"Author ORCID" = "https://orcid.org/0000-0001-9259-7112"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.3"

@@ -4,9 +4,11 @@
   "creators": [
     {
       "name": "Erkalkan, Ercan",
-      "affiliation": "Marmara University"
+      "affiliation": "Marmara University",
+      "orcid": "0000-0001-9259-7112"
     }
   ],
+  "doi": "10.5281/zenodo.19928296",
   "access_right": "open",
   "license": "MIT",
   "keywords": [
@@ -17,6 +19,13 @@
     "iso-27001",
     "nist-csf",
     "nsga-ii"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management",
+      "relation": "isSupplementedBy",
+      "resource_type": "software"
+    }
   ],
   "version": "0.1.0",
   "publication_date": "2026-04-11",

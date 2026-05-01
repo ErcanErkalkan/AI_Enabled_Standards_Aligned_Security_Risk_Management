@@ -26,9 +26,16 @@ Contains the executable artifact `ai_risk`, evaluation pipelines, test suite, an
 - **Location:** `software/`
 - **Main files:** `software/pyproject.toml`, `software/README.md`
 
+## Persistent Identifiers
+
+- **Zenodo DOI:** [10.5281/zenodo.19928296](https://doi.org/10.5281/zenodo.19928296)
+- **GitHub repository:** [ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management](https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management)
+- **Author ORCID:** [0000-0001-9259-7112](https://orcid.org/0000-0001-9259-7112)
+
 ## Zenodo and GitHub Compatibility
 This repository is configured for archiving on Zenodo and hosting on GitHub:
 - Both `CITATION.cff` and `.zenodo.json` files are provided in the root to ensure proper citation parsing by GitHub and metadata extraction by Zenodo releases.
+- The repository metadata points to the Zenodo DOI, GitHub repository, and author ORCID listed above.
 - The dual-package structure (`paper` and `software`) provides clear boundaries for readers, reviewers, and automated archiving tools.
 
 ## Quick start (Software)

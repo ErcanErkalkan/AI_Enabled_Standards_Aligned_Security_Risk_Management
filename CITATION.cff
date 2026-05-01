@@ -1,13 +1,19 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite the software metadata below."
+type: software
 title: "AI-Enabled Standards-Aligned Security Risk Management"
 version: "0.1.0"
+doi: 10.5281/zenodo.19928296
+repository-code: "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
+url: "https://doi.org/10.5281/zenodo.19928296"
 date-released: 2026-04-11
 license: MIT
 authors:
   - family-names: Erkalkan
     given-names: Ercan
     email: ercan.erkalkan@marmara.edu.tr
+    affiliation: Marmara University
+    orcid: "https://orcid.org/0000-0001-9259-7112"
 abstract: >-
   Reproducible research artifact for leakage-safe IoT telemetry evaluation,
   standards traceability, auditable security risk scoring, and cost-aware
@@ -20,4 +26,3 @@ keywords:
   - iso-27001
   - nist-csf
   - nsga-ii
-

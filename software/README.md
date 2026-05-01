@@ -40,6 +40,12 @@ python -m pytest -q --basetemp .pytest_tmp
 
 Outputs are written to profile-specific directories under `out/`.
 
+## Persistent identifiers
+
+- Zenodo DOI: [10.5281/zenodo.19928296](https://doi.org/10.5281/zenodo.19928296)
+- GitHub repository: [ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management](https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management)
+- Author ORCID: [0000-0001-9259-7112](https://orcid.org/0000-0001-9259-7112)
+
 ## Public-data constraints
 
 The strict public CICIoT2023 path is intentionally conservative:

@@ -1,8 +1,8 @@
 # ai_risk
 
-`ai_risk` is the Python artifact package that accompanies the manuscript in the
-repository root. It packages the data pipeline, evaluation logic, reporting
-utilities, and validation assets required to reproduce the study.
+`ai_risk` is the Python artifact package for the public software artifact. It
+packages the data pipeline, evaluation logic, reporting utilities, and
+validation assets required to reproduce the reported software workflows.
 
 ## Scope
 
@@ -10,7 +10,8 @@ The package includes:
 
 - ISO/IEC 27001:2022 Annex A and NIST CSF 2.0 traceability assets
 - UML/XMI data model and automated mapping validator
-- bidirectional ISO<->NIST semantic crosswalk checks against official NIST informative references
+- bidirectional ISO<->NIST informative-reference crosswalk checks against official NIST references
+- semantic review packet templates and dual-rater scoring utilities for future independent mapping adjudication
 - auditable `AV x EP x IL` risk scoring with optional human-factor terms
 - boundary-safe preprocessing with raw-row splitting before windowing
 - telemetry-only IDS evaluation that keeps CVSS, asset-value, and HF fields out of the classifier

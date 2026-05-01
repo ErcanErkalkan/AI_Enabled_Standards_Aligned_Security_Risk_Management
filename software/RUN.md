@@ -24,12 +24,14 @@ pip install -e .[dev]
 ```powershell
 python scripts/build_reference_data.py
 python tools/validate_mappings.py
+python scripts/build_semantic_review_packet.py --sample-size 60
 ```
 
 Notes:
 
 - `build_reference_data.py` is cache-first. If `data/nist_csf_2_0_subcats.csv` already exists, it can rebuild offline.
 - Use `python scripts/build_reference_data.py --refresh` to refresh the official NIST workbook input.
+- `build_semantic_review_packet.py` creates blank reviewer templates under `out/review/`. These templates support future independent human semantic adjudication; they are not completed expert reviews by themselves.
 
 Expected validator summary:
 
@@ -39,6 +41,12 @@ NIST CSF 2.0 coverage: 106/106 (100.0%)
 Broken links (UML/GQM/IDs): 0
 Duplicate or dangling rows: 0
 Informative-reference crosswalk mismatches (official ISO<->NIST refs): 0
+```
+
+After two qualified reviewers complete the generated templates, score agreement with:
+
+```powershell
+python tools/score_semantic_reviews.py --review-a out/review/reviewer_template_a.csv --review-b out/review/reviewer_template_b.csv
 ```
 
 ## 3. Run the demo profile

@@ -1,12 +1,11 @@
 # AI-Enabled Standards-Aligned Security Risk Management
 
-This workspace bundles the manuscript source and the executable `ai_risk` software artifact used by the paper, separated into two main packages to align with best practices for reproducibility.
+This public repository contains the executable `ai_risk` software artifact and metadata for the standards-aligned security risk management study. Manuscript materials are kept locally under `paper/` and are intentionally not published to GitHub until the paper is published.
 
 ## Workspace layout
 
 ```text
 .
-+-- paper/                       # Manuscript files, figures, cover letter, and reviews
 +-- software/                    # Python package, configs, scripts, tests, reference data
 +-- CITATION.cff                 # Citation metadata
 +-- .zenodo.json                 # Zenodo metadata for archiving
@@ -16,15 +15,13 @@ This workspace bundles the manuscript source and the executable `ai_risk` softwa
 
 ## Packages
 
-### 1. Paper (Manuscript)
-Contains the LaTeX source code, compiled PDFs, bibliography, figures, and submission-related checklists for the manuscript.
-- **Location:** `paper/`
-- **Main files:** `elsarticle-template-num.tex`, `elsarticle-template-num.pdf`
-
-### 2. Software (Data and Code)
+### Software (Data and Code)
 Contains the executable artifact `ai_risk`, evaluation pipelines, test suite, and machine-readable standards mapping.
 - **Location:** `software/`
 - **Main files:** `software/pyproject.toml`, `software/README.md`
+
+### Manuscript Materials
+The local workspace may contain a `paper/` directory with manuscript sources, figures, and submission files. That directory is ignored by Git and is not part of the public GitHub repository until publication.
 
 ## Persistent Identifiers
 
@@ -36,7 +33,7 @@ Contains the executable artifact `ai_risk`, evaluation pipelines, test suite, an
 This repository is configured for archiving on Zenodo and hosting on GitHub:
 - Both `CITATION.cff` and `.zenodo.json` files are provided in the root to ensure proper citation parsing by GitHub and metadata extraction by Zenodo releases.
 - The repository metadata points to the Zenodo DOI, GitHub repository, and author ORCID listed above.
-- The dual-package structure (`paper` and `software`) provides clear boundaries for readers, reviewers, and automated archiving tools.
+- The public GitHub repository currently exposes the software artifact and machine-readable metadata; manuscript files remain local until publication.
 
 ## Quick start (Software)
 

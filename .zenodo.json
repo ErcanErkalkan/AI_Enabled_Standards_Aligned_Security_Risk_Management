@@ -1,6 +1,6 @@
 {
   "title": "AI-Enabled Standards-Aligned Security Risk Management",
-  "description": "Reproducible research artifact for leakage-safe IoT telemetry evaluation, standards traceability, auditable security risk scoring, and cost-aware control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0. Separated into two modular packages: paper and software.",
+  "description": "Reproducible software artifact for leakage-safe IoT telemetry evaluation, standards traceability, auditable security risk scoring, and cost-aware control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0. Manuscript materials are kept local until publication.",
   "creators": [
     {
       "name": "Erkalkan, Ercan",

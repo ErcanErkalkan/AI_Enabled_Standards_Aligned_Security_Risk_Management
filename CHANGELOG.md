@@ -13,9 +13,9 @@ All notable changes to this repository will be documented in this file.
 ### Added
 
 - GitHub-ready repository structure with root documentation and licensing
-- CI workflow, issue templates, and pull request template
-- Contribution, security, citation, and conduct documents
-- Root ignore rules for raw datasets, generated outputs, and build artefacts
+- Citation and Zenodo archive metadata
+- Root ignore rules for raw datasets, generated outputs, Python caches, and LaTeX build artefacts
+- Public `software/` artifact layout with local-only `paper/` manuscript materials withheld until publication
 
 ### Changed
 

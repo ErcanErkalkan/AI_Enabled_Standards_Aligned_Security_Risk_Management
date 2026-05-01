@@ -4,7 +4,7 @@
 
 The strict public profile is a representation-level and telemetry-evidence demonstration. It does not fully activate all AV--EP--IL--HF risk factors. CVSS exploitability is represented by a global neutral prior, asset value is a telemetry-derived proxy, the HF term is inactive, device attribution is based on source-file cohorts, and timestamps are synthesized. Full risk-engine validation requires deployment-specific overlays for asset values, device identities, row-varying CVE/CVSS mappings, observed HF indicators, and measured control effects.
 
-This guide describes how to reproduce the artifact in `ai_risk/`.
+This guide describes how to reproduce the artifact from the `software/` package directory. The installed Python package is named `ai_risk`.
 
 ## Project identifiers
 
@@ -15,7 +15,7 @@ This guide describes how to reproduce the artifact in `ai_risk/`.
 ## 1. Set up the environment
 
 ```powershell
-cd ai_risk
+cd software
 pip install -e .[dev]
 ```
 
@@ -23,7 +23,6 @@ pip install -e .[dev]
 
 ```powershell
 python scripts/build_reference_data.py
-python scripts/build_ciciot_metadata.py
 python tools/validate_mappings.py
 ```
 
@@ -89,6 +88,12 @@ data/attack_taxonomy.csv
 data/attack_victims.csv
 data/cve_map.csv
 data/nvd_cache.json
+```
+
+Run it after the official notebook and victims PDF are present:
+
+```powershell
+python scripts/build_ciciot_metadata.py
 ```
 
 Supported curated CVE map formats:

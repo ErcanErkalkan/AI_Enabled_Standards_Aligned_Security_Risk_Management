@@ -33,7 +33,7 @@ var/
 *.spl
 *.synctex.gz
 *.toc
-# Ignore compiled PDFs depending on your release strategy (optional)
+# Manuscript materials are kept local until publication.
 paper/
 
 # Project outputs

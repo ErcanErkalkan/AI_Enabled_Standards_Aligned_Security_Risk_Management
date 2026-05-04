@@ -230,6 +230,14 @@ out/real_full/
 python -m pytest -q --basetemp .pytest_tmp
 ```
 
+### Artifact Reviewer Minimal Path
+
+To run the tests offline without making any network calls to external servers (e.g., NIST), use the `--offline` flag:
+
+```powershell
+python -m pytest -q --offline --basetemp .pytest_tmp
+```
+
 Expected test result after installing the package and development dependencies:
 
 ```text

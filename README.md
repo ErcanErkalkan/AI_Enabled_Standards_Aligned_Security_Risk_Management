@@ -1,5 +1,12 @@
 # AI-Enabled Standards-Aligned Security Risk Management
 
+**Description:** A Model-Based Software Engineering Framework for Standards-Traceable Security Evidence Management in IoT-Enabled Systems. This artifact encodes security requirements, controls, telemetry observations, and standard clauses into a machine-readable UML/XMI representation and provides an automated validator for structural integrity.
+
+**Topics (Tags):** `mbse`, `cybersecurity`, `traceability`, `uml`, `xmi`, `iso-27001`, `nist-csf`, `evidence-management`
+
+**Release Notes:**
+- Version 1.0.0: Initial reproducible artifact for SCP submission, containing the XMI mapping, automated structural validator, and offline test suite.
+
 This public repository contains the executable `ai_risk` software artifact and metadata for the standards-aligned security risk management study. Manuscript materials are kept locally under `paper/` and are intentionally not published to GitHub until the paper is published.
 
 ## Workspace layout
@@ -50,3 +57,14 @@ python -m pytest -q --basetemp .pytest_tmp
 ```
 
 For the full execution guide, see [software/RUN.md](software/RUN.md).
+
+## Artifact Submission Notes
+
+When exporting plots and diagrams as EPS or PDF files for journal submission, ensure that Type 3 fonts are not used, as they are often rejected by preflight systems (like Elsevier's Editorial Manager). 
+
+If using Matplotlib to generate figures, enforce Type 1 or TrueType fonts by adding the following to your script:
+```python
+import matplotlib
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+```

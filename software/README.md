@@ -11,6 +11,7 @@ The package includes:
 - ISO/IEC 27001:2022 Annex A and NIST CSF 2.0 traceability assets
 - UML/XMI data model and automated mapping validator
 - bidirectional ISO<->NIST informative-reference crosswalk checks against official NIST references
+- deterministic seeded-defect checks for broken links, duplicates, dangling references, wrong crosswalks, missing metrics, and schema violations
 - semantic review packet templates and dual-rater scoring utilities for future independent mapping adjudication
 - auditable `AV x EP x IL` risk scoring with optional human-factor terms
 - boundary-safe preprocessing with raw-row splitting before windowing
@@ -32,10 +33,12 @@ Four execution profiles are provided:
 
 ```powershell
 cd software
+pip install -r requirements.lock
 pip install -e .[dev]
 python scripts/build_reference_data.py
-python scripts/run_demo_study.py --config configs/default.yaml --profile demo
 python tools/validate_mappings.py
+python tools/test_validator_seeded_defects.py
+python scripts/run_demo_study.py --config configs/default.yaml --profile demo
 python -m pytest -q --basetemp .pytest_tmp
 ```
 

@@ -16,6 +16,7 @@ def main() -> None:
     print(f"NIST CSF 2.0 coverage: {summary['nist_coverage']}/{summary['nist_total']} ({(summary['nist_coverage'] / summary['nist_total']) * 100:.1f}%)")
     print(f"Broken links (UML/GQM/IDs): {summary['broken_links']}")
     print(f"Duplicate or dangling rows: {summary['duplicate_or_dangling']}")
+    print(f"Schema violations: {summary['schema_violations']}")
     print(f"Informative-reference crosswalk mismatches (official ISO<->NIST refs): {summary['informative_reference_crosswalk_mismatches']}")
     print(f"Elapsed: {summary['elapsed_seconds']:.2f} s")
     if "log_path" in summary:

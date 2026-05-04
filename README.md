@@ -41,8 +41,10 @@ To run the codebase and validate the artifacts:
 
 ```powershell
 cd software
+pip install -r requirements.lock
 pip install -e .[dev]
 python tools/validate_mappings.py
+python tools/test_validator_seeded_defects.py
 python scripts/run_demo_study.py --config configs/default.yaml --profile demo
 python -m pytest -q --basetemp .pytest_tmp
 ```

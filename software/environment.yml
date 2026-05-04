@@ -1,0 +1,9 @@
+name: ai-risk-repro
+channels:
+  - conda-forge
+dependencies:
+  - python=3.14
+  - pip
+  - pip:
+      - -r requirements.lock
+      - -e .[dev]

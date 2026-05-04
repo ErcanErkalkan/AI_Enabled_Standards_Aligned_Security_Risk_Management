@@ -13,4 +13,5 @@ def test_reference_data_validator_reports_full_coverage(tmp_path: Path):
     assert summary["nist_coverage"] == 106
     assert summary["broken_links"] == 0
     assert summary["duplicate_or_dangling"] == 0
+    assert summary["schema_violations"] == 0
     assert summary["semantic_crosswalk_mismatches"] == 0

@@ -4,11 +4,25 @@ All notable changes to this repository will be documented in this file.
 
 ## [Unreleased]
 
+### Added
+
+- Promoted the Science of Computer Programming R1 authoritative UML/XMI metamodel to the canonical software tree.
+- Added the final 199-row evidence-first semantic mapping, 211 reciprocal ISO–NIST pairs, 199 GQM goals, and 257 GQM questions.
+- Added namespace-safe XMI parsing, the extended structural validator, reciprocal-crosswalk validation, seeded structural regression, and an exact-byte SHA-256 manifest for the canonical R1 files.
+- Added GitHub Actions clean regression for exact-byte verification, the complete pytest suite, canonical mapping validation, and seeded defect testing.
+
 ### Changed
 
-- Clarified that the current public Zenodo-linked release is version 0.1.0, not 1.0.0.
-- Added an explicit release boundary: Science of Computer Programming R1 candidate metamodel, validator, semantic-review, and evaluation changes are not yet part of the public v0.1.0 archive and will be promoted only after the revision validation gates are completed.
-- Added Zenodo DOI, GitHub repository URL, and author ORCID metadata across citation, archive, package, and documentation files.
+- Replaced the pre-R1 15-class public UML schema with the validated R1 28-class model.
+- Replaced forced generic metric bundles with the post-adjudication evidence-first metric bindings.
+- Updated the canonical ISO/IEC 27001:2022 and NIST CSF 2.0 mappings after independent semantic review, human adjudication, reciprocal-consistency resolution, and the Step 12L freeze.
+- Clarified that NIST informative-reference differences are an external comparator rather than semantic validation errors.
+- Prepared release metadata for the next public software version, planned as v0.2.0; the historical v0.1.0 Zenodo DOI remains provenance for the earlier archive only.
+
+### Validation
+
+- Exact tested canonical code commit: `0962f1b19951da793a90169682e746b70471eeaf`.
+- Clean GitHub Actions regression: 28 tests passed; ISO coverage 93/93; NIST coverage 106/106; 0 broken links, duplicate/dangling rows, schema/XMI violations, contract violations, or reciprocal-crosswalk violations; 11/11 seeded structural defect scenarios detected.
 
 ## [0.1.0] - 2026-04-11
 

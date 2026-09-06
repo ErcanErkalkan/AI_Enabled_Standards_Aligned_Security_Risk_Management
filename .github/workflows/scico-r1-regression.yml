@@ -1,5 +1,6 @@
 name: SCICO R1 canonical regression
 
+# Canonical promotion workflow; payload bytes are verified against SHA-256 before tests.
 on:
   push:
     branches:

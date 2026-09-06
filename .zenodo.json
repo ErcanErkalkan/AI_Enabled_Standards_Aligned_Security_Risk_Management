@@ -1,6 +1,6 @@
 {
   "title": "AI-Enabled Standards-Aligned Security Risk Management",
-  "description": "Reproducible software artifact for leakage-safe IoT telemetry evaluation, standards traceability, auditable security risk scoring, and cost-aware control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0. Manuscript materials are kept local until publication.",
+  "description": "Reproducible software artifact for leakage-safe IoT telemetry evaluation, standards traceability, auditable security risk scoring, and cost-aware control portfolio optimization aligned with ISO/IEC 27001:2022 and NIST CSF 2.0. The current main branch contains the validated Science of Computer Programming R1 software candidate; manuscript materials remain local until publication.",
   "creators": [
     {
       "name": "Erkalkan, Ercan",
@@ -8,7 +8,6 @@
       "orcid": "0000-0001-9259-7112"
     }
   ],
-  "doi": "10.5281/zenodo.19928296",
   "access_right": "open",
   "license": "MIT",
   "keywords": [
@@ -18,7 +17,10 @@
     "iot",
     "iso-27001",
     "nist-csf",
-    "nsga-ii"
+    "uml",
+    "xmi",
+    "traceability",
+    "evidence-management"
   ],
   "related_identifiers": [
     {
@@ -27,7 +29,5 @@
       "resource_type": "software"
     }
   ],
-  "version": "0.1.0",
-  "publication_date": "2026-04-11",
   "upload_type": "software"
 }

@@ -3,6 +3,7 @@ name: SCICO R1 canonical regression
 on:
   push:
     branches:
+      - main
       - scico-r1-canonical-promotion
   workflow_dispatch:
 

@@ -1,6 +1,5 @@
 name: SCICO R1 canonical regression
 
-# Canonical promotion workflow; materialized R1 bytes are re-verified against SHA-256 before every clean test run.
 on:
   push:
     branches:
@@ -8,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   pytest:
@@ -27,8 +26,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.lock
           python -m pip install pytest
-      - name: Materialize SCICO R1 canonical promotion payload
-        run: python software/tools/apply_scico_r1_promotion_payload.py
+      - name: Verify canonical R1 exact bytes
+        run: sha256sum -c software/R1_CANONICAL_SHA256SUMS.txt
       - name: Full pytest suite
         working-directory: software
         run: python -m pytest -q
@@ -38,31 +37,3 @@ jobs:
       - name: Seeded structural regression
         working-directory: software
         run: python tools/test_validator_seeded_defects.py
-      - name: Persist validated canonical R1 artifacts
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add \
-            software/ai_risk/reference_data.py \
-            software/ai_risk/utils/io.py \
-            software/ai_risk/validator.py \
-            software/ai_risk/xmi.py \
-            software/data/gqm_goals_r1.csv \
-            software/data/gqm_questions_r1.csv \
-            software/data/iso27001_2022_annexA.csv \
-            software/data/iso_nist_semantic_crosswalk.csv \
-            software/data/mapping_iso_csf_gqm.csv \
-            software/data/metric_catalog.csv \
-            software/data/nist_csf_2_0_subcats.csv \
-            software/data/semantic_mapping_r1.csv \
-            software/data/uml_schema.xmi \
-            software/tests/test_r1_promotion.py \
-            software/tools/test_validator_seeded_defects.py \
-            software/tools/validate_mappings.py
-          if git diff --cached --quiet; then
-            echo "Canonical R1 artifacts already match the validated payload."
-          else
-            git commit -m "chore: materialize validated SCICO R1 canonical artifacts"
-            git push
-          fi

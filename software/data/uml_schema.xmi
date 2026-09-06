@@ -1,1 +1,752 @@
-<xmi:XMI xmlns:xmi="http://www.omg.org/XMI"><uml:Model name="AIEnabledRiskManagement" xmlns:uml="http://www.omg.org/spec/UML/20161101"><packagedElement xmi:type="uml:Package" name="RiskKnowledgeBase"><packagedElement xmi:type="uml:Class" xmi:id="class_1" name="Asset" /><packagedElement xmi:type="uml:Class" xmi:id="class_2" name="Threat" /><packagedElement xmi:type="uml:Class" xmi:id="class_3" name="Vulnerability" /><packagedElement xmi:type="uml:Class" xmi:id="class_4" name="Event" /><packagedElement xmi:type="uml:Class" xmi:id="class_5" name="Impact" /><packagedElement xmi:type="uml:Class" xmi:id="class_6" name="Risk" /><packagedElement xmi:type="uml:Class" xmi:id="class_7" name="RiskTreatment" /><packagedElement xmi:type="uml:Class" xmi:id="class_8" name="SecurityRequirement" /><packagedElement xmi:type="uml:Class" xmi:id="class_9" name="SecurityObjective" /><packagedElement xmi:type="uml:Class" xmi:id="class_10" name="AssetValue" /><packagedElement xmi:type="uml:Class" xmi:id="class_11" name="EventPotential" /><packagedElement xmi:type="uml:Class" xmi:id="class_12" name="ImpactLevel" /><packagedElement xmi:type="uml:Class" xmi:id="class_13" name="RiskReductionLevel" /><packagedElement xmi:type="uml:Class" xmi:id="class_14" name="CostMetrics" /><packagedElement xmi:type="uml:Class" xmi:id="class_15" name="HumanFactorMetric" /></packagedElement></uml:Model></xmi:XMI>
+<?xml version='1.0' encoding='utf-8'?>
+<xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmi:version="2.5.1">
+  <uml:Model xmi:id="SETM_Model" name="StandardsTraceableSecurityEvidenceModel">
+    <ownedComment xmi:type="uml:Comment" xmi:id="SETM_Comment_contract">
+      <body>Revision contract: UML 2.5.1 class model serialized as XMI 2.5.1. TraceabilityCore is the normative trace/evidence package; SecurityContext preserves the RQ1 asset/threat/vulnerability/event/impact/risk/control context from the submitted scope. The base mapping CSV supplies row identifiers, metric IDs, one measurement-concept class name, one GQM reference, and linked standards IDs; evidence/semantic status and detailed GQM question text are enrichment fields. Tool interoperability and executable OCL conformance are evaluated separately.</body>
+    </ownedComment>
+    <packagedElement xmi:type="uml:Package" xmi:id="SETM_Package_Core" name="TraceabilityCore">
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="PT_String" name="String" />
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="PT_Boolean" name="Boolean" />
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="PT_Integer" name="Integer" />
+      <packagedElement xmi:type="uml:PrimitiveType" xmi:id="PT_Real" name="Real" />
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_StandardFamily" name="StandardFamily">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_StandardFamily_ISO27001_2022" name="ISO27001_2022" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_StandardFamily_NIST_CSF_2_0" name="NIST_CSF_2_0" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_EvidenceStatus" name="EvidenceStatus">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_telemetryLinked" name="telemetryLinked" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_extensionOnly" name="extensionOnly" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_placeholder" name="placeholder" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_unavailable" name="unavailable" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_externallySupplied" name="externallySupplied" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_MappingStatus" name="MappingStatus">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_unreviewed" name="unreviewed" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_accepted" name="accepted" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_minorRevision" name="minorRevision" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_majorRevision" name="majorRevision" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_rejected" name="rejected" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_TraceRelationType" name="TraceRelationType">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_equivalent" name="equivalent" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_strongOverlap" name="strongOverlap" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_partialOverlap" name="partialOverlap" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_broaderThan" name="broaderThan" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_narrowerThan" name="narrowerThan" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_contextDependent" name="contextDependent" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_unsupported" name="unsupported" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_Severity" name="Severity">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_Severity_info" name="info" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_Severity_warning" name="warning" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_Severity_error" name="error" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_ExportFormat" name="ExportFormat">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_ExportFormat_CSV" name="CSV" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_ExportFormat_JSON" name="JSON" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_ExportFormat_XMI" name="XMI" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_ExportFormat_PDF" name="PDF" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_ExportFormat_TXT" name="TXT" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_FindingCategory" name="FindingCategory">
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_coverageGap" name="coverageGap" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_brokenLink" name="brokenLink" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_danglingReference" name="danglingReference" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_duplicateIdentifier" name="duplicateIdentifier" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_schemaViolation" name="schemaViolation" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_FindingCategory_crosswalkInconsistency" name="crosswalkInconsistency" />
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_SecurityRequirement" name="SecurityRequirement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_SecurityRequirement_requirementId" name="requirementId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_SecurityRequirement_requirementId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_SecurityRequirement_requirementId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_SecurityRequirement_text" name="text" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_SecurityRequirement_text" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_SecurityRequirement_text" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_SecurityRequirement_lifecycleStage" name="lifecycleStage" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_SecurityRequirement_lifecycleStage" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_SecurityRequirement_lifecycleStage" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_StandardRow" name="StandardRow">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_rowId" name="rowId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_rowId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_rowId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_standardId" name="standardId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_standardId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_standardId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_standardFamily" name="standardFamily" type="Enum_StandardFamily">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_standardFamily" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_standardFamily" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_title" name="title" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_title" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_title" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_evidenceStatus" name="evidenceStatus" type="Enum_EvidenceStatus">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_evidenceStatus" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_evidenceStatus" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_StandardRow_semanticStatus" name="semanticStatus" type="Enum_MappingStatus">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_StandardRow_semanticStatus" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_StandardRow_semanticStatus" value="1" />
+        </ownedAttribute>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C01_UniqueStandardRowId" name="C01_UniqueStandardRowId">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C01_UniqueStandardRowId_Spec">
+            <language>OCL</language>
+            <body>StandardRow.allInstances()-&gt;isUnique(rowId)</body>
+          </specification>
+        </ownedRule>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C02_UniqueStandardKey" name="C02_UniqueStandardKey">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C02_UniqueStandardKey_Spec">
+            <language>OCL</language>
+            <body>StandardRow.allInstances()-&gt;isUnique(r | Tuple{family=r.standardFamily, id=r.standardId})</body>
+          </specification>
+        </ownedRule>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_GQMGoal" name="GQMGoal">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_GQMGoal_goalId" name="goalId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_GQMGoal_goalId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_GQMGoal_goalId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_GQMGoal_statement" name="statement" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_GQMGoal_statement" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_GQMGoal_statement" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_GQMQuestion" name="GQMQuestion">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_GQMQuestion_questionId" name="questionId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_GQMQuestion_questionId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_GQMQuestion_questionId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_GQMQuestion_text" name="text" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_GQMQuestion_text" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_GQMQuestion_text" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_MetricDefinition" name="MetricDefinition">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_MetricDefinition_metricId" name="metricId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_MetricDefinition_metricId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_MetricDefinition_metricId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_MetricDefinition_name" name="name" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_MetricDefinition_name" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_MetricDefinition_name" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_MetricDefinition_description" name="description" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_MetricDefinition_description" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_MetricDefinition_description" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_MetricDefinition_unit" name="unit" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_MetricDefinition_unit" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_MetricDefinition_unit" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_MetricDefinition_aggregationRule" name="aggregationRule" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_MetricDefinition_aggregationRule" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_MetricDefinition_aggregationRule" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_EvidenceRequirement" name="EvidenceRequirement">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceRequirement_evidenceRequirementId" name="evidenceRequirementId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceRequirement_evidenceRequirementId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceRequirement_evidenceRequirementId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceRequirement_evidenceType" name="evidenceType" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceRequirement_evidenceType" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceRequirement_evidenceType" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceRequirement_required" name="required" type="PT_Boolean">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceRequirement_required" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceRequirement_required" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_EvidenceItem" name="EvidenceItem">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_evidenceId" name="evidenceId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_evidenceId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_evidenceId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_evidenceType" name="evidenceType" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_evidenceType" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_evidenceType" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_value" name="value" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_value" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_observedAt" name="observedAt" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_observedAt" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_observedAt" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_sourceRef" name="sourceRef" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_sourceRef" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_sourceRef" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EvidenceItem_evidenceStatus" name="evidenceStatus" type="Enum_EvidenceStatus">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EvidenceItem_evidenceStatus" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EvidenceItem_evidenceStatus" value="1" />
+        </ownedAttribute>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C06_EvidenceSourceRequired" name="C06_EvidenceSourceRequired">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C06_EvidenceSourceRequired_Spec">
+            <language>OCL</language>
+            <body>(self.evidenceStatus = EvidenceStatus::telemetryLinked or self.evidenceStatus = EvidenceStatus::externallySupplied) implies (not self.sourceRef.oclIsUndefined() and self.sourceRef.size() &gt; 0)</body>
+          </specification>
+        </ownedRule>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ProvenanceRecord" name="ProvenanceRecord">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_provenanceId" name="provenanceId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_provenanceId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_provenanceId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_sourceType" name="sourceType" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_sourceType" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_sourceType" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_sourceUri" name="sourceUri" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_sourceUri" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_sourceUri" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_generatedAt" name="generatedAt" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_generatedAt" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_generatedAt" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_toolVersion" name="toolVersion" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_toolVersion" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_toolVersion" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ProvenanceRecord_checksum" name="checksum" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ProvenanceRecord_checksum" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ProvenanceRecord_checksum" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_TraceLink" name="TraceLink">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_TraceLink_traceId" name="traceId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_TraceLink_traceId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_TraceLink_traceId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_TraceLink_relationType" name="relationType" type="Enum_TraceRelationType">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_TraceLink_relationType" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_TraceLink_relationType" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_TraceLink_rationale" name="rationale" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_TraceLink_rationale" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_TraceLink_rationale" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_TraceLink_confidence" name="confidence" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_TraceLink_confidence" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_TraceLink_confidence" value="1" />
+        </ownedAttribute>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C03_TraceDifferentRows" name="C03_TraceDifferentRows">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C03_TraceDifferentRows_Spec">
+            <language>OCL</language>
+            <body>self.sourceStandard &lt;&gt; self.targetStandard</body>
+          </specification>
+        </ownedRule>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C04_TraceCrossFamily" name="C04_TraceCrossFamily">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C04_TraceCrossFamily_Spec">
+            <language>OCL</language>
+            <body>self.sourceStandard.standardFamily &lt;&gt; self.targetStandard.standardFamily</body>
+          </specification>
+        </ownedRule>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C05_ConfidenceRange" name="C05_ConfidenceRange">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C05_ConfidenceRange_Spec">
+            <language>OCL</language>
+            <body>self.confidence.oclIsUndefined() or (self.confidence &gt;= 0.0 and self.confidence &lt;= 1.0)</body>
+          </specification>
+        </ownedRule>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ValidationRun" name="ValidationRun">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationRun_runId" name="runId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationRun_runId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationRun_runId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationRun_executedAt" name="executedAt" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationRun_executedAt" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationRun_executedAt" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationRun_validatorVersion" name="validatorVersion" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationRun_validatorVersion" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationRun_validatorVersion" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationRun_passed" name="passed" type="PT_Boolean">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationRun_passed" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationRun_passed" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ValidationFinding" name="ValidationFinding">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_findingId" name="findingId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_findingId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_findingId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_category" name="category" type="Enum_FindingCategory">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_category" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_category" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_severity" name="severity" type="Enum_Severity">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_severity" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_severity" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_ruleId" name="ruleId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_ruleId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_ruleId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_targetId" name="targetId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_targetId" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_targetId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ValidationFinding_message" name="message" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ValidationFinding_message" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ValidationFinding_message" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ExportView" name="ExportView">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ExportView_exportId" name="exportId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ExportView_exportId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ExportView_exportId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ExportView_format" name="format" type="Enum_ExportFormat">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ExportView_format" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ExportView_format" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ExportView_generatedAt" name="generatedAt" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ExportView_generatedAt" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ExportView_generatedAt" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ExportView_checksum" name="checksum" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ExportView_checksum" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ExportView_checksum" value="1" />
+        </ownedAttribute>
+        <ownedRule xmi:type="uml:Constraint" xmi:id="C07_ExportTimestampRequired" name="C07_ExportTimestampRequired">
+          <specification xmi:type="uml:OpaqueExpression" xmi:id="C07_ExportTimestampRequired_Spec">
+            <language>OCL</language>
+            <body>self.generatedAt.size() &gt; 0</body>
+          </specification>
+        </ownedRule>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_MeasurementConcept" name="MeasurementConcept" isAbstract="true" />
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_AssetValue" name="AssetValue">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_AssetValue" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_AssetValue_value" name="value" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_AssetValue_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_AssetValue_value" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_EventPotential" name="EventPotential">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_EventPotential" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_EventPotential_value" name="value" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_EventPotential_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_EventPotential_value" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ImpactLevel" name="ImpactLevel">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_ImpactLevel" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ImpactLevel_confidentiality" name="confidentiality" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ImpactLevel_confidentiality" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ImpactLevel_confidentiality" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ImpactLevel_integrity" name="integrity" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ImpactLevel_integrity" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ImpactLevel_integrity" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ImpactLevel_availability" name="availability" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ImpactLevel_availability" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ImpactLevel_availability" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_RiskReductionLevel" name="RiskReductionLevel">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_RiskReductionLevel" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_RiskReductionLevel_value" name="value" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_RiskReductionLevel_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_RiskReductionLevel_value" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_CostMetrics" name="CostMetrics">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_CostMetrics" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_CostMetrics_value" name="value" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_CostMetrics_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_CostMetrics_value" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_CostMetrics_horizonMonths" name="horizonMonths" type="PT_Integer">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_CostMetrics_horizonMonths" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_CostMetrics_horizonMonths" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_HumanFactorMetric" name="HumanFactorMetric">
+        <generalization xmi:type="uml:Generalization" xmi:id="Gen_HumanFactorMetric" general="Class_MeasurementConcept" />
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_HumanFactorMetric_value" name="value" type="PT_Real">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_HumanFactorMetric_value" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_HumanFactorMetric_value" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_RequirementToStandard" name="RequirementToStandard" memberEnd="End_RequirementToStandard_SecurityRequirement End_RequirementToStandard_StandardRow">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RequirementToStandard_SecurityRequirement" name="requirements" type="Class_SecurityRequirement" association="Assoc_RequirementToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RequirementToStandard_SecurityRequirement_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RequirementToStandard_SecurityRequirement_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RequirementToStandard_StandardRow" name="standards" type="Class_StandardRow" association="Assoc_RequirementToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RequirementToStandard_StandardRow_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RequirementToStandard_StandardRow_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_StandardToGoal" name="StandardToGoal" memberEnd="End_StandardToGoal_StandardRow End_StandardToGoal_GQMGoal">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToGoal_StandardRow" name="standardRow" type="Class_StandardRow" association="Assoc_StandardToGoal">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToGoal_StandardRow_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToGoal_StandardRow_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToGoal_GQMGoal" name="gqmGoal" type="Class_GQMGoal" association="Assoc_StandardToGoal">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToGoal_GQMGoal_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToGoal_GQMGoal_up" value="1" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_GoalToQuestion" name="GoalToQuestion" memberEnd="End_GoalToQuestion_GQMGoal End_GoalToQuestion_GQMQuestion">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_GoalToQuestion_GQMGoal" name="goal" type="Class_GQMGoal" association="Assoc_GoalToQuestion">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_GoalToQuestion_GQMGoal_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_GoalToQuestion_GQMGoal_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_GoalToQuestion_GQMQuestion" name="questions" type="Class_GQMQuestion" association="Assoc_GoalToQuestion">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_GoalToQuestion_GQMQuestion_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_GoalToQuestion_GQMQuestion_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_QuestionToMetric" name="QuestionToMetric" memberEnd="End_QuestionToMetric_GQMQuestion End_QuestionToMetric_MetricDefinition">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_QuestionToMetric_GQMQuestion" name="questions" type="Class_GQMQuestion" association="Assoc_QuestionToMetric">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_QuestionToMetric_GQMQuestion_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_QuestionToMetric_GQMQuestion_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_QuestionToMetric_MetricDefinition" name="metrics" type="Class_MetricDefinition" association="Assoc_QuestionToMetric">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_QuestionToMetric_MetricDefinition_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_QuestionToMetric_MetricDefinition_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_MetricToEvidenceRequirement" name="MetricToEvidenceRequirement" memberEnd="End_MetricToEvidenceRequirement_MetricDefinition End_MetricToEvidenceRequirement_EvidenceRequirement">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition" name="metric" type="Class_MetricDefinition" association="Assoc_MetricToEvidenceRequirement">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_MetricToEvidenceRequirement_EvidenceRequirement" name="evidenceRequirements" type="Class_EvidenceRequirement" association="Assoc_MetricToEvidenceRequirement">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_MetricToEvidenceRequirement_EvidenceRequirement_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_MetricToEvidenceRequirement_EvidenceRequirement_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_EvidenceRequirementToItem" name="EvidenceRequirementToItem" memberEnd="End_EvidenceRequirementToItem_EvidenceRequirement End_EvidenceRequirementToItem_EvidenceItem">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceRequirementToItem_EvidenceRequirement" name="evidenceRequirements" type="Class_EvidenceRequirement" association="Assoc_EvidenceRequirementToItem">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceRequirementToItem_EvidenceRequirement_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceRequirementToItem_EvidenceRequirement_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceRequirementToItem_EvidenceItem" name="evidenceItems" type="Class_EvidenceItem" association="Assoc_EvidenceRequirementToItem">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceRequirementToItem_EvidenceItem_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceRequirementToItem_EvidenceItem_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_EvidenceToProvenance" name="EvidenceToProvenance" memberEnd="End_EvidenceToProvenance_EvidenceItem End_EvidenceToProvenance_ProvenanceRecord">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToProvenance_EvidenceItem" name="evidenceItems" type="Class_EvidenceItem" association="Assoc_EvidenceToProvenance">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToProvenance_EvidenceItem_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToProvenance_EvidenceItem_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToProvenance_ProvenanceRecord" name="provenance" type="Class_ProvenanceRecord" association="Assoc_EvidenceToProvenance">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToProvenance_ProvenanceRecord_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToProvenance_ProvenanceRecord_up" value="1" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_TraceSource" name="TraceSource" memberEnd="End_TraceSource_StandardRow End_TraceSource_TraceLink">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TraceSource_StandardRow" name="sourceStandard" type="Class_StandardRow" association="Assoc_TraceSource">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TraceSource_StandardRow_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TraceSource_StandardRow_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TraceSource_TraceLink" name="outgoingTraceLinks" type="Class_TraceLink" association="Assoc_TraceSource">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TraceSource_TraceLink_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TraceSource_TraceLink_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_TraceTarget" name="TraceTarget" memberEnd="End_TraceTarget_StandardRow End_TraceTarget_TraceLink">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TraceTarget_StandardRow" name="targetStandard" type="Class_StandardRow" association="Assoc_TraceTarget">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TraceTarget_StandardRow_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TraceTarget_StandardRow_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TraceTarget_TraceLink" name="incomingTraceLinks" type="Class_TraceLink" association="Assoc_TraceTarget">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TraceTarget_TraceLink_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TraceTarget_TraceLink_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_RunToFinding" name="RunToFinding" memberEnd="End_RunToFinding_ValidationRun End_RunToFinding_ValidationFinding">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RunToFinding_ValidationRun" name="validationRun" type="Class_ValidationRun" association="Assoc_RunToFinding">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RunToFinding_ValidationRun_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RunToFinding_ValidationRun_up" value="1" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RunToFinding_ValidationFinding" name="findings" type="Class_ValidationFinding" association="Assoc_RunToFinding">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RunToFinding_ValidationFinding_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RunToFinding_ValidationFinding_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ExportToEvidence" name="ExportToEvidence" memberEnd="End_ExportToEvidence_ExportView End_ExportToEvidence_EvidenceItem">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ExportToEvidence_ExportView" name="exports" type="Class_ExportView" association="Assoc_ExportToEvidence">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ExportToEvidence_ExportView_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ExportToEvidence_ExportView_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ExportToEvidence_EvidenceItem" name="evidenceItems" type="Class_EvidenceItem" association="Assoc_ExportToEvidence">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ExportToEvidence_EvidenceItem_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ExportToEvidence_EvidenceItem_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ExportToStandard" name="ExportToStandard" memberEnd="End_ExportToStandard_ExportView End_ExportToStandard_StandardRow">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ExportToStandard_ExportView" name="exports" type="Class_ExportView" association="Assoc_ExportToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ExportToStandard_ExportView_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ExportToStandard_ExportView_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ExportToStandard_StandardRow" name="standardRows" type="Class_StandardRow" association="Assoc_ExportToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ExportToStandard_StandardRow_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ExportToStandard_StandardRow_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_StandardToMetric" name="StandardToMetric" memberEnd="End_StandardToMetric_StandardRow End_StandardToMetric_MetricDefinition">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMetric_StandardRow" name="standardRows" type="Class_StandardRow" association="Assoc_StandardToMetric">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMetric_StandardRow_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMetric_StandardRow_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMetric_MetricDefinition" name="metrics" type="Class_MetricDefinition" association="Assoc_StandardToMetric">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMetric_MetricDefinition_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMetric_MetricDefinition_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_StandardToMeasurementConcept" name="StandardToMeasurementConcept" memberEnd="End_StandardToMeasurementConcept_StandardRow End_StandardToMeasurementConcept_MeasurementConcept">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMeasurementConcept_StandardRow" name="standardRows" type="Class_StandardRow" association="Assoc_StandardToMeasurementConcept">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMeasurementConcept_StandardRow_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMeasurementConcept_StandardRow_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept" name="measurementConcept" type="Class_MeasurementConcept" association="Assoc_StandardToMeasurementConcept">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept_low" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept_up" value="1" />
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="SETM_Package_Context" name="SecurityContext">
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Asset" name="Asset">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Asset_assetId" name="assetId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Asset_assetId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Asset_assetId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Asset_name" name="name" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Asset_name" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Asset_name" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Threat" name="Threat">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Threat_threatId" name="threatId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Threat_threatId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Threat_threatId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Threat_name" name="name" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Threat_name" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Threat_name" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Vulnerability" name="Vulnerability">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Vulnerability_vulnerabilityId" name="vulnerabilityId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Vulnerability_vulnerabilityId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Vulnerability_vulnerabilityId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Vulnerability_externalRef" name="externalRef" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Vulnerability_externalRef" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Vulnerability_externalRef" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Event" name="Event">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Event_eventId" name="eventId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Event_eventId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Event_eventId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Event_eventType" name="eventType" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Event_eventType" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Event_eventType" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Impact" name="Impact">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Impact_impactId" name="impactId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Impact_impactId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Impact_impactId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Impact_description" name="description" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Impact_description" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Impact_description" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_Risk" name="Risk">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Risk_riskId" name="riskId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Risk_riskId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Risk_riskId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_Risk_description" name="description" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_Risk_description" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_Risk_description" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_RiskTreatment" name="RiskTreatment">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_RiskTreatment_treatmentId" name="treatmentId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_RiskTreatment_treatmentId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_RiskTreatment_treatmentId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_RiskTreatment_description" name="description" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_RiskTreatment_description" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_RiskTreatment_description" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_SecurityObjective" name="SecurityObjective">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_SecurityObjective_objectiveId" name="objectiveId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_SecurityObjective_objectiveId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_SecurityObjective_objectiveId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_SecurityObjective_statement" name="statement" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_SecurityObjective_statement" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_SecurityObjective_statement" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="Class_ControlImplementation" name="ControlImplementation">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ControlImplementation_controlImplementationId" name="controlImplementationId" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ControlImplementation_controlImplementationId" value="1" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ControlImplementation_controlImplementationId" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ControlImplementation_description" name="description" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ControlImplementation_description" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ControlImplementation_description" value="1" />
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="Attr_ControlImplementation_status" name="status" type="PT_String">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="Low_ControlImplementation_status" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="Up_ControlImplementation_status" value="1" />
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_SecurityObjectiveToRequirement" name="SecurityObjectiveToRequirement" memberEnd="End_SecurityObjectiveToRequirement_SecurityObjective End_SecurityObjectiveToRequirement_SecurityRequirement">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_SecurityObjectiveToRequirement_SecurityObjective" name="objectives" type="Class_SecurityObjective" association="Assoc_SecurityObjectiveToRequirement">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_SecurityObjectiveToRequirement_SecurityObjective_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_SecurityObjectiveToRequirement_SecurityObjective_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_SecurityObjectiveToRequirement_SecurityRequirement" name="requirements" type="Class_SecurityRequirement" association="Assoc_SecurityObjectiveToRequirement">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_SecurityObjectiveToRequirement_SecurityRequirement_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_SecurityObjectiveToRequirement_SecurityRequirement_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_RequirementToControlImplementation" name="RequirementToControlImplementation" memberEnd="End_RequirementToControlImplementation_SecurityRequirement End_RequirementToControlImplementation_ControlImplementation">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RequirementToControlImplementation_SecurityRequirement" name="requirements" type="Class_SecurityRequirement" association="Assoc_RequirementToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RequirementToControlImplementation_SecurityRequirement_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RequirementToControlImplementation_SecurityRequirement_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RequirementToControlImplementation_ControlImplementation" name="controlImplementations" type="Class_ControlImplementation" association="Assoc_RequirementToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RequirementToControlImplementation_ControlImplementation_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RequirementToControlImplementation_ControlImplementation_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ControlImplementationToStandard" name="ControlImplementationToStandard" memberEnd="End_ControlImplementationToStandard_ControlImplementation End_ControlImplementationToStandard_StandardRow">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ControlImplementationToStandard_ControlImplementation" name="controlImplementations" type="Class_ControlImplementation" association="Assoc_ControlImplementationToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ControlImplementationToStandard_ControlImplementation_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ControlImplementationToStandard_ControlImplementation_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ControlImplementationToStandard_StandardRow" name="standards" type="Class_StandardRow" association="Assoc_ControlImplementationToStandard">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ControlImplementationToStandard_StandardRow_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ControlImplementationToStandard_StandardRow_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_EvidenceToControlImplementation" name="EvidenceToControlImplementation" memberEnd="End_EvidenceToControlImplementation_EvidenceItem End_EvidenceToControlImplementation_ControlImplementation">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToControlImplementation_EvidenceItem" name="evidenceItems" type="Class_EvidenceItem" association="Assoc_EvidenceToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToControlImplementation_EvidenceItem_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToControlImplementation_EvidenceItem_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToControlImplementation_ControlImplementation" name="controlImplementations" type="Class_ControlImplementation" association="Assoc_EvidenceToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToControlImplementation_ControlImplementation_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToControlImplementation_ControlImplementation_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_EvidenceToEvent" name="EvidenceToEvent" memberEnd="End_EvidenceToEvent_EvidenceItem End_EvidenceToEvent_Event">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToEvent_EvidenceItem" name="evidenceItems" type="Class_EvidenceItem" association="Assoc_EvidenceToEvent">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToEvent_EvidenceItem_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToEvent_EvidenceItem_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EvidenceToEvent_Event" name="events" type="Class_Event" association="Assoc_EvidenceToEvent">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EvidenceToEvent_Event_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EvidenceToEvent_Event_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_AssetToVulnerability" name="AssetToVulnerability" memberEnd="End_AssetToVulnerability_Asset End_AssetToVulnerability_Vulnerability">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_AssetToVulnerability_Asset" name="assets" type="Class_Asset" association="Assoc_AssetToVulnerability">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_AssetToVulnerability_Asset_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_AssetToVulnerability_Asset_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_AssetToVulnerability_Vulnerability" name="vulnerabilities" type="Class_Vulnerability" association="Assoc_AssetToVulnerability">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_AssetToVulnerability_Vulnerability_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_AssetToVulnerability_Vulnerability_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ThreatToVulnerability" name="ThreatToVulnerability" memberEnd="End_ThreatToVulnerability_Threat End_ThreatToVulnerability_Vulnerability">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ThreatToVulnerability_Threat" name="threats" type="Class_Threat" association="Assoc_ThreatToVulnerability">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ThreatToVulnerability_Threat_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ThreatToVulnerability_Threat_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ThreatToVulnerability_Vulnerability" name="vulnerabilities" type="Class_Vulnerability" association="Assoc_ThreatToVulnerability">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ThreatToVulnerability_Vulnerability_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ThreatToVulnerability_Vulnerability_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ThreatToEvent" name="ThreatToEvent" memberEnd="End_ThreatToEvent_Threat End_ThreatToEvent_Event">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ThreatToEvent_Threat" name="threats" type="Class_Threat" association="Assoc_ThreatToEvent">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ThreatToEvent_Threat_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ThreatToEvent_Threat_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ThreatToEvent_Event" name="events" type="Class_Event" association="Assoc_ThreatToEvent">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ThreatToEvent_Event_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ThreatToEvent_Event_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_EventToImpact" name="EventToImpact" memberEnd="End_EventToImpact_Event End_EventToImpact_Impact">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EventToImpact_Event" name="events" type="Class_Event" association="Assoc_EventToImpact">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EventToImpact_Event_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EventToImpact_Event_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_EventToImpact_Impact" name="impacts" type="Class_Impact" association="Assoc_EventToImpact">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_EventToImpact_Impact_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_EventToImpact_Impact_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_ImpactToRisk" name="ImpactToRisk" memberEnd="End_ImpactToRisk_Impact End_ImpactToRisk_Risk">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ImpactToRisk_Impact" name="impacts" type="Class_Impact" association="Assoc_ImpactToRisk">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ImpactToRisk_Impact_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ImpactToRisk_Impact_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_ImpactToRisk_Risk" name="risks" type="Class_Risk" association="Assoc_ImpactToRisk">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_ImpactToRisk_Risk_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_ImpactToRisk_Risk_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_AssetToRisk" name="AssetToRisk" memberEnd="End_AssetToRisk_Asset End_AssetToRisk_Risk">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_AssetToRisk_Asset" name="assets" type="Class_Asset" association="Assoc_AssetToRisk">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_AssetToRisk_Asset_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_AssetToRisk_Asset_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_AssetToRisk_Risk" name="risks" type="Class_Risk" association="Assoc_AssetToRisk">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_AssetToRisk_Risk_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_AssetToRisk_Risk_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_RiskToTreatment" name="RiskToTreatment" memberEnd="End_RiskToTreatment_Risk End_RiskToTreatment_RiskTreatment">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RiskToTreatment_Risk" name="risks" type="Class_Risk" association="Assoc_RiskToTreatment">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RiskToTreatment_Risk_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RiskToTreatment_Risk_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_RiskToTreatment_RiskTreatment" name="treatments" type="Class_RiskTreatment" association="Assoc_RiskToTreatment">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_RiskToTreatment_RiskTreatment_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_RiskToTreatment_RiskTreatment_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="Assoc_TreatmentToControlImplementation" name="TreatmentToControlImplementation" memberEnd="End_TreatmentToControlImplementation_RiskTreatment End_TreatmentToControlImplementation_ControlImplementation">
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TreatmentToControlImplementation_RiskTreatment" name="treatments" type="Class_RiskTreatment" association="Assoc_TreatmentToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TreatmentToControlImplementation_RiskTreatment_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TreatmentToControlImplementation_RiskTreatment_up" value="*" />
+        </ownedEnd>
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_TreatmentToControlImplementation_ControlImplementation" name="controlImplementations" type="Class_ControlImplementation" association="Assoc_TreatmentToControlImplementation">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_TreatmentToControlImplementation_ControlImplementation_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_TreatmentToControlImplementation_ControlImplementation_up" value="*" />
+        </ownedEnd>
+      </packagedElement>
+    </packagedElement>
+  </uml:Model>
+</xmi:XMI>

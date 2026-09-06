@@ -1,94 +1,94 @@
 iso_id,iso_title,nist_ids,crosswalk_source
-A.5.1,Policies for Information Security,GV.OV-01;GV.OV-02;GV.OV-03;GV.PO-01;GV.PO-02;GV.RM-01;GV.RM-02;GV.RM-03;GV.RM-04;GV.RM-05;GV.RM-06;GV.SC-01;GV.SC-03;PR.AA-05;PR.DS-01,NIST-CSF-2.0 informative references
-A.5.2,Information Security Roles and Responsibilities,GV.SC-02;PR.AT-02,NIST-CSF-2.0 informative references
-A.5.3,Segregation of Duties,GV.OC-05;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.5.4,Management Responsibilities,GV.RR-01;GV.SC-02,NIST-CSF-2.0 informative references
-A.5.5,Contact With Authorities,,NIST-CSF-2.0 informative references
-A.5.6,Contact With Special Interest Groups,,NIST-CSF-2.0 informative references
-A.5.7,Threat Intelligence,DE.AE-07;ID.RA-02;ID.RA-03;ID.RA-05;ID.RA-06,NIST-CSF-2.0 informative references
-A.5.8,Information Security in Project Management,ID.AM-08,NIST-CSF-2.0 informative references
-A.5.9,Inventory of Information and Other Associated Assets,ID.AM-01;ID.AM-02;ID.AM-05;ID.AM-07;ID.AM-08;PR.PS-02;PR.PS-03,NIST-CSF-2.0 informative references
-A.5.10,Acceptable Use of Information and Other Associated Assets,PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.5.11,Return of Assets,,NIST-CSF-2.0 informative references
-A.5.12,Classification of Information,ID.AM-05;ID.AM-08,NIST-CSF-2.0 informative references
-A.5.13,Labelling of Information,ID.AM-05;ID.AM-08;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.5.14,Information Transfer,ID.AM-03;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.5.15,Access Control,PR.AA-01;PR.AA-03;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.5.16,Identity Management,PR.AA-03;PR.AA-04;PR.AA-05,NIST-CSF-2.0 informative references
-A.5.17,Authentication Information,PR.AA-03;PR.AA-05,NIST-CSF-2.0 informative references
-A.5.18,Access Rights,PR.AA-01;PR.AA-03;PR.AA-05,NIST-CSF-2.0 informative references
-A.5.19,Information Security in Supplier Relationships,GV.OV-01;GV.OV-02;GV.OV-03;GV.RM-05;GV.SC-01;GV.SC-03;GV.SC-04;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.AM-08;ID.IM-02;ID.RA-09;ID.RA-10,NIST-CSF-2.0 informative references
-A.5.20,Addressing Information Security Within Supplier Agreements,GV.OC-03;GV.OC-04;GV.OV-03;GV.SC-01;GV.SC-03;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.RA-09;ID.RA-10,NIST-CSF-2.0 informative references
-A.5.21,Managing Information Security in the ICT Supply Chain,GV.SC-01;GV.SC-03;GV.SC-09;GV.SC-10,NIST-CSF-2.0 informative references
-A.5.22,"Monitoring, Review and Change Management of Supplier Services",DE.CM-06;GV.SC-01;GV.SC-04;GV.SC-09;GV.SC-10;ID.AM-04;ID.AM-08;ID.RA-02;ID.RA-03;ID.RA-09;ID.RA-10,NIST-CSF-2.0 informative references
-A.5.23,Information Security for Use of Cloud Services,,NIST-CSF-2.0 informative references
-A.5.24,Information Security Incident Management Planning and Preparation,DE.AE-02;ID.IM-04;RS.MA-02,NIST-CSF-2.0 informative references
-A.5.25,Assessment and Decision on Information Security Events,DE.AE-02;DE.AE-04;DE.AE-08;RS.AN-03;RS.AN-08;RS.MA-03;RS.MA-05,NIST-CSF-2.0 informative references
-A.5.26,Response to Information Security Incidents,DE.AE-06;DE.AE-08;GV.SC-08;ID.IM-04;RC.RP-01;RC.RP-02;RC.RP-05;RS.CO-02;RS.CO-03;RS.MA-01;RS.MA-02;RS.MA-04;RS.MI-01;RS.MI-02,NIST-CSF-2.0 informative references
-A.5.27,Learning From Information Security Incidents,ID.IM-03;ID.IM-04;RC.RP-06;RS.AN-03;RS.MA-01;RS.MA-02,NIST-CSF-2.0 informative references
-A.5.28,Collection of Evidence,RC.CO-03;RS.AN-06;RS.AN-07;RS.MA-01;RS.MA-02,NIST-CSF-2.0 informative references
-A.5.29,Information Security During Disruption,PR.IR-03,NIST-CSF-2.0 informative references
-A.5.30,ICT Readiness for Business Continuity,,NIST-CSF-2.0 informative references
-A.5.31,"Legal, Statutory, Regulatory and Contractual Requirements",GV.OC-03;GV.OC-04;GV.SC-05;GV.SC-06;GV.SC-07,NIST-CSF-2.0 informative references
-A.5.32,Intellectual Property Rights,,NIST-CSF-2.0 informative references
-A.5.33,Protection of Records,,NIST-CSF-2.0 informative references
-A.5.34,Privacy and Protection of PII,,NIST-CSF-2.0 informative references
-A.5.35,Independent Review of Information Security,ID.IM-01;ID.IM-02,NIST-CSF-2.0 informative references
-A.5.36,"Compliance With Policies, Rules and Standards for Information Security",,NIST-CSF-2.0 informative references
-A.5.37,Documented Operating Procedures,,NIST-CSF-2.0 informative references
-A.6.1,Screening,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.6.2,Terms and Conditions of Employment,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.6.3,"Information Security Awareness, Education and Training",GV.RR-04;PR.AT-01;PR.AT-02,NIST-CSF-2.0 informative references
-A.6.4,Disciplinary Process,GV.RR-04,NIST-CSF-2.0 informative references
-A.6.5,Responsibilities After Termination or Change of Employment,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.6.6,Confidentiality or Non-Disclosure Agreements,GV.RR-04,NIST-CSF-2.0 informative references
-A.6.7,Remote Working,GV.RR-04,NIST-CSF-2.0 informative references
-A.6.8,Information Security Event Reporting,GV.RR-04;RS.MA-02,NIST-CSF-2.0 informative references
-A.7.1,Physical Security Perimeters,PR.AA-06,NIST-CSF-2.0 informative references
-A.7.2,Physical Entry,PR.AA-06,NIST-CSF-2.0 informative references
-A.7.3,"Securing Offices, Rooms and Facilities",PR.AA-06,NIST-CSF-2.0 informative references
-A.7.4,Physical Security Monitoring,DE.CM-02;DE.CM-03;PR.AA-06,NIST-CSF-2.0 informative references
-A.7.5,Protecting Against Physical and Environmental Threats,PR.IR-02,NIST-CSF-2.0 informative references
-A.7.6,Working In Secure Areas,,NIST-CSF-2.0 informative references
-A.7.7,Clear Desk and Clear Screen,PR.DS-01,NIST-CSF-2.0 informative references
-A.7.8,Equipment Siting and Protection,,NIST-CSF-2.0 informative references
-A.7.9,Security of Assets Off-Premises,,NIST-CSF-2.0 informative references
-A.7.10,Storage Media,ID.AM-08;PR.DS-01,NIST-CSF-2.0 informative references
-A.7.11,Supporting Utilities,,NIST-CSF-2.0 informative references
-A.7.12,Cabling Security,PR.AA-06,NIST-CSF-2.0 informative references
-A.7.13,Equipment Maintenance,ID.AM-08,NIST-CSF-2.0 informative references
-A.7.14,Secure Disposal or Re-Use of Equipment,ID.AM-08,NIST-CSF-2.0 informative references
-A.8.1,User Endpoint Devices,,NIST-CSF-2.0 informative references
-A.8.2,Privileged Access Rights,PR.AA-01;PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.8.3,Information Access Restriction,PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.8.4,Access to Source Code,PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.8.5,Secure Authentication,PR.AA-01;PR.AA-02;PR.AA-03;PR.AA-05,NIST-CSF-2.0 informative references
-A.8.6,Capacity Management,PR.IR-04,NIST-CSF-2.0 informative references
-A.8.7,Protection Against Malware,PR.DS-01,NIST-CSF-2.0 informative references
-A.8.8,Management of Technical Vulnerabilities,ID.RA-01;PR.DS-01,NIST-CSF-2.0 informative references
-A.8.9,Configuration Management,PR.PS-01,NIST-CSF-2.0 informative references
-A.8.10,Information Deletion,,NIST-CSF-2.0 informative references
-A.8.11,Data Masking,,NIST-CSF-2.0 informative references
-A.8.12,Data Leakage Prevention,,NIST-CSF-2.0 informative references
-A.8.13,Information Backup,PR.DS-11;RC.RP-03;RC.RP-06,NIST-CSF-2.0 informative references
-A.8.14,Redundancy of Information Processing Facilities,PR.IR-03,NIST-CSF-2.0 informative references
-A.8.15,Logging,DE.AE-03;PR.PS-04,NIST-CSF-2.0 informative references
-A.8.16,Monitoring Activities,DE.AE-03;DE.CM-01;DE.CM-03;DE.CM-06;DE.CM-09;ID.RA-02;ID.RA-03,NIST-CSF-2.0 informative references
-A.8.17,Clock Synchronization,PR.DS-01;PR.DS-02;PR.DS-10;PR.PS-04,NIST-CSF-2.0 informative references
-A.8.18,Use of Privileged Utility Programs,PR.AA-05,NIST-CSF-2.0 informative references
-A.8.19,Installation of Software on Operational Systems,PR.DS-01;PR.PS-05,NIST-CSF-2.0 informative references
-A.8.20,Network Security,ID.AM-03;PR.DS-02;PR.IR-01,NIST-CSF-2.0 informative references
-A.8.21,Security of Network Services,ID.AM-03;PR.IR-01,NIST-CSF-2.0 informative references
-A.8.22,Segregation of Networks,ID.AM-03;PR.DS-01;PR.DS-02;PR.DS-10;PR.IR-01,NIST-CSF-2.0 informative references
-A.8.23,Web Filtering,,NIST-CSF-2.0 informative references
-A.8.24,Use of Cryptography,,NIST-CSF-2.0 informative references
-A.8.25,Secure Development Life Cycle,PR.PS-06,NIST-CSF-2.0 informative references
-A.8.26,Application Security Requirements,PR.DS-01;PR.DS-02;PR.DS-10,NIST-CSF-2.0 informative references
-A.8.27,Secure System Architecture and Engineering Principles,,NIST-CSF-2.0 informative references
-A.8.28,Secure Coding,PR.PS-06,NIST-CSF-2.0 informative references
-A.8.29,Security Testing in Development and Acceptance,,NIST-CSF-2.0 informative references
-A.8.30,Outsourced Development,,NIST-CSF-2.0 informative references
-A.8.31,"Separation of Development, Test and Production Environments",,NIST-CSF-2.0 informative references
-A.8.32,Change Management,ID.RA-07,NIST-CSF-2.0 informative references
-A.8.33,Test Information,,NIST-CSF-2.0 informative references
-A.8.34,Protection of Information Systems During Audit Testing,,NIST-CSF-2.0 informative references
+A.5.1,Policies for Information Security,GV.OV-03;GV.PO-01;GV.PO-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.2,Information Security Roles and Responsibilities,GV.SC-02;PR.AT-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.3,Segregation of Duties,GV.OC-05;PR.AA-05;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.4,Management Responsibilities,GV.RR-01;GV.SC-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.5,Contact With Authorities,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.6,Contact With Special Interest Groups,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.7,Threat Intelligence,DE.AE-07;ID.RA-02;ID.RA-03;ID.RA-05;ID.RA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.8,Information Security in Project Management,ID.AM-08,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.9,Inventory of Information and Other Associated Assets,ID.AM-01;ID.AM-02;ID.AM-05;ID.AM-07;ID.AM-08;PR.PS-02;PR.PS-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.10,Acceptable Use of Information and Other Associated Assets,PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.11,Return of Assets,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.12,Classification of Information,ID.AM-05;ID.AM-08,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.13,Labelling of Information,ID.AM-05;ID.AM-08;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.14,Information Transfer,ID.AM-03;PR.AA-05;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.15,Access Control,PR.AA-01;PR.AA-03;PR.AA-05;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.16,Identity Management,PR.AA-03;PR.AA-04;PR.AA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.17,Authentication Information,PR.AA-03;PR.AA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.18,Access Rights,PR.AA-01;PR.AA-03;PR.AA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.19,Information Security in Supplier Relationships,GV.SC-01;GV.SC-04;GV.SC-05;GV.SC-07;GV.SC-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.20,Addressing Information Security Within Supplier Agreements,GV.OC-03;GV.OC-04;GV.SC-01;GV.SC-03;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.RA-09;ID.RA-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.21,Managing Information Security in the ICT Supply Chain,GV.SC-01;GV.SC-03;GV.SC-09;GV.SC-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.22,"Monitoring, Review and Change Management of Supplier Services",DE.CM-06;GV.SC-01;GV.SC-04;GV.SC-09;GV.SC-10;ID.AM-04;ID.AM-08;ID.RA-02;ID.RA-09;ID.RA-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.23,Information Security for Use of Cloud Services,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.24,Information Security Incident Management Planning and Preparation,DE.AE-02;ID.IM-04;RS.MA-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.25,Assessment and Decision on Information Security Events,DE.AE-02;DE.AE-04;DE.AE-08;RS.AN-03;RS.AN-08;RS.MA-03;RS.MA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.26,Response to Information Security Incidents,DE.AE-06;DE.AE-08;GV.SC-08;ID.IM-04;RC.CO-03;RC.RP-01;RC.RP-02;RC.RP-05;RS.CO-02;RS.CO-03;RS.MA-01;RS.MA-02;RS.MA-04;RS.MI-01;RS.MI-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.27,Learning From Information Security Incidents,ID.IM-03;ID.IM-04;RC.RP-06;RS.AN-03;RS.MA-01;RS.MA-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.28,Collection of Evidence,RS.AN-06;RS.AN-07;RS.MA-01;RS.MA-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.29,Information Security During Disruption,PR.IR-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.30,ICT Readiness for Business Continuity,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.31,"Legal, Statutory, Regulatory and Contractual Requirements",GV.OC-03;GV.OC-04;GV.SC-05;GV.SC-06;GV.SC-07,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.32,Intellectual Property Rights,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.33,Protection of Records,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.34,Privacy and Protection of PII,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.35,Independent Review of Information Security,ID.IM-01;ID.IM-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.36,"Compliance With Policies, Rules and Standards for Information Security",,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.5.37,Documented Operating Procedures,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.1,Screening,GV.RR-04;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.2,Terms and Conditions of Employment,GV.RR-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.3,"Information Security Awareness, Education and Training",GV.RR-04;PR.AT-01;PR.AT-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.4,Disciplinary Process,GV.RR-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.5,Responsibilities After Termination or Change of Employment,GV.RR-04;PR.DS-01;PR.DS-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.6,Confidentiality or Non-Disclosure Agreements,GV.RR-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.7,Remote Working,GV.RR-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.6.8,Information Security Event Reporting,GV.RR-04;RS.MA-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.1,Physical Security Perimeters,PR.AA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.2,Physical Entry,PR.AA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.3,"Securing Offices, Rooms and Facilities",PR.AA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.4,Physical Security Monitoring,DE.CM-02;DE.CM-03;PR.AA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.5,Protecting Against Physical and Environmental Threats,PR.IR-02,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.6,Working In Secure Areas,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.7,Clear Desk and Clear Screen,PR.DS-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.8,Equipment Siting and Protection,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.9,Security of Assets Off-Premises,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.10,Storage Media,ID.AM-08;PR.DS-01;PR.PS-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.11,Supporting Utilities,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.12,Cabling Security,PR.AA-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.13,Equipment Maintenance,ID.AM-08;PR.PS-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.7.14,Secure Disposal or Re-Use of Equipment,ID.AM-08,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.1,User Endpoint Devices,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.2,Privileged Access Rights,PR.AA-01;PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.3,Information Access Restriction,PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.4,Access to Source Code,PR.AA-05;PR.DS-01;PR.DS-02;PR.PS-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.5,Secure Authentication,PR.AA-01;PR.AA-02;PR.AA-03;PR.AA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.6,Capacity Management,PR.IR-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.7,Protection Against Malware,PR.DS-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.8,Management of Technical Vulnerabilities,ID.RA-01;PR.DS-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.9,Configuration Management,PR.PS-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.10,Information Deletion,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.11,Data Masking,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.12,Data Leakage Prevention,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.13,Information Backup,PR.DS-11;RC.RP-03;RC.RP-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.14,Redundancy of Information Processing Facilities,PR.IR-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.15,Logging,DE.AE-03;PR.PS-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.16,Monitoring Activities,DE.AE-03;DE.CM-01;DE.CM-03;DE.CM-06;DE.CM-09;ID.RA-02;ID.RA-03,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.17,Clock Synchronization,PR.DS-01;PR.DS-02;PR.PS-04,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.18,Use of Privileged Utility Programs,PR.AA-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.19,Installation of Software on Operational Systems,PR.DS-01;PR.PS-05,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.20,Network Security,ID.AM-03;PR.DS-02;PR.IR-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.21,Security of Network Services,ID.AM-03;PR.IR-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.22,Segregation of Networks,ID.AM-03;PR.DS-01;PR.DS-02;PR.IR-01,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.23,Web Filtering,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.24,Use of Cryptography,PR.DS-10,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.25,Secure Development Life Cycle,PR.PS-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.26,Application Security Requirements,PR.DS-01;PR.DS-02;PR.PS-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.27,Secure System Architecture and Engineering Principles,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.28,Secure Coding,PR.PS-06,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.29,Security Testing in Development and Acceptance,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.30,Outsourced Development,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.31,"Separation of Development, Test and Production Environments",,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.32,Change Management,ID.RA-07,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.33,Test Information,,R1 human-adjudicated semantic mapping (Step 12L freeze)
+A.8.34,Protection of Information Systems During Audit Testing,,R1 human-adjudicated semantic mapping (Step 12L freeze)

@@ -12,15 +12,30 @@ from ai_risk.validator import validate_reference_artifacts
 
 def main() -> None:
     summary = validate_reference_artifacts(ROOT, write_log=True)
-    print(f"ISO Annex A coverage: {summary['iso_coverage']}/{summary['iso_total']} ({(summary['iso_coverage'] / summary['iso_total']) * 100:.1f}%)")
-    print(f"NIST CSF 2.0 coverage: {summary['nist_coverage']}/{summary['nist_total']} ({(summary['nist_coverage'] / summary['nist_total']) * 100:.1f}%)")
-    print(f"Broken links (UML/GQM/IDs): {summary['broken_links']}")
-    print(f"Duplicate or dangling rows: {summary['duplicate_or_dangling']}")
-    print(f"Schema violations: {summary['schema_violations']}")
-    print(f"Informative-reference crosswalk mismatches (official ISO<->NIST refs): {summary['informative_reference_crosswalk_mismatches']}")
-    print(f"Elapsed: {summary['elapsed_seconds']:.2f} s")
+    print(f"ISO Annex A coverage: {summary['iso_coverage']}/{summary['iso_total']}")
+    print(f"NIST CSF 2.0 coverage: {summary['nist_coverage']}/{summary['nist_total']}")
+    print(f"Broken links: {summary['broken_links']}")
+    print(f"Duplicate/dangling rows or catalog IDs: {summary['duplicate_or_dangling']}")
+    print(f"Schema/XMI violations: {summary['schema_violations']}")
+    print(f"Contract violations: {summary['contract_violations']}")
+    print(f"Reciprocal crosswalk violations: {summary['reciprocal_crosswalk_violations']}")
+    print(
+        "NIST informative-reference differences (external comparator; not a semantic error): "
+        f"{summary['informative_reference_crosswalk_differences']}"
+    )
+    print(f"Elapsed: {summary['elapsed_seconds']:.3f} s")
     if "log_path" in summary:
         print(f"Log: {summary['log_path']}")
+
+    fatal_keys = [
+        "broken_links",
+        "duplicate_or_dangling",
+        "schema_violations",
+        "contract_violations",
+        "reciprocal_crosswalk_violations",
+    ]
+    if any(int(summary[key]) != 0 for key in fatal_keys):
+        raise SystemExit("R1 structural validation failed.")
 
 
 if __name__ == "__main__":

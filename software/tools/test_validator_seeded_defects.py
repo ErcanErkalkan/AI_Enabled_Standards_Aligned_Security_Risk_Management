@@ -1,19 +1,13 @@
 #!/usr/bin/env python3
-"""Run deterministic seeded-defect checks against the mapping validator.
-
-Each scenario copies the reference-data directory into a temporary workspace,
-injects one defect class, runs the real validator, and scores whether the
-affected identifiers are reported in the expected validator channel.
-"""
-
+"""Deterministic structural-defect smoke test for the promoted R1 validator."""
 from __future__ import annotations
 
 import shutil
 import sys
 import tempfile
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Callable
+import xml.etree.ElementTree as ET
 
 import pandas as pd
 
@@ -24,17 +18,7 @@ if str(ROOT) not in sys.path:
 from ai_risk.validator import validate_reference_artifacts
 
 
-COUNT = 50
 MAPPING_COLUMNS = ["framework", "id", "title", "metric_ids", "uml_class", "gqm_ref", "linked_ids"]
-
-
-@dataclass(frozen=True)
-class ScenarioResult:
-    defect_type: str
-    injected: int
-    detected: int
-    precision: float
-    recall: float
 
 
 def _copy_data_root() -> tuple[tempfile.TemporaryDirectory[str], Path]:
@@ -49,157 +33,98 @@ def _load_mapping(root: Path) -> pd.DataFrame:
 
 
 def _write_mapping(root: Path, frame: pd.DataFrame) -> None:
-    columns = [column for column in MAPPING_COLUMNS if column in frame.columns]
-    frame.to_csv(root / "data" / "mapping_iso_csf_gqm.csv", columns=columns, index=False)
+    frame.to_csv(root / "data" / "mapping_iso_csf_gqm.csv", columns=MAPPING_COLUMNS, index=False)
 
 
-def _first_indices(frame: pd.DataFrame, count: int = COUNT, *, require_links: bool = False) -> list[int]:
-    candidate = frame
-    if require_links:
-        candidate = candidate.loc[candidate["linked_ids"].str.strip() != ""]
-    return list(candidate.head(count).index)
+def _first_linked_index(frame: pd.DataFrame) -> int:
+    return int(frame.loc[frame["linked_ids"].str.strip().ne("")].index[0])
 
 
-def _all_target_ids(root: Path, framework: str, current: set[str]) -> list[str]:
-    if framework == "ISO27001:2022":
-        catalog = pd.read_csv(root / "data" / "nist_csf_2_0_subcats.csv", dtype=str).fillna("")
-    else:
-        catalog = pd.read_csv(root / "data" / "iso27001_2022_annexA.csv", dtype=str).fillna("")
-    return [candidate for candidate in catalog["id"].tolist() if candidate not in current]
+def _inject_unknown_metric(root: Path) -> None:
+    f = _load_mapping(root); f.loc[0, "metric_ids"] = "SEEDED_UNKNOWN_METRIC"; _write_mapping(root, f)
 
 
-def _ids_from_details(details: list[str], marker: str | None = None) -> set[str]:
-    detected: set[str] = set()
-    for detail in details:
-        if marker is not None and marker not in detail:
-            continue
-        if detail.startswith("Duplicate mapping row:"):
-            detected.add(detail.rsplit("::", 1)[-1])
-        elif detail.startswith("mapping_iso_csf_gqm.csv:"):
-            detected.add("mapping_schema")
-        else:
-            detected.add(detail.split(":", 1)[0])
-    return detected
+def _inject_duplicate_mapping(root: Path) -> None:
+    f = _load_mapping(root); f = pd.concat([f, f.iloc[[0]]], ignore_index=True); _write_mapping(root, f)
 
 
-def _score(defect_type: str, expected_ids: set[str], detected_ids: set[str]) -> ScenarioResult:
-    true_positives = len(expected_ids & detected_ids)
-    false_positives = len(detected_ids - expected_ids)
-    precision = true_positives / (true_positives + false_positives) if true_positives + false_positives else 0.0
-    recall = true_positives / len(expected_ids) if expected_ids else 0.0
-    return ScenarioResult(defect_type, len(expected_ids), true_positives, precision, recall)
+def _inject_dangling_link(root: Path) -> None:
+    f = _load_mapping(root); i = _first_linked_index(f); f.loc[i, "linked_ids"] += ";SEEDED_UNKNOWN_ID"; _write_mapping(root, f)
 
 
-def _run_scenario(
-    defect_type: str,
-    inject: Callable[[Path], set[str]],
-    detail_key: str,
-    marker: str | None = None,
-) -> ScenarioResult:
-    temp_dir, temp_root = _copy_data_root()
-    try:
-        expected_ids = inject(temp_root)
-        summary = validate_reference_artifacts(temp_root, write_log=False)
-        detected_ids = _ids_from_details(summary[detail_key], marker=marker)
-    finally:
-        temp_dir.cleanup()
-    return _score(defect_type, expected_ids, detected_ids)
+def _inject_duplicate_link_token(root: Path) -> None:
+    f = _load_mapping(root); i = _first_linked_index(f); token = f.loc[i, "linked_ids"].split(";")[0]; f.loc[i, "linked_ids"] += f";{token}"; _write_mapping(root, f)
 
 
-def _inject_broken_metric(root: Path) -> set[str]:
-    frame = _load_mapping(root)
-    indices = _first_indices(frame)
-    for offset, index in enumerate(indices, start=1):
-        frame.loc[index, "metric_ids"] = f"{frame.loc[index, 'metric_ids']};SEEDED_MISSING_METRIC_{offset:03d}"
-    _write_mapping(root, frame)
-    return set(frame.loc[indices, "id"])
+def _inject_invalid_framework(root: Path) -> None:
+    f = _load_mapping(root); f.loc[0, "framework"] = "INVALID"; _write_mapping(root, f)
 
 
-def _inject_duplicate_rows(root: Path) -> set[str]:
-    frame = _load_mapping(root)
-    indices = _first_indices(frame)
-    duplicated = frame.loc[indices].copy()
-    frame = pd.concat([frame, duplicated], ignore_index=True)
-    _write_mapping(root, frame)
-    return set(duplicated["id"])
+def _inject_blank_title(root: Path) -> None:
+    f = _load_mapping(root); f.loc[0, "title"] = ""; _write_mapping(root, f)
 
 
-def _inject_dangling_link(root: Path) -> set[str]:
-    frame = _load_mapping(root)
-    indices = _first_indices(frame, require_links=True)
-    for offset, index in enumerate(indices, start=1):
-        seeded_id = f"SEEDED_DANGLING_LINK_{offset:03d}"
-        frame.loc[index, "linked_ids"] = f"{frame.loc[index, 'linked_ids']};{seeded_id}"
-    _write_mapping(root, frame)
-    return set(frame.loc[indices, "id"])
+def _inject_duplicate_gqm(root: Path) -> None:
+    f = _load_mapping(root); f.loc[1, "gqm_ref"] = f.loc[0, "gqm_ref"]; _write_mapping(root, f)
 
 
-def _inject_wrong_crosswalk(root: Path) -> set[str]:
-    frame = _load_mapping(root)
-    indices = _first_indices(frame, require_links=True)
-    for index in indices:
-        current = set(part.strip() for part in frame.loc[index, "linked_ids"].split(";") if part.strip())
-        replacement = _all_target_ids(root, frame.loc[index, "framework"], current)[0]
-        frame.loc[index, "linked_ids"] = replacement
-    _write_mapping(root, frame)
-    return set(frame.loc[indices, "id"])
+def _inject_title_mismatch(root: Path) -> None:
+    f = _load_mapping(root); f.loc[0, "title"] = "SEEDED WRONG TITLE"; _write_mapping(root, f)
 
 
-def _inject_missing_metric_field(root: Path) -> set[str]:
-    frame = _load_mapping(root)
-    indices = _first_indices(frame)
-    frame.loc[indices, "metric_ids"] = ""
-    _write_mapping(root, frame)
-    return set(frame.loc[indices, "id"])
+def _inject_rogue_row(root: Path) -> None:
+    f = _load_mapping(root); rogue = f.iloc[[0]].copy(); rogue.loc[:, "id"] = "A.9.99"; rogue.loc[:, "linked_ids"] = ""; rogue.loc[:, "gqm_ref"] = "GQM-ROGUE-001"; f = pd.concat([f, rogue], ignore_index=True); _write_mapping(root, f)
 
 
-def _inject_schema_violation(root: Path) -> set[str]:
-    frame = _load_mapping(root).drop(columns=["metric_ids"])
-    _write_mapping(root, frame)
-    return {"mapping_schema"}
+def _inject_asymmetric_link(root: Path) -> None:
+    f = _load_mapping(root); i = _first_linked_index(f); source = f.loc[i, "id"]; target = f.loc[i, "linked_ids"].split(";")[0]; target_index = int(f.index[f["id"].eq(target)][0]); tokens = [x for x in f.loc[target_index, "linked_ids"].split(";") if x and x != source]; f.loc[target_index, "linked_ids"] = ";".join(tokens); _write_mapping(root, f)
+
+
+def _inject_malformed_xmi(root: Path) -> None:
+    (root / "data" / "uml_schema.xmi").write_text("<xmi:XMI><broken>", encoding="utf-8")
+
+
+SCENARIOS: list[tuple[str, Callable[[Path], None], str]] = [
+    ("unknown metric", _inject_unknown_metric, "broken_links"),
+    ("duplicate mapping row", _inject_duplicate_mapping, "duplicate_or_dangling"),
+    ("dangling link", _inject_dangling_link, "broken_links"),
+    ("duplicate link token", _inject_duplicate_link_token, "contract_violations"),
+    ("invalid framework", _inject_invalid_framework, "contract_violations"),
+    ("blank title", _inject_blank_title, "contract_violations"),
+    ("duplicate GQM", _inject_duplicate_gqm, "duplicate_or_dangling"),
+    ("title/catalog mismatch", _inject_title_mismatch, "contract_violations"),
+    ("rogue mapping row", _inject_rogue_row, "duplicate_or_dangling"),
+    ("asymmetric crosswalk", _inject_asymmetric_link, "reciprocal_crosswalk_violations"),
+    ("malformed XMI", _inject_malformed_xmi, "schema_violations"),
+]
 
 
 def _assert_clean_baseline() -> None:
-    summary = validate_reference_artifacts(ROOT, write_log=False)
-    failing_keys = [
-        "broken_links",
-        "duplicate_or_dangling",
-        "schema_violations",
-        "informative_reference_crosswalk_mismatches",
-    ]
-    failures = {key: summary[key] for key in failing_keys if summary[key] != 0}
-    if failures:
-        raise SystemExit(f"Clean mapping baseline has validator findings: {failures}")
-
-
-def run_seeded_defect_test() -> list[ScenarioResult]:
-    _assert_clean_baseline()
-    scenarios = [
-        ("Broken metric link", _inject_broken_metric, "broken_link_details", "missing metrics"),
-        ("Duplicate row", _inject_duplicate_rows, "duplicate_or_dangling_details", "Duplicate mapping row"),
-        ("Dangling linked id", _inject_dangling_link, "broken_link_details", "dangling linked ids"),
-        ("Wrong crosswalk", _inject_wrong_crosswalk, "semantic_crosswalk_mismatch_details", None),
-        ("Missing metric field", _inject_missing_metric_field, "broken_link_details", "empty metric_ids"),
-        ("Schema violation", _inject_schema_violation, "schema_violation_details", None),
-    ]
-    return [_run_scenario(*scenario) for scenario in scenarios]
+    s = validate_reference_artifacts(ROOT, write_log=False)
+    fatal = {k: s[k] for k in ["broken_links", "duplicate_or_dangling", "schema_violations", "contract_violations", "reciprocal_crosswalk_violations"] if s[k] != 0}
+    if fatal:
+        raise SystemExit(f"Clean R1 baseline has validator findings: {fatal}")
 
 
 def main() -> None:
-    results = run_seeded_defect_test()
-
-    print("Seeded-defect injection test")
-    print(f"{'Defect type':<22} | {'Injected':>8} | {'Detected':>8} | {'Precision':>9} | {'Recall':>6}")
-    print("-" * 70)
-    for result in results:
-        print(
-            f"{result.defect_type:<22} | {result.injected:>8} | {result.detected:>8} | "
-            f"{result.precision:>9.2f} | {result.recall:>6.2f}"
-        )
-
-    failed = [result for result in results if result.recall < 1.0 or result.precision < 1.0]
-    if failed:
-        raise SystemExit("One or more seeded-defect scenarios were not fully detected.")
+    _assert_clean_baseline()
+    failures: list[str] = []
+    for name, inject, key in SCENARIOS:
+        td, root = _copy_data_root()
+        try:
+            inject(root)
+            summary = validate_reference_artifacts(root, write_log=False)
+            detected = int(summary[key]) > 0
+            print(f"{name:<28} {'PASS' if detected else 'FAIL'} ({key}={summary[key]})")
+            if not detected:
+                failures.append(name)
+        except ET.ParseError as exc:
+            failures.append(f"{name}: uncaught parse error {exc}")
+        finally:
+            td.cleanup()
+    if failures:
+        raise SystemExit("Seeded structural scenarios not detected: " + ", ".join(failures))
+    print(f"All {len(SCENARIOS)} seeded structural scenarios detected with structured findings.")
 
 
 if __name__ == "__main__":

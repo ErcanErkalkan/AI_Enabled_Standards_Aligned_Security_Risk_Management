@@ -1,200 +1,200 @@
 framework,id,title,metric_ids,uml_class,gqm_ref,linked_ids
-ISO27001:2022,A.5.1,Policies for Information Security,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-001,GV.OV-01;GV.OV-02;GV.OV-03;GV.PO-01;GV.PO-02;GV.RM-01;GV.RM-02;GV.RM-03;GV.RM-04;GV.RM-05;GV.RM-06;GV.SC-01;GV.SC-03;PR.AA-05;PR.DS-01
-ISO27001:2022,A.5.2,Information Security Roles and Responsibilities,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-002,GV.SC-02;PR.AT-02
-ISO27001:2022,A.5.3,Segregation of Duties,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-003,GV.OC-05;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.5.4,Management Responsibilities,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-004,GV.RR-01;GV.SC-02
-ISO27001:2022,A.5.5,Contact With Authorities,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-005,
-ISO27001:2022,A.5.6,Contact With Special Interest Groups,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-006,
-ISO27001:2022,A.5.7,Threat Intelligence,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-007,DE.AE-07;ID.RA-02;ID.RA-03;ID.RA-05;ID.RA-06
-ISO27001:2022,A.5.8,Information Security in Project Management,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-008,ID.AM-08
-ISO27001:2022,A.5.9,Inventory of Information and Other Associated Assets,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-009,ID.AM-01;ID.AM-02;ID.AM-05;ID.AM-07;ID.AM-08;PR.PS-02;PR.PS-03
-ISO27001:2022,A.5.10,Acceptable Use of Information and Other Associated Assets,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-010,PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.5.11,Return of Assets,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-011,
-ISO27001:2022,A.5.12,Classification of Information,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-012,ID.AM-05;ID.AM-08
-ISO27001:2022,A.5.13,Labelling of Information,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-013,ID.AM-05;ID.AM-08;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.5.14,Information Transfer,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-014,ID.AM-03;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.5.15,Access Control,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-015,PR.AA-01;PR.AA-03;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.5.16,Identity Management,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-016,PR.AA-03;PR.AA-04;PR.AA-05
-ISO27001:2022,A.5.17,Authentication Information,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-017,PR.AA-03;PR.AA-05
-ISO27001:2022,A.5.18,Access Rights,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-018,PR.AA-01;PR.AA-03;PR.AA-05
-ISO27001:2022,A.5.19,Information Security in Supplier Relationships,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-019,GV.OV-01;GV.OV-02;GV.OV-03;GV.RM-05;GV.SC-01;GV.SC-03;GV.SC-04;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.AM-08;ID.IM-02;ID.RA-09;ID.RA-10
-ISO27001:2022,A.5.20,Addressing Information Security Within Supplier Agreements,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-020,GV.OC-03;GV.OC-04;GV.OV-03;GV.SC-01;GV.SC-03;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.RA-09;ID.RA-10
-ISO27001:2022,A.5.21,Managing Information Security in the ICT Supply Chain,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-021,GV.SC-01;GV.SC-03;GV.SC-09;GV.SC-10
-ISO27001:2022,A.5.22,"Monitoring, Review and Change Management of Supplier Services",HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-022,DE.CM-06;GV.SC-01;GV.SC-04;GV.SC-09;GV.SC-10;ID.AM-04;ID.AM-08;ID.RA-02;ID.RA-03;ID.RA-09;ID.RA-10
-ISO27001:2022,A.5.23,Information Security for Use of Cloud Services,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-023,
-ISO27001:2022,A.5.24,Information Security Incident Management Planning and Preparation,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-024,DE.AE-02;ID.IM-04;RS.MA-02
-ISO27001:2022,A.5.25,Assessment and Decision on Information Security Events,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-025,DE.AE-02;DE.AE-04;DE.AE-08;RS.AN-03;RS.AN-08;RS.MA-03;RS.MA-05
-ISO27001:2022,A.5.26,Response to Information Security Incidents,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-026,DE.AE-06;DE.AE-08;GV.SC-08;ID.IM-04;RC.RP-01;RC.RP-02;RC.RP-05;RS.CO-02;RS.CO-03;RS.MA-01;RS.MA-02;RS.MA-04;RS.MI-01;RS.MI-02
-ISO27001:2022,A.5.27,Learning From Information Security Incidents,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-027,ID.IM-03;ID.IM-04;RC.RP-06;RS.AN-03;RS.MA-01;RS.MA-02
-ISO27001:2022,A.5.28,Collection of Evidence,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-028,RC.CO-03;RS.AN-06;RS.AN-07;RS.MA-01;RS.MA-02
-ISO27001:2022,A.5.29,Information Security During Disruption,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-029,PR.IR-03
-ISO27001:2022,A.5.30,ICT Readiness for Business Continuity,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-030,
-ISO27001:2022,A.5.31,"Legal, Statutory, Regulatory and Contractual Requirements",HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-031,GV.OC-03;GV.OC-04;GV.SC-05;GV.SC-06;GV.SC-07
-ISO27001:2022,A.5.32,Intellectual Property Rights,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-032,
-ISO27001:2022,A.5.33,Protection of Records,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-033,
-ISO27001:2022,A.5.34,Privacy and Protection of PII,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-034,
-ISO27001:2022,A.5.35,Independent Review of Information Security,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-035,ID.IM-01;ID.IM-02
-ISO27001:2022,A.5.36,"Compliance With Policies, Rules and Standards for Information Security",HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-036,
-ISO27001:2022,A.5.37,Documented Operating Procedures,HF_AWARENESS;TCO_3Y,HumanFactorMetric,GQM-ISO-037,
-ISO27001:2022,A.6.1,Screening,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-038,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.6.2,Terms and Conditions of Employment,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-039,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.6.3,"Information Security Awareness, Education and Training",HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-040,GV.RR-04;PR.AT-01;PR.AT-02
-ISO27001:2022,A.6.4,Disciplinary Process,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-041,GV.RR-04
-ISO27001:2022,A.6.5,Responsibilities After Termination or Change of Employment,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-042,GV.RR-04;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.6.6,Confidentiality or Non-Disclosure Agreements,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-043,GV.RR-04
-ISO27001:2022,A.6.7,Remote Working,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-044,GV.RR-04
-ISO27001:2022,A.6.8,Information Security Event Reporting,HF_AWARENESS;DR,HumanFactorMetric,GQM-ISO-045,GV.RR-04;RS.MA-02
-ISO27001:2022,A.7.1,Physical Security Perimeters,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-046,PR.AA-06
-ISO27001:2022,A.7.2,Physical Entry,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-047,PR.AA-06
-ISO27001:2022,A.7.3,"Securing Offices, Rooms and Facilities",IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-048,PR.AA-06
-ISO27001:2022,A.7.4,Physical Security Monitoring,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-049,DE.CM-02;DE.CM-03;PR.AA-06
-ISO27001:2022,A.7.5,Protecting Against Physical and Environmental Threats,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-050,PR.IR-02
-ISO27001:2022,A.7.6,Working In Secure Areas,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-051,
-ISO27001:2022,A.7.7,Clear Desk and Clear Screen,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-052,PR.DS-01
-ISO27001:2022,A.7.8,Equipment Siting and Protection,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-053,
-ISO27001:2022,A.7.9,Security of Assets Off-Premises,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-054,
-ISO27001:2022,A.7.10,Storage Media,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-055,ID.AM-08;PR.DS-01
-ISO27001:2022,A.7.11,Supporting Utilities,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-056,
-ISO27001:2022,A.7.12,Cabling Security,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-057,PR.AA-06
-ISO27001:2022,A.7.13,Equipment Maintenance,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-058,ID.AM-08
-ISO27001:2022,A.7.14,Secure Disposal or Re-Use of Equipment,IL_CIA;RRL_PORTFOLIO,ImpactLevel,GQM-ISO-059,ID.AM-08
-ISO27001:2022,A.8.1,User Endpoint Devices,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-060,
-ISO27001:2022,A.8.2,Privileged Access Rights,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-061,PR.AA-01;PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.8.3,Information Access Restriction,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-062,PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.8.4,Access to Source Code,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-063,PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.8.5,Secure Authentication,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-064,PR.AA-01;PR.AA-02;PR.AA-03;PR.AA-05
-ISO27001:2022,A.8.6,Capacity Management,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-065,PR.IR-04
-ISO27001:2022,A.8.7,Protection Against Malware,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-066,PR.DS-01
-ISO27001:2022,A.8.8,Management of Technical Vulnerabilities,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-067,ID.RA-01;PR.DS-01
-ISO27001:2022,A.8.9,Configuration Management,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-068,PR.PS-01
-ISO27001:2022,A.8.10,Information Deletion,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-069,
-ISO27001:2022,A.8.11,Data Masking,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-070,
-ISO27001:2022,A.8.12,Data Leakage Prevention,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-071,
-ISO27001:2022,A.8.13,Information Backup,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-072,PR.DS-11;RC.RP-03;RC.RP-06
-ISO27001:2022,A.8.14,Redundancy of Information Processing Facilities,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-073,PR.IR-03
-ISO27001:2022,A.8.15,Logging,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-074,DE.AE-03;PR.PS-04
-ISO27001:2022,A.8.16,Monitoring Activities,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-075,DE.AE-03;DE.CM-01;DE.CM-03;DE.CM-06;DE.CM-09;ID.RA-02;ID.RA-03
-ISO27001:2022,A.8.17,Clock Synchronization,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-076,PR.DS-01;PR.DS-02;PR.DS-10;PR.PS-04
-ISO27001:2022,A.8.18,Use of Privileged Utility Programs,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-077,PR.AA-05
-ISO27001:2022,A.8.19,Installation of Software on Operational Systems,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-078,PR.DS-01;PR.PS-05
-ISO27001:2022,A.8.20,Network Security,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-079,ID.AM-03;PR.DS-02;PR.IR-01
-ISO27001:2022,A.8.21,Security of Network Services,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-080,ID.AM-03;PR.IR-01
-ISO27001:2022,A.8.22,Segregation of Networks,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-081,ID.AM-03;PR.DS-01;PR.DS-02;PR.DS-10;PR.IR-01
-ISO27001:2022,A.8.23,Web Filtering,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-082,
-ISO27001:2022,A.8.24,Use of Cryptography,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-083,
-ISO27001:2022,A.8.25,Secure Development Life Cycle,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-084,PR.PS-06
-ISO27001:2022,A.8.26,Application Security Requirements,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-085,PR.DS-01;PR.DS-02;PR.DS-10
-ISO27001:2022,A.8.27,Secure System Architecture and Engineering Principles,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-086,
-ISO27001:2022,A.8.28,Secure Coding,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-087,PR.PS-06
-ISO27001:2022,A.8.29,Security Testing in Development and Acceptance,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-088,
-ISO27001:2022,A.8.30,Outsourced Development,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-089,
-ISO27001:2022,A.8.31,"Separation of Development, Test and Production Environments",EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-090,
-ISO27001:2022,A.8.32,Change Management,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-091,ID.RA-07
-ISO27001:2022,A.8.33,Test Information,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-092,
-ISO27001:2022,A.8.34,Protection of Information Systems During Audit Testing,EP_EXPLOIT;DR;FPR;AUROC,EventPotential,GQM-ISO-093,
-NIST-CSF-2.0,GV.OC-01,The organizational mission is understood and informs cybersecurity risk management,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-001,
-NIST-CSF-2.0,GV.OC-02,"Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-002,
-NIST-CSF-2.0,GV.OC-03,"Legal, regulatory, and contractual requirements regarding cybersecurity - including privacy and civil liberties obligations - are understood and managed",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-003,A.5.20;A.5.31
-NIST-CSF-2.0,GV.OC-04,"Critical objectives, capabilities, and services that external stakeholders depend on or expect from the organization are understood and communicated",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-004,A.5.20;A.5.31
-NIST-CSF-2.0,GV.OC-05,"Outcomes, capabilities, and services that the organization depends on are understood and communicated",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-005,A.5.3
-NIST-CSF-2.0,GV.RM-01,Risk management objectives are established and agreed to by organizational stakeholders,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-006,A.5.1
-NIST-CSF-2.0,GV.RM-02,"Risk appetite and risk tolerance statements are established, communicated, and maintained",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-007,A.5.1
-NIST-CSF-2.0,GV.RM-03,Cybersecurity risk management activities and outcomes are included in enterprise risk management processes,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-008,A.5.1
-NIST-CSF-2.0,GV.RM-04,Strategic direction that describes appropriate risk response options is established and communicated,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-009,A.5.1
-NIST-CSF-2.0,GV.RM-05,"Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-010,A.5.1;A.5.19
-NIST-CSF-2.0,GV.RM-06,"A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established and communicated",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-011,A.5.1
-NIST-CSF-2.0,GV.RM-07,"Strategic opportunities (i.e., positive risks) are characterized and are included in organizational cybersecurity risk discussions",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-012,
-NIST-CSF-2.0,GV.RR-01,"Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-013,A.5.4
-NIST-CSF-2.0,GV.RR-02,"Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-014,
-NIST-CSF-2.0,GV.RR-03,"Adequate resources are allocated commensurate with the cybersecurity risk strategy, roles, responsibilities, and policies",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-015,
-NIST-CSF-2.0,GV.RR-04,Cybersecurity is included in human resources practices,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-016,A.6.1;A.6.2;A.6.3;A.6.4;A.6.5;A.6.6;A.6.7;A.6.8
-NIST-CSF-2.0,GV.PO-01,"Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-017,A.5.1
-NIST-CSF-2.0,GV.PO-02,"Policy for managing cybersecurity risks is reviewed, updated, communicated, and enforced to reflect changes in requirements, threats, technology, and organizational mission",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-018,A.5.1
-NIST-CSF-2.0,GV.OV-01,Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-019,A.5.1;A.5.19
-NIST-CSF-2.0,GV.OV-02,The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-020,A.5.1;A.5.19
-NIST-CSF-2.0,GV.OV-03,Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-021,A.5.1;A.5.19;A.5.20
-NIST-CSF-2.0,GV.SC-01,"A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-022,A.5.1;A.5.19;A.5.20;A.5.21;A.5.22
-NIST-CSF-2.0,GV.SC-02,"Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-023,A.5.2;A.5.4
-NIST-CSF-2.0,GV.SC-03,"Cybersecurity supply chain risk management is integrated into cybersecurity and enterprise risk management, risk assessment, and improvement processes",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-024,A.5.1;A.5.19;A.5.20;A.5.21
-NIST-CSF-2.0,GV.SC-04,Suppliers are known and prioritized by criticality,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-025,A.5.19;A.5.22
-NIST-CSF-2.0,GV.SC-05,"Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-026,A.5.19;A.5.20;A.5.31
-NIST-CSF-2.0,GV.SC-06,Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-027,A.5.19;A.5.20;A.5.31
-NIST-CSF-2.0,GV.SC-07,"The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-028,A.5.19;A.5.20;A.5.31
-NIST-CSF-2.0,GV.SC-08,"Relevant suppliers and other third parties are included in incident planning, response, and recovery activities",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-029,A.5.26
-NIST-CSF-2.0,GV.SC-09,"Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-030,A.5.19;A.5.20;A.5.21;A.5.22
-NIST-CSF-2.0,GV.SC-10,Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-031,A.5.19;A.5.20;A.5.21;A.5.22
-NIST-CSF-2.0,ID.AM-01,Inventories of hardware managed by the organization are maintained,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-032,A.5.9
-NIST-CSF-2.0,ID.AM-02,"Inventories of software, services, and systems managed by the organization are maintained",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-033,A.5.9
-NIST-CSF-2.0,ID.AM-03,Representations of the organization's authorized network communication and internal and external network data flows are maintained,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-034,A.5.14;A.8.20;A.8.21;A.8.22
-NIST-CSF-2.0,ID.AM-04,Inventories of services provided by suppliers are maintained,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-035,A.5.22
-NIST-CSF-2.0,ID.AM-05,"Assets are prioritized based on classification, criticality, resources, and impact on the mission",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-036,A.5.12;A.5.13;A.5.9
-NIST-CSF-2.0,ID.AM-07,Inventories of data and corresponding metadata for designated data types are maintained,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-037,A.5.9
-NIST-CSF-2.0,ID.AM-08,"Systems, hardware, software, services, and data are managed throughout their life cycles",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-038,A.5.12;A.5.13;A.5.19;A.5.22;A.5.8;A.5.9;A.7.10;A.7.13;A.7.14
-NIST-CSF-2.0,ID.RA-01,"Vulnerabilities in assets are identified, validated, and recorded",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-039,A.8.8
-NIST-CSF-2.0,ID.RA-02,Cyber threat intelligence is received from information sharing forums and sources,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-040,A.5.22;A.5.7;A.8.16
-NIST-CSF-2.0,ID.RA-03,Internal and external threats to the organization are identified and recorded,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-041,A.5.22;A.5.7;A.8.16
-NIST-CSF-2.0,ID.RA-04,Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-042,
-NIST-CSF-2.0,ID.RA-05,"Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-043,A.5.7
-NIST-CSF-2.0,ID.RA-06,"Risk responses are chosen, prioritized, planned, tracked, and communicated",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-044,A.5.7
-NIST-CSF-2.0,ID.RA-07,"Changes and exceptions are managed, assessed for risk impact, recorded, and tracked",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-045,A.8.32
-NIST-CSF-2.0,ID.RA-08,"Processes for receiving, analyzing, and responding to vulnerability disclosures are established",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-046,
-NIST-CSF-2.0,ID.RA-09,The authenticity and integrity of hardware and software are assessed prior to acquisition and use,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-047,A.5.19;A.5.20;A.5.22
-NIST-CSF-2.0,ID.RA-10,Critical suppliers are assessed prior to acquisition,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-048,A.5.19;A.5.20;A.5.22
-NIST-CSF-2.0,ID.IM-01,Improvements are identified from evaluations,AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-049,A.5.35
-NIST-CSF-2.0,ID.IM-02,"Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-050,A.5.19;A.5.35
-NIST-CSF-2.0,ID.IM-03,"Improvements are identified from execution of operational processes, procedures, and activities",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-051,A.5.27
-NIST-CSF-2.0,ID.IM-04,"Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved",AV_MONETARY;EP_FREQ;HF_AWARENESS,AssetValue,GQM-CSF-052,A.5.24;A.5.26;A.5.27
-NIST-CSF-2.0,PR.AA-01,"Identities and credentials for authorized users, services, and hardware are managed by the organization",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-053,A.5.15;A.5.18;A.8.2;A.8.5
-NIST-CSF-2.0,PR.AA-02,Identities are proofed and bound to credentials based on the context of interactions,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-054,A.8.2;A.8.3;A.8.5
-NIST-CSF-2.0,PR.AA-03,"Users, services, and hardware are authenticated",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-055,A.5.15;A.5.16;A.5.17;A.5.18;A.8.5
-NIST-CSF-2.0,PR.AA-04,"Identity assertions are protected, conveyed, and verified",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-056,A.5.16
-NIST-CSF-2.0,PR.AA-05,"Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-057,A.5.1;A.5.14;A.5.15;A.5.16;A.5.17;A.5.18;A.5.3;A.8.18;A.8.2;A.8.3;A.8.5
-NIST-CSF-2.0,PR.AA-06,"Physical access to assets is managed, monitored, and enforced commensurate with risk",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-058,A.7.1;A.7.12;A.7.2;A.7.3;A.7.4
-NIST-CSF-2.0,PR.AT-01,Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-059,A.6.3
-NIST-CSF-2.0,PR.AT-02,Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-060,A.5.2;A.6.3
-NIST-CSF-2.0,PR.DS-01,"The confidentiality, integrity, and availability of data-at-rest are protected",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-061,A.5.1;A.5.10;A.5.13;A.5.14;A.5.15;A.5.3;A.6.1;A.6.2;A.6.5;A.7.10;A.7.7;A.8.17;A.8.19;A.8.2;A.8.22;A.8.26;A.8.3;A.8.4;A.8.7;A.8.8
-NIST-CSF-2.0,PR.DS-02,"The confidentiality, integrity, and availability of data-in-transit are protected",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-062,A.5.10;A.5.13;A.5.14;A.5.15;A.5.3;A.6.1;A.6.2;A.6.5;A.8.17;A.8.2;A.8.20;A.8.22;A.8.26;A.8.3;A.8.4
-NIST-CSF-2.0,PR.DS-10,"The confidentiality, integrity, and availability of data-in-use are protected",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-063,A.5.10;A.5.13;A.5.14;A.5.15;A.5.3;A.6.1;A.6.2;A.6.5;A.8.17;A.8.2;A.8.22;A.8.26;A.8.3;A.8.4
-NIST-CSF-2.0,PR.DS-11,"Backups of data are created, protected, maintained, and tested",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-064,A.8.13
-NIST-CSF-2.0,PR.PS-01,Configuration management practices are established and applied,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-065,A.8.9
-NIST-CSF-2.0,PR.PS-02,"Software is maintained, replaced, and removed commensurate with risk",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-066,A.5.9
-NIST-CSF-2.0,PR.PS-03,"Hardware is maintained, replaced, and removed commensurate with risk",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-067,A.5.9
-NIST-CSF-2.0,PR.PS-04,Log records are generated and made available for continuous monitoring,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-068,A.8.15;A.8.17
-NIST-CSF-2.0,PR.PS-05,Installation and execution of unauthorized software are prevented,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-069,A.8.19
-NIST-CSF-2.0,PR.PS-06,"Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-070,A.8.25;A.8.28
-NIST-CSF-2.0,PR.IR-01,Networks and environments are protected from unauthorized logical access and usage,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-071,A.8.20;A.8.21;A.8.22
-NIST-CSF-2.0,PR.IR-02,The organization's technology assets are protected from environmental threats,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-072,A.7.5
-NIST-CSF-2.0,PR.IR-03,Mechanisms are implemented to achieve resilience requirements in normal and adverse situations,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-073,A.5.29;A.8.14
-NIST-CSF-2.0,PR.IR-04,Adequate resource capacity to ensure availability is maintained,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-074,A.8.6
-NIST-CSF-2.0,DE.CM-01,Networks and network services are monitored to find potentially adverse events,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-075,A.8.16
-NIST-CSF-2.0,DE.CM-02,The physical environment is monitored to find potentially adverse events,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-076,A.7.4
-NIST-CSF-2.0,DE.CM-03,Personnel activity and technology usage are monitored to find potentially adverse events,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-077,A.7.4;A.8.16
-NIST-CSF-2.0,DE.CM-06,External service provider activities and services are monitored to find potentially adverse events,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-078,A.5.22;A.8.16
-NIST-CSF-2.0,DE.CM-09,"Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events",EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-079,A.8.16
-NIST-CSF-2.0,DE.AE-02,Potentially adverse events are analyzed to better understand associated activities,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-080,A.5.24;A.5.25
-NIST-CSF-2.0,DE.AE-03,Information is correlated from multiple sources,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-081,A.8.15;A.8.16
-NIST-CSF-2.0,DE.AE-04,The estimated impact and scope of adverse events are understood,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-082,A.5.25
-NIST-CSF-2.0,DE.AE-06,Information on adverse events is provided to authorized staff and tools,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-083,A.5.26
-NIST-CSF-2.0,DE.AE-07,Cyber threat intelligence and other contextual information are integrated into the analysis,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-084,A.5.7
-NIST-CSF-2.0,DE.AE-08,Incidents are declared when adverse events meet the defined incident criteria,EP_EXPLOIT;DR;FPR;AUROC;PR_AUC,EventPotential,GQM-CSF-085,A.5.25;A.5.26
-NIST-CSF-2.0,RS.MA-01,The incident response plan is executed in coordination with relevant third parties once an incident is declared,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-086,A.5.26;A.5.27;A.5.28
-NIST-CSF-2.0,RS.MA-02,Incident reports are triaged and validated,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-087,A.5.24;A.5.26;A.5.27;A.5.28;A.6.8
-NIST-CSF-2.0,RS.MA-03,Incidents are categorized and prioritized,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-088,A.5.25
-NIST-CSF-2.0,RS.MA-04,Incidents are escalated or elevated as needed,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-089,A.5.26
-NIST-CSF-2.0,RS.MA-05,The criteria for initiating incident recovery are applied,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-090,A.5.25
-NIST-CSF-2.0,RS.AN-03,Analysis is performed to establish what has taken place during an incident and the root cause of the incident,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-091,A.5.25;A.5.27
-NIST-CSF-2.0,RS.AN-06,"Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved",IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-092,A.5.28
-NIST-CSF-2.0,RS.AN-07,"Incident data and metadata are collected, and their integrity and provenance are preserved",IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-093,A.5.28
-NIST-CSF-2.0,RS.AN-08,An incident's magnitude is estimated and validated,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-094,A.5.25
-NIST-CSF-2.0,RS.CO-02,Internal and external stakeholders are notified of incidents,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-095,A.5.26
-NIST-CSF-2.0,RS.CO-03,Information is shared with designated internal and external stakeholders,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-096,A.5.26
-NIST-CSF-2.0,RS.MI-01,Incidents are contained,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-097,A.5.26
-NIST-CSF-2.0,RS.MI-02,Incidents are eradicated,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-098,A.5.26
-NIST-CSF-2.0,RC.RP-01,The recovery portion of the incident response plan is executed once initiated from the incident response process,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-099,A.5.26
-NIST-CSF-2.0,RC.RP-02,"Recovery actions are selected, scoped, prioritized, and performed",IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-100,A.5.26
-NIST-CSF-2.0,RC.RP-03,The integrity of backups and other restoration assets is verified before using them for restoration,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-101,A.8.13
-NIST-CSF-2.0,RC.RP-04,Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-102,
-NIST-CSF-2.0,RC.RP-05,"The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed",IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-103,A.5.26
-NIST-CSF-2.0,RC.RP-06,"The end of incident recovery is declared based on criteria, and incident-related documentation is completed",IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-104,A.5.27;A.8.13
-NIST-CSF-2.0,RC.CO-03,Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-105,A.5.28
-NIST-CSF-2.0,RC.CO-04,Public updates on incident recovery are shared using approved methods and messaging,IL_CIA;RRL_PORTFOLIO;TCO_3Y,ImpactLevel,GQM-CSF-106,
+ISO27001:2022,A.5.1,Policies for Information Security,,EvidenceRequirement,GQM-ISO-001,GV.OV-03;GV.PO-01;GV.PO-02
+ISO27001:2022,A.5.2,Information Security Roles and Responsibilities,,EvidenceRequirement,GQM-ISO-002,GV.SC-02;PR.AT-02
+ISO27001:2022,A.5.3,Segregation of Duties,,EvidenceRequirement,GQM-ISO-003,GV.OC-05;PR.AA-05;PR.DS-01;PR.DS-02
+ISO27001:2022,A.5.4,Management Responsibilities,,EvidenceRequirement,GQM-ISO-004,GV.RR-01;GV.SC-02
+ISO27001:2022,A.5.5,Contact With Authorities,,EvidenceRequirement,GQM-ISO-005,
+ISO27001:2022,A.5.6,Contact With Special Interest Groups,,EvidenceRequirement,GQM-ISO-006,
+ISO27001:2022,A.5.7,Threat Intelligence,EP_EXPLOIT,EvidenceRequirement,GQM-ISO-007,DE.AE-07;ID.RA-02;ID.RA-03;ID.RA-05;ID.RA-06
+ISO27001:2022,A.5.8,Information Security in Project Management,,EvidenceRequirement,GQM-ISO-008,ID.AM-08
+ISO27001:2022,A.5.9,Inventory of Information and Other Associated Assets,,EvidenceRequirement,GQM-ISO-009,ID.AM-01;ID.AM-02;ID.AM-05;ID.AM-07;ID.AM-08;PR.PS-02;PR.PS-03
+ISO27001:2022,A.5.10,Acceptable Use of Information and Other Associated Assets,,EvidenceRequirement,GQM-ISO-010,PR.DS-01;PR.DS-02
+ISO27001:2022,A.5.11,Return of Assets,,EvidenceRequirement,GQM-ISO-011,
+ISO27001:2022,A.5.12,Classification of Information,,EvidenceRequirement,GQM-ISO-012,ID.AM-05;ID.AM-08
+ISO27001:2022,A.5.13,Labelling of Information,,EvidenceRequirement,GQM-ISO-013,ID.AM-05;ID.AM-08;PR.DS-01;PR.DS-02
+ISO27001:2022,A.5.14,Information Transfer,,EvidenceRequirement,GQM-ISO-014,ID.AM-03;PR.AA-05;PR.DS-01;PR.DS-02
+ISO27001:2022,A.5.15,Access Control,,EvidenceRequirement,GQM-ISO-015,PR.AA-01;PR.AA-03;PR.AA-05;PR.DS-01;PR.DS-02
+ISO27001:2022,A.5.16,Identity Management,,EvidenceRequirement,GQM-ISO-016,PR.AA-03;PR.AA-04;PR.AA-05
+ISO27001:2022,A.5.17,Authentication Information,,EvidenceRequirement,GQM-ISO-017,PR.AA-03;PR.AA-05
+ISO27001:2022,A.5.18,Access Rights,,EvidenceRequirement,GQM-ISO-018,PR.AA-01;PR.AA-03;PR.AA-05
+ISO27001:2022,A.5.19,Information Security in Supplier Relationships,,EvidenceRequirement,GQM-ISO-019,GV.SC-01;GV.SC-04;GV.SC-05;GV.SC-07;GV.SC-10
+ISO27001:2022,A.5.20,Addressing Information Security Within Supplier Agreements,,EvidenceRequirement,GQM-ISO-020,GV.OC-03;GV.OC-04;GV.SC-01;GV.SC-03;GV.SC-05;GV.SC-06;GV.SC-07;GV.SC-09;GV.SC-10;ID.RA-09;ID.RA-10
+ISO27001:2022,A.5.21,Managing Information Security in the ICT Supply Chain,,EvidenceRequirement,GQM-ISO-021,GV.SC-01;GV.SC-03;GV.SC-09;GV.SC-10
+ISO27001:2022,A.5.22,"Monitoring, Review and Change Management of Supplier Services",,EvidenceRequirement,GQM-ISO-022,DE.CM-06;GV.SC-01;GV.SC-04;GV.SC-09;GV.SC-10;ID.AM-04;ID.AM-08;ID.RA-02;ID.RA-09;ID.RA-10
+ISO27001:2022,A.5.23,Information Security for Use of Cloud Services,,EvidenceRequirement,GQM-ISO-023,
+ISO27001:2022,A.5.24,Information Security Incident Management Planning and Preparation,,EvidenceRequirement,GQM-ISO-024,DE.AE-02;ID.IM-04;RS.MA-02
+ISO27001:2022,A.5.25,Assessment and Decision on Information Security Events,,EvidenceRequirement,GQM-ISO-025,DE.AE-02;DE.AE-04;DE.AE-08;RS.AN-03;RS.AN-08;RS.MA-03;RS.MA-05
+ISO27001:2022,A.5.26,Response to Information Security Incidents,,EvidenceRequirement,GQM-ISO-026,DE.AE-06;DE.AE-08;GV.SC-08;ID.IM-04;RC.CO-03;RC.RP-01;RC.RP-02;RC.RP-05;RS.CO-02;RS.CO-03;RS.MA-01;RS.MA-02;RS.MA-04;RS.MI-01;RS.MI-02
+ISO27001:2022,A.5.27,Learning From Information Security Incidents,,EvidenceRequirement,GQM-ISO-027,ID.IM-03;ID.IM-04;RC.RP-06;RS.AN-03;RS.MA-01;RS.MA-02
+ISO27001:2022,A.5.28,Collection of Evidence,,EvidenceRequirement,GQM-ISO-028,RS.AN-06;RS.AN-07;RS.MA-01;RS.MA-02
+ISO27001:2022,A.5.29,Information Security During Disruption,,EvidenceRequirement,GQM-ISO-029,PR.IR-03
+ISO27001:2022,A.5.30,ICT Readiness for Business Continuity,,EvidenceRequirement,GQM-ISO-030,
+ISO27001:2022,A.5.31,"Legal, Statutory, Regulatory and Contractual Requirements",,EvidenceRequirement,GQM-ISO-031,GV.OC-03;GV.OC-04;GV.SC-05;GV.SC-06;GV.SC-07
+ISO27001:2022,A.5.32,Intellectual Property Rights,,EvidenceRequirement,GQM-ISO-032,
+ISO27001:2022,A.5.33,Protection of Records,,EvidenceRequirement,GQM-ISO-033,
+ISO27001:2022,A.5.34,Privacy and Protection of PII,,EvidenceRequirement,GQM-ISO-034,
+ISO27001:2022,A.5.35,Independent Review of Information Security,,EvidenceRequirement,GQM-ISO-035,ID.IM-01;ID.IM-02
+ISO27001:2022,A.5.36,"Compliance With Policies, Rules and Standards for Information Security",,EvidenceRequirement,GQM-ISO-036,
+ISO27001:2022,A.5.37,Documented Operating Procedures,,EvidenceRequirement,GQM-ISO-037,
+ISO27001:2022,A.6.1,Screening,,EvidenceRequirement,GQM-ISO-038,GV.RR-04;PR.DS-01;PR.DS-02
+ISO27001:2022,A.6.2,Terms and Conditions of Employment,,EvidenceRequirement,GQM-ISO-039,GV.RR-04
+ISO27001:2022,A.6.3,"Information Security Awareness, Education and Training",HF_AWARENESS,EvidenceRequirement,GQM-ISO-040,GV.RR-04;PR.AT-01;PR.AT-02
+ISO27001:2022,A.6.4,Disciplinary Process,,EvidenceRequirement,GQM-ISO-041,GV.RR-04
+ISO27001:2022,A.6.5,Responsibilities After Termination or Change of Employment,,EvidenceRequirement,GQM-ISO-042,GV.RR-04;PR.DS-01;PR.DS-02
+ISO27001:2022,A.6.6,Confidentiality or Non-Disclosure Agreements,,EvidenceRequirement,GQM-ISO-043,GV.RR-04
+ISO27001:2022,A.6.7,Remote Working,,EvidenceRequirement,GQM-ISO-044,GV.RR-04
+ISO27001:2022,A.6.8,Information Security Event Reporting,,EvidenceRequirement,GQM-ISO-045,GV.RR-04;RS.MA-02
+ISO27001:2022,A.7.1,Physical Security Perimeters,,EvidenceRequirement,GQM-ISO-046,PR.AA-06
+ISO27001:2022,A.7.2,Physical Entry,,EvidenceRequirement,GQM-ISO-047,PR.AA-06
+ISO27001:2022,A.7.3,"Securing Offices, Rooms and Facilities",,EvidenceRequirement,GQM-ISO-048,PR.AA-06
+ISO27001:2022,A.7.4,Physical Security Monitoring,,EvidenceRequirement,GQM-ISO-049,DE.CM-02;DE.CM-03;PR.AA-06
+ISO27001:2022,A.7.5,Protecting Against Physical and Environmental Threats,,EvidenceRequirement,GQM-ISO-050,PR.IR-02
+ISO27001:2022,A.7.6,Working In Secure Areas,,EvidenceRequirement,GQM-ISO-051,
+ISO27001:2022,A.7.7,Clear Desk and Clear Screen,,EvidenceRequirement,GQM-ISO-052,PR.DS-01
+ISO27001:2022,A.7.8,Equipment Siting and Protection,,EvidenceRequirement,GQM-ISO-053,
+ISO27001:2022,A.7.9,Security of Assets Off-Premises,,EvidenceRequirement,GQM-ISO-054,
+ISO27001:2022,A.7.10,Storage Media,,EvidenceRequirement,GQM-ISO-055,ID.AM-08;PR.DS-01;PR.PS-03
+ISO27001:2022,A.7.11,Supporting Utilities,,EvidenceRequirement,GQM-ISO-056,
+ISO27001:2022,A.7.12,Cabling Security,,EvidenceRequirement,GQM-ISO-057,PR.AA-06
+ISO27001:2022,A.7.13,Equipment Maintenance,,EvidenceRequirement,GQM-ISO-058,ID.AM-08;PR.PS-03
+ISO27001:2022,A.7.14,Secure Disposal or Re-Use of Equipment,,EvidenceRequirement,GQM-ISO-059,ID.AM-08
+ISO27001:2022,A.8.1,User Endpoint Devices,,EvidenceRequirement,GQM-ISO-060,
+ISO27001:2022,A.8.2,Privileged Access Rights,,EvidenceRequirement,GQM-ISO-061,PR.AA-01;PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
+ISO27001:2022,A.8.3,Information Access Restriction,,EvidenceRequirement,GQM-ISO-062,PR.AA-02;PR.AA-05;PR.DS-01;PR.DS-02;PR.DS-10
+ISO27001:2022,A.8.4,Access to Source Code,,EvidenceRequirement,GQM-ISO-063,PR.AA-05;PR.DS-01;PR.DS-02;PR.PS-06
+ISO27001:2022,A.8.5,Secure Authentication,,EvidenceRequirement,GQM-ISO-064,PR.AA-01;PR.AA-02;PR.AA-03;PR.AA-05
+ISO27001:2022,A.8.6,Capacity Management,,EvidenceRequirement,GQM-ISO-065,PR.IR-04
+ISO27001:2022,A.8.7,Protection Against Malware,,EvidenceRequirement,GQM-ISO-066,PR.DS-01
+ISO27001:2022,A.8.8,Management of Technical Vulnerabilities,EP_EXPLOIT,EvidenceRequirement,GQM-ISO-067,ID.RA-01;PR.DS-01
+ISO27001:2022,A.8.9,Configuration Management,,EvidenceRequirement,GQM-ISO-068,PR.PS-01
+ISO27001:2022,A.8.10,Information Deletion,,EvidenceRequirement,GQM-ISO-069,
+ISO27001:2022,A.8.11,Data Masking,,EvidenceRequirement,GQM-ISO-070,
+ISO27001:2022,A.8.12,Data Leakage Prevention,,EvidenceRequirement,GQM-ISO-071,
+ISO27001:2022,A.8.13,Information Backup,,EvidenceRequirement,GQM-ISO-072,PR.DS-11;RC.RP-03;RC.RP-06
+ISO27001:2022,A.8.14,Redundancy of Information Processing Facilities,,EvidenceRequirement,GQM-ISO-073,PR.IR-03
+ISO27001:2022,A.8.15,Logging,EP_FREQ,EvidenceRequirement,GQM-ISO-074,DE.AE-03;PR.PS-04
+ISO27001:2022,A.8.16,Monitoring Activities,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-ISO-075,DE.AE-03;DE.CM-01;DE.CM-03;DE.CM-06;DE.CM-09;ID.RA-02;ID.RA-03
+ISO27001:2022,A.8.17,Clock Synchronization,,EvidenceRequirement,GQM-ISO-076,PR.DS-01;PR.DS-02;PR.PS-04
+ISO27001:2022,A.8.18,Use of Privileged Utility Programs,,EvidenceRequirement,GQM-ISO-077,PR.AA-05
+ISO27001:2022,A.8.19,Installation of Software on Operational Systems,,EvidenceRequirement,GQM-ISO-078,PR.DS-01;PR.PS-05
+ISO27001:2022,A.8.20,Network Security,,EvidenceRequirement,GQM-ISO-079,ID.AM-03;PR.DS-02;PR.IR-01
+ISO27001:2022,A.8.21,Security of Network Services,,EvidenceRequirement,GQM-ISO-080,ID.AM-03;PR.IR-01
+ISO27001:2022,A.8.22,Segregation of Networks,,EvidenceRequirement,GQM-ISO-081,ID.AM-03;PR.DS-01;PR.DS-02;PR.IR-01
+ISO27001:2022,A.8.23,Web Filtering,,EvidenceRequirement,GQM-ISO-082,
+ISO27001:2022,A.8.24,Use of Cryptography,,EvidenceRequirement,GQM-ISO-083,PR.DS-10
+ISO27001:2022,A.8.25,Secure Development Life Cycle,,EvidenceRequirement,GQM-ISO-084,PR.PS-06
+ISO27001:2022,A.8.26,Application Security Requirements,,EvidenceRequirement,GQM-ISO-085,PR.DS-01;PR.DS-02;PR.PS-06
+ISO27001:2022,A.8.27,Secure System Architecture and Engineering Principles,,EvidenceRequirement,GQM-ISO-086,
+ISO27001:2022,A.8.28,Secure Coding,,EvidenceRequirement,GQM-ISO-087,PR.PS-06
+ISO27001:2022,A.8.29,Security Testing in Development and Acceptance,,EvidenceRequirement,GQM-ISO-088,
+ISO27001:2022,A.8.30,Outsourced Development,,EvidenceRequirement,GQM-ISO-089,
+ISO27001:2022,A.8.31,"Separation of Development, Test and Production Environments",,EvidenceRequirement,GQM-ISO-090,
+ISO27001:2022,A.8.32,Change Management,,EvidenceRequirement,GQM-ISO-091,ID.RA-07
+ISO27001:2022,A.8.33,Test Information,,EvidenceRequirement,GQM-ISO-092,
+ISO27001:2022,A.8.34,Protection of Information Systems During Audit Testing,,EvidenceRequirement,GQM-ISO-093,
+NIST-CSF-2.0,GV.OC-01,The organizational mission is understood and informs cybersecurity risk management,,EvidenceRequirement,GQM-CSF-001,
+NIST-CSF-2.0,GV.OC-02,"Internal and external stakeholders are understood, and their needs and expectations regarding cybersecurity risk management are understood and considered",,EvidenceRequirement,GQM-CSF-002,
+NIST-CSF-2.0,GV.OC-03,"Legal, regulatory, and contractual requirements regarding cybersecurity - including privacy and civil liberties obligations - are understood and managed",,EvidenceRequirement,GQM-CSF-003,A.5.20;A.5.31
+NIST-CSF-2.0,GV.OC-04,"Critical objectives, capabilities, and services that external stakeholders depend on or expect from the organization are understood and communicated",,EvidenceRequirement,GQM-CSF-004,A.5.20;A.5.31
+NIST-CSF-2.0,GV.OC-05,"Outcomes, capabilities, and services that the organization depends on are understood and communicated",,EvidenceRequirement,GQM-CSF-005,A.5.3
+NIST-CSF-2.0,GV.RM-01,Risk management objectives are established and agreed to by organizational stakeholders,,EvidenceRequirement,GQM-CSF-006,
+NIST-CSF-2.0,GV.RM-02,"Risk appetite and risk tolerance statements are established, communicated, and maintained",,EvidenceRequirement,GQM-CSF-007,
+NIST-CSF-2.0,GV.RM-03,Cybersecurity risk management activities and outcomes are included in enterprise risk management processes,,EvidenceRequirement,GQM-CSF-008,
+NIST-CSF-2.0,GV.RM-04,Strategic direction that describes appropriate risk response options is established and communicated,RRL_PORTFOLIO,EvidenceRequirement,GQM-CSF-009,
+NIST-CSF-2.0,GV.RM-05,"Lines of communication across the organization are established for cybersecurity risks, including risks from suppliers and other third parties",,EvidenceRequirement,GQM-CSF-010,
+NIST-CSF-2.0,GV.RM-06,"A standardized method for calculating, documenting, categorizing, and prioritizing cybersecurity risks is established and communicated",,EvidenceRequirement,GQM-CSF-011,
+NIST-CSF-2.0,GV.RM-07,"Strategic opportunities (i.e., positive risks) are characterized and are included in organizational cybersecurity risk discussions",,EvidenceRequirement,GQM-CSF-012,
+NIST-CSF-2.0,GV.RR-01,"Organizational leadership is responsible and accountable for cybersecurity risk and fosters a culture that is risk-aware, ethical, and continually improving",,EvidenceRequirement,GQM-CSF-013,A.5.4
+NIST-CSF-2.0,GV.RR-02,"Roles, responsibilities, and authorities related to cybersecurity risk management are established, communicated, understood, and enforced",,EvidenceRequirement,GQM-CSF-014,
+NIST-CSF-2.0,GV.RR-03,"Adequate resources are allocated commensurate with the cybersecurity risk strategy, roles, responsibilities, and policies",,EvidenceRequirement,GQM-CSF-015,
+NIST-CSF-2.0,GV.RR-04,Cybersecurity is included in human resources practices,,EvidenceRequirement,GQM-CSF-016,A.6.1;A.6.2;A.6.3;A.6.4;A.6.5;A.6.6;A.6.7;A.6.8
+NIST-CSF-2.0,GV.PO-01,"Policy for managing cybersecurity risks is established based on organizational context, cybersecurity strategy, and priorities and is communicated and enforced",,EvidenceRequirement,GQM-CSF-017,A.5.1
+NIST-CSF-2.0,GV.PO-02,"Policy for managing cybersecurity risks is reviewed, updated, communicated, and enforced to reflect changes in requirements, threats, technology, and organizational mission",,EvidenceRequirement,GQM-CSF-018,A.5.1
+NIST-CSF-2.0,GV.OV-01,Cybersecurity risk management strategy outcomes are reviewed to inform and adjust strategy and direction,,EvidenceRequirement,GQM-CSF-019,
+NIST-CSF-2.0,GV.OV-02,The cybersecurity risk management strategy is reviewed and adjusted to ensure coverage of organizational requirements and risks,,EvidenceRequirement,GQM-CSF-020,
+NIST-CSF-2.0,GV.OV-03,Organizational cybersecurity risk management performance is evaluated and reviewed for adjustments needed,,EvidenceRequirement,GQM-CSF-021,A.5.1
+NIST-CSF-2.0,GV.SC-01,"A cybersecurity supply chain risk management program, strategy, objectives, policies, and processes are established and agreed to by organizational stakeholders",,EvidenceRequirement,GQM-CSF-022,A.5.19;A.5.20;A.5.21;A.5.22
+NIST-CSF-2.0,GV.SC-02,"Cybersecurity roles and responsibilities for suppliers, customers, and partners are established, communicated, and coordinated internally and externally",,EvidenceRequirement,GQM-CSF-023,A.5.2;A.5.4
+NIST-CSF-2.0,GV.SC-03,"Cybersecurity supply chain risk management is integrated into cybersecurity and enterprise risk management, risk assessment, and improvement processes",,EvidenceRequirement,GQM-CSF-024,A.5.20;A.5.21
+NIST-CSF-2.0,GV.SC-04,Suppliers are known and prioritized by criticality,,EvidenceRequirement,GQM-CSF-025,A.5.19;A.5.22
+NIST-CSF-2.0,GV.SC-05,"Requirements to address cybersecurity risks in supply chains are established, prioritized, and integrated into contracts and other types of agreements with suppliers and other relevant third parties",,EvidenceRequirement,GQM-CSF-026,A.5.19;A.5.20;A.5.31
+NIST-CSF-2.0,GV.SC-06,Planning and due diligence are performed to reduce risks before entering into formal supplier or other third-party relationships,,EvidenceRequirement,GQM-CSF-027,A.5.20;A.5.31
+NIST-CSF-2.0,GV.SC-07,"The risks posed by a supplier, their products and services, and other third parties are understood, recorded, prioritized, assessed, responded to, and monitored over the course of the relationship",,EvidenceRequirement,GQM-CSF-028,A.5.19;A.5.20;A.5.31
+NIST-CSF-2.0,GV.SC-08,"Relevant suppliers and other third parties are included in incident planning, response, and recovery activities",,EvidenceRequirement,GQM-CSF-029,A.5.26
+NIST-CSF-2.0,GV.SC-09,"Supply chain security practices are integrated into cybersecurity and enterprise risk management programs, and their performance is monitored throughout the technology product and service life cycle",,EvidenceRequirement,GQM-CSF-030,A.5.20;A.5.21;A.5.22
+NIST-CSF-2.0,GV.SC-10,Cybersecurity supply chain risk management plans include provisions for activities that occur after the conclusion of a partnership or service agreement,,EvidenceRequirement,GQM-CSF-031,A.5.19;A.5.20;A.5.21;A.5.22
+NIST-CSF-2.0,ID.AM-01,Inventories of hardware managed by the organization are maintained,,EvidenceRequirement,GQM-CSF-032,A.5.9
+NIST-CSF-2.0,ID.AM-02,"Inventories of software, services, and systems managed by the organization are maintained",,EvidenceRequirement,GQM-CSF-033,A.5.9
+NIST-CSF-2.0,ID.AM-03,Representations of the organization's authorized network communication and internal and external network data flows are maintained,,EvidenceRequirement,GQM-CSF-034,A.5.14;A.8.20;A.8.21;A.8.22
+NIST-CSF-2.0,ID.AM-04,Inventories of services provided by suppliers are maintained,,EvidenceRequirement,GQM-CSF-035,A.5.22
+NIST-CSF-2.0,ID.AM-05,"Assets are prioritized based on classification, criticality, resources, and impact on the mission",AV_MONETARY,EvidenceRequirement,GQM-CSF-036,A.5.12;A.5.13;A.5.9
+NIST-CSF-2.0,ID.AM-07,Inventories of data and corresponding metadata for designated data types are maintained,,EvidenceRequirement,GQM-CSF-037,A.5.9
+NIST-CSF-2.0,ID.AM-08,"Systems, hardware, software, services, and data are managed throughout their life cycles",,EvidenceRequirement,GQM-CSF-038,A.5.12;A.5.13;A.5.22;A.5.8;A.5.9;A.7.10;A.7.13;A.7.14
+NIST-CSF-2.0,ID.RA-01,"Vulnerabilities in assets are identified, validated, and recorded",EP_EXPLOIT,EvidenceRequirement,GQM-CSF-039,A.8.8
+NIST-CSF-2.0,ID.RA-02,Cyber threat intelligence is received from information sharing forums and sources,EP_EXPLOIT,EvidenceRequirement,GQM-CSF-040,A.5.22;A.5.7;A.8.16
+NIST-CSF-2.0,ID.RA-03,Internal and external threats to the organization are identified and recorded,EP_EXPLOIT,EvidenceRequirement,GQM-CSF-041,A.5.7;A.8.16
+NIST-CSF-2.0,ID.RA-04,Potential impacts and likelihoods of threats exploiting vulnerabilities are identified and recorded,EP_EXPLOIT;IL_CIA,EvidenceRequirement,GQM-CSF-042,
+NIST-CSF-2.0,ID.RA-05,"Threats, vulnerabilities, likelihoods, and impacts are used to understand inherent risk and inform risk response prioritization",EP_EXPLOIT;IL_CIA;RRL_PORTFOLIO,EvidenceRequirement,GQM-CSF-043,A.5.7
+NIST-CSF-2.0,ID.RA-06,"Risk responses are chosen, prioritized, planned, tracked, and communicated",RRL_PORTFOLIO,EvidenceRequirement,GQM-CSF-044,A.5.7
+NIST-CSF-2.0,ID.RA-07,"Changes and exceptions are managed, assessed for risk impact, recorded, and tracked",IL_CIA,EvidenceRequirement,GQM-CSF-045,A.8.32
+NIST-CSF-2.0,ID.RA-08,"Processes for receiving, analyzing, and responding to vulnerability disclosures are established",EP_EXPLOIT,EvidenceRequirement,GQM-CSF-046,
+NIST-CSF-2.0,ID.RA-09,The authenticity and integrity of hardware and software are assessed prior to acquisition and use,,EvidenceRequirement,GQM-CSF-047,A.5.20;A.5.22
+NIST-CSF-2.0,ID.RA-10,Critical suppliers are assessed prior to acquisition,,EvidenceRequirement,GQM-CSF-048,A.5.20;A.5.22
+NIST-CSF-2.0,ID.IM-01,Improvements are identified from evaluations,,EvidenceRequirement,GQM-CSF-049,A.5.35
+NIST-CSF-2.0,ID.IM-02,"Improvements are identified from security tests and exercises, including those done in coordination with suppliers and relevant third parties",,EvidenceRequirement,GQM-CSF-050,A.5.35
+NIST-CSF-2.0,ID.IM-03,"Improvements are identified from execution of operational processes, procedures, and activities",,EvidenceRequirement,GQM-CSF-051,A.5.27
+NIST-CSF-2.0,ID.IM-04,"Incident response plans and other cybersecurity plans that affect operations are established, communicated, maintained, and improved",,EvidenceRequirement,GQM-CSF-052,A.5.24;A.5.26;A.5.27
+NIST-CSF-2.0,PR.AA-01,"Identities and credentials for authorized users, services, and hardware are managed by the organization",,EvidenceRequirement,GQM-CSF-053,A.5.15;A.5.18;A.8.2;A.8.5
+NIST-CSF-2.0,PR.AA-02,Identities are proofed and bound to credentials based on the context of interactions,,EvidenceRequirement,GQM-CSF-054,A.8.2;A.8.3;A.8.5
+NIST-CSF-2.0,PR.AA-03,"Users, services, and hardware are authenticated",,EvidenceRequirement,GQM-CSF-055,A.5.15;A.5.16;A.5.17;A.5.18;A.8.5
+NIST-CSF-2.0,PR.AA-04,"Identity assertions are protected, conveyed, and verified",,EvidenceRequirement,GQM-CSF-056,A.5.16
+NIST-CSF-2.0,PR.AA-05,"Access permissions, entitlements, and authorizations are defined in a policy, managed, enforced, and reviewed, and incorporate the principles of least privilege and separation of duties",,EvidenceRequirement,GQM-CSF-057,A.5.14;A.5.15;A.5.16;A.5.17;A.5.18;A.5.3;A.8.18;A.8.2;A.8.3;A.8.4;A.8.5
+NIST-CSF-2.0,PR.AA-06,"Physical access to assets is managed, monitored, and enforced commensurate with risk",,EvidenceRequirement,GQM-CSF-058,A.7.1;A.7.12;A.7.2;A.7.3;A.7.4
+NIST-CSF-2.0,PR.AT-01,Personnel are provided with awareness and training so that they possess the knowledge and skills to perform general tasks with cybersecurity risks in mind,HF_AWARENESS,EvidenceRequirement,GQM-CSF-059,A.6.3
+NIST-CSF-2.0,PR.AT-02,Individuals in specialized roles are provided with awareness and training so that they possess the knowledge and skills to perform relevant tasks with cybersecurity risks in mind,HF_AWARENESS,EvidenceRequirement,GQM-CSF-060,A.5.2;A.6.3
+NIST-CSF-2.0,PR.DS-01,"The confidentiality, integrity, and availability of data-at-rest are protected",,EvidenceRequirement,GQM-CSF-061,A.5.10;A.5.13;A.5.14;A.5.15;A.5.3;A.6.1;A.6.5;A.7.10;A.7.7;A.8.17;A.8.19;A.8.2;A.8.22;A.8.26;A.8.3;A.8.4;A.8.7;A.8.8
+NIST-CSF-2.0,PR.DS-02,"The confidentiality, integrity, and availability of data-in-transit are protected",,EvidenceRequirement,GQM-CSF-062,A.5.10;A.5.13;A.5.14;A.5.15;A.5.3;A.6.1;A.6.5;A.8.17;A.8.2;A.8.20;A.8.22;A.8.26;A.8.3;A.8.4
+NIST-CSF-2.0,PR.DS-10,"The confidentiality, integrity, and availability of data-in-use are protected",,EvidenceRequirement,GQM-CSF-063,A.8.2;A.8.24;A.8.3
+NIST-CSF-2.0,PR.DS-11,"Backups of data are created, protected, maintained, and tested",,EvidenceRequirement,GQM-CSF-064,A.8.13
+NIST-CSF-2.0,PR.PS-01,Configuration management practices are established and applied,,EvidenceRequirement,GQM-CSF-065,A.8.9
+NIST-CSF-2.0,PR.PS-02,"Software is maintained, replaced, and removed commensurate with risk",,EvidenceRequirement,GQM-CSF-066,A.5.9
+NIST-CSF-2.0,PR.PS-03,"Hardware is maintained, replaced, and removed commensurate with risk",,EvidenceRequirement,GQM-CSF-067,A.5.9;A.7.10;A.7.13
+NIST-CSF-2.0,PR.PS-04,Log records are generated and made available for continuous monitoring,EP_FREQ,EvidenceRequirement,GQM-CSF-068,A.8.15;A.8.17
+NIST-CSF-2.0,PR.PS-05,Installation and execution of unauthorized software are prevented,,EvidenceRequirement,GQM-CSF-069,A.8.19
+NIST-CSF-2.0,PR.PS-06,"Secure software development practices are integrated, and their performance is monitored throughout the software development life cycle",,EvidenceRequirement,GQM-CSF-070,A.8.25;A.8.26;A.8.28;A.8.4
+NIST-CSF-2.0,PR.IR-01,Networks and environments are protected from unauthorized logical access and usage,,EvidenceRequirement,GQM-CSF-071,A.8.20;A.8.21;A.8.22
+NIST-CSF-2.0,PR.IR-02,The organization's technology assets are protected from environmental threats,,EvidenceRequirement,GQM-CSF-072,A.7.5
+NIST-CSF-2.0,PR.IR-03,Mechanisms are implemented to achieve resilience requirements in normal and adverse situations,,EvidenceRequirement,GQM-CSF-073,A.5.29;A.8.14
+NIST-CSF-2.0,PR.IR-04,Adequate resource capacity to ensure availability is maintained,,EvidenceRequirement,GQM-CSF-074,A.8.6
+NIST-CSF-2.0,DE.CM-01,Networks and network services are monitored to find potentially adverse events,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-075,A.8.16
+NIST-CSF-2.0,DE.CM-02,The physical environment is monitored to find potentially adverse events,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-076,A.7.4
+NIST-CSF-2.0,DE.CM-03,Personnel activity and technology usage are monitored to find potentially adverse events,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-077,A.7.4;A.8.16
+NIST-CSF-2.0,DE.CM-06,External service provider activities and services are monitored to find potentially adverse events,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-078,A.5.22;A.8.16
+NIST-CSF-2.0,DE.CM-09,"Computing hardware and software, runtime environments, and their data are monitored to find potentially adverse events",EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-079,A.8.16
+NIST-CSF-2.0,DE.AE-02,Potentially adverse events are analyzed to better understand associated activities,EP_FREQ;DR;FPR;AUROC;PR_AUC;CAL_BRIER,EvidenceRequirement,GQM-CSF-080,A.5.24;A.5.25
+NIST-CSF-2.0,DE.AE-03,Information is correlated from multiple sources,EP_FREQ;AUROC;PR_AUC;CAL_BRIER,EvidenceRequirement,GQM-CSF-081,A.8.15;A.8.16
+NIST-CSF-2.0,DE.AE-04,The estimated impact and scope of adverse events are understood,EP_FREQ;DR;FPR,EvidenceRequirement,GQM-CSF-082,A.5.25
+NIST-CSF-2.0,DE.AE-06,Information on adverse events is provided to authorized staff and tools,EP_FREQ,EvidenceRequirement,GQM-CSF-083,A.5.26
+NIST-CSF-2.0,DE.AE-07,Cyber threat intelligence and other contextual information are integrated into the analysis,EP_FREQ;AUROC;PR_AUC;CAL_BRIER,EvidenceRequirement,GQM-CSF-084,A.5.7
+NIST-CSF-2.0,DE.AE-08,Incidents are declared when adverse events meet the defined incident criteria,,EvidenceRequirement,GQM-CSF-085,A.5.25;A.5.26
+NIST-CSF-2.0,RS.MA-01,The incident response plan is executed in coordination with relevant third parties once an incident is declared,,EvidenceRequirement,GQM-CSF-086,A.5.26;A.5.27;A.5.28
+NIST-CSF-2.0,RS.MA-02,Incident reports are triaged and validated,,EvidenceRequirement,GQM-CSF-087,A.5.24;A.5.26;A.5.27;A.5.28;A.6.8
+NIST-CSF-2.0,RS.MA-03,Incidents are categorized and prioritized,,EvidenceRequirement,GQM-CSF-088,A.5.25
+NIST-CSF-2.0,RS.MA-04,Incidents are escalated or elevated as needed,,EvidenceRequirement,GQM-CSF-089,A.5.26
+NIST-CSF-2.0,RS.MA-05,The criteria for initiating incident recovery are applied,,EvidenceRequirement,GQM-CSF-090,A.5.25
+NIST-CSF-2.0,RS.AN-03,Analysis is performed to establish what has taken place during an incident and the root cause of the incident,,EvidenceRequirement,GQM-CSF-091,A.5.25;A.5.27
+NIST-CSF-2.0,RS.AN-06,"Actions performed during an investigation are recorded, and the records' integrity and provenance are preserved",,EvidenceRequirement,GQM-CSF-092,A.5.28
+NIST-CSF-2.0,RS.AN-07,"Incident data and metadata are collected, and their integrity and provenance are preserved",,EvidenceRequirement,GQM-CSF-093,A.5.28
+NIST-CSF-2.0,RS.AN-08,An incident's magnitude is estimated and validated,IL_CIA,EvidenceRequirement,GQM-CSF-094,A.5.25
+NIST-CSF-2.0,RS.CO-02,Internal and external stakeholders are notified of incidents,,EvidenceRequirement,GQM-CSF-095,A.5.26
+NIST-CSF-2.0,RS.CO-03,Information is shared with designated internal and external stakeholders,,EvidenceRequirement,GQM-CSF-096,A.5.26
+NIST-CSF-2.0,RS.MI-01,Incidents are contained,,EvidenceRequirement,GQM-CSF-097,A.5.26
+NIST-CSF-2.0,RS.MI-02,Incidents are eradicated,,EvidenceRequirement,GQM-CSF-098,A.5.26
+NIST-CSF-2.0,RC.RP-01,The recovery portion of the incident response plan is executed once initiated from the incident response process,,EvidenceRequirement,GQM-CSF-099,A.5.26
+NIST-CSF-2.0,RC.RP-02,"Recovery actions are selected, scoped, prioritized, and performed",,EvidenceRequirement,GQM-CSF-100,A.5.26
+NIST-CSF-2.0,RC.RP-03,The integrity of backups and other restoration assets is verified before using them for restoration,,EvidenceRequirement,GQM-CSF-101,A.8.13
+NIST-CSF-2.0,RC.RP-04,Critical mission functions and cybersecurity risk management are considered to establish post-incident operational norms,IL_CIA,EvidenceRequirement,GQM-CSF-102,
+NIST-CSF-2.0,RC.RP-05,"The integrity of restored assets is verified, systems and services are restored, and normal operating status is confirmed",,EvidenceRequirement,GQM-CSF-103,A.5.26
+NIST-CSF-2.0,RC.RP-06,"The end of incident recovery is declared based on criteria, and incident-related documentation is completed",,EvidenceRequirement,GQM-CSF-104,A.5.27;A.8.13
+NIST-CSF-2.0,RC.CO-03,Recovery activities and progress in restoring operational capabilities are communicated to designated internal and external stakeholders,,EvidenceRequirement,GQM-CSF-105,A.5.26
+NIST-CSF-2.0,RC.CO-04,Public updates on incident recovery are shared using approved methods and messaging,,EvidenceRequirement,GQM-CSF-106,

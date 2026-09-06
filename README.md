@@ -1,22 +1,39 @@
 # AI-Enabled Standards-Aligned Security Risk Management
 
-**Description:** A Model-Based Software Engineering Framework for Standards-Traceable Security Evidence Management in IoT-Enabled Systems. This artifact encodes security requirements, controls, telemetry observations, and standard clauses into a machine-readable UML/XMI representation and provides an automated validator for structural integrity.
+**Description:** A model-based software engineering framework for standards-traceable security evidence management. The artifact binds ISO/IEC 27001:2022 and NIST CSF 2.0 requirements to evidence, GQM intent, UML/XMI structures, telemetry-derived measurements where applicable, and auditable validation outputs.
 
 **Topics (Tags):** `mbse`, `cybersecurity`, `traceability`, `uml`, `xmi`, `iso-27001`, `nist-csf`, `evidence-management`
 
 **Release Notes:**
-- Version 0.1.0: Initial public reproducible software archive linked to Zenodo DOI 10.5281/zenodo.19928296.
-- The Science of Computer Programming R1 revision introduces candidate metamodel, validator, semantic-review, and evaluation changes that are being validated separately. Those R1-specific changes are not represented by the v0.1.0 Zenodo archive and will not be promoted to the public software release until the revision validation gates are complete.
+- **Version 0.1.0:** historical initial public reproducible software archive, preserved at Zenodo DOI `10.5281/zenodo.19928296`.
+- **Current main / v0.2.0 candidate:** validated Science of Computer Programming R1 canonical software tree. The authoritative R1 metamodel, evidence-first semantic mapping, GQM catalog, namespace-safe XMI parser, and extended validator have been promoted after the revision validation gates completed.
+- Exact tested R1 canonical code commit: `0962f1b19951da793a90169682e746b70471eeaf`.
 
-This public repository contains the executable `ai_risk` software artifact and metadata for the standards-aligned security risk management study. Manuscript materials are kept locally under `paper/` and are intentionally not published to GitHub until the paper is published.
+This public repository contains the executable `ai_risk` software artifact and machine-readable standards/evidence metadata. Manuscript source and submission-only materials remain outside the public repository until publication.
+
+## R1 canonical validation snapshot
+
+The promoted R1 software tree was independently rebuilt in GitHub Actions on Ubuntu 24.04 with CPython 3.13.15. The release-clean regression verified the exact SHA-256 bytes of 16 canonical R1 files and reported:
+
+- `28 passed` in the full pytest suite;
+- ISO/IEC 27001:2022 Annex A coverage: `93/93`;
+- NIST CSF 2.0 coverage: `106/106`;
+- broken links: `0`;
+- duplicate/dangling rows or catalog IDs: `0`;
+- schema/XMI violations: `0`;
+- contract violations: `0`;
+- reciprocal crosswalk violations: `0`;
+- seeded structural defect scenarios: `11/11` detected with structured findings.
+
+The final R1 semantic artifacts contain 199 standards rows, 211 symmetric ISO–NIST pairs, 199 GQM goals, and 257 GQM questions. NIST informative-reference differences are retained as external-comparator evidence and are not treated as semantic validation errors.
 
 ## Workspace layout
 
 ```text
 .
-+-- software/                    # Python package, configs, scripts, tests, reference data
-+-- CITATION.cff                 # Citation metadata
-+-- .zenodo.json                 # Zenodo metadata for archiving
++-- software/                    # Python package, configs, tests, reference data and R1 canonical SHA manifest
++-- CITATION.cff                 # Citation metadata for the next software version
++-- .zenodo.json                 # Zenodo metadata for GitHub release archiving
 +-- LICENSE                      # Licensing information
 `-- README.md                    # This file
 ```
@@ -26,32 +43,30 @@ This public repository contains the executable `ai_risk` software artifact and m
 ### Software (Data and Code)
 Contains the executable artifact `ai_risk`, evaluation pipelines, test suite, and machine-readable standards mapping.
 - **Location:** `software/`
+- **Canonical R1 byte manifest:** `software/R1_CANONICAL_SHA256SUMS.txt`
 - **Main files:** `software/pyproject.toml`, `software/README.md`
 
 ### Manuscript Materials
-The local workspace may contain a `paper/` directory with manuscript sources, figures, and submission files. That directory is ignored by Git and is not part of the public GitHub repository until publication.
+The local workspace may contain a `paper/` directory with manuscript sources, figures, reviewer evidence, and submission files. That directory is ignored by Git and is not part of the public repository until publication.
 
 ## Persistent Identifiers
 
-- **Zenodo DOI (public v0.1.0 archive):** [10.5281/zenodo.19928296](https://doi.org/10.5281/zenodo.19928296)
+- **Historical Zenodo DOI (v0.1.0 only):** [10.5281/zenodo.19928296](https://doi.org/10.5281/zenodo.19928296)
+- **Next R1/v0.2.0 Zenodo DOI:** pending creation of the new public release; do not use the v0.1.0 DOI as the identifier for the R1 software snapshot.
 - **GitHub repository:** [ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management](https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management)
 - **Author ORCID:** [0000-0001-9259-7112](https://orcid.org/0000-0001-9259-7112)
 
-## Zenodo and GitHub Compatibility
-This repository is configured for archiving on Zenodo and hosting on GitHub:
-- Both `CITATION.cff` and `.zenodo.json` files are provided in the root to ensure proper citation parsing by GitHub and metadata extraction by Zenodo releases.
-- The current public Zenodo record is version 0.1.0. It is a historical public archive and must not be interpreted as containing later R1-specific revision artifacts unless a new version is explicitly published.
-- The repository metadata points to the Zenodo DOI, GitHub repository, and author ORCID listed above.
-- The public GitHub repository currently exposes the software artifact and machine-readable metadata; manuscript files remain local until publication.
+## Zenodo and GitHub compatibility
+
+This repository is configured for Zenodo/GitHub release archiving. `.zenodo.json` is the metadata source used by Zenodo when both `.zenodo.json` and `CITATION.cff` are present. The old v0.1.0 version DOI has therefore been removed from the current `.zenodo.json` so a future R1 release is not incorrectly assigned the historical version DOI.
 
 ## Quick start (Software)
-
-To run the codebase and validate the artifacts:
 
 ```powershell
 cd software
 pip install -r requirements.lock
 pip install -e .[dev]
+sha256sum -c R1_CANONICAL_SHA256SUMS.txt
 python tools/validate_mappings.py
 python tools/test_validator_seeded_defects.py
 python scripts/run_demo_study.py --config configs/default.yaml --profile demo
@@ -62,9 +77,8 @@ For the full execution guide, see [software/RUN.md](software/RUN.md).
 
 ## Artifact Submission Notes
 
-When exporting plots and diagrams as EPS or PDF files for journal submission, ensure that Type 3 fonts are not used, as they are often rejected by preflight systems (like Elsevier's Editorial Manager). 
+When exporting plots and diagrams as EPS or PDF files for journal submission, ensure that Type 3 fonts are not used. With Matplotlib, for example:
 
-If using Matplotlib to generate figures, enforce Type 1 or TrueType fonts by adding the following to your script:
 ```python
 import matplotlib
 matplotlib.rcParams['pdf.fonttype'] = 42

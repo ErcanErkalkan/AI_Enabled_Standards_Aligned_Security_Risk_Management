@@ -133,7 +133,13 @@ def validate(
     failures: list[str] = []
     counts = report["counts"]
     assert isinstance(counts, dict)
-    for key, expected in EXPECTED_COUNTS.items():
+    expected_counts = dict(EXPECTED_COUNTS)
+    # The rerun protocol requires one GUI-created sentinel class. When the
+    # sentinel is requested, preserve the canonical 28 classes plus exactly
+    # that one test-only class rather than treating the edit itself as drift.
+    if sentinel:
+        expected_counts["classes"] += 1
+    for key, expected in expected_counts.items():
         found = int(counts.get(key, -1))
         if found != expected:
             failures.append(f"inventory {key}: expected {expected}, found {found}")
@@ -190,7 +196,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--sentinel",
-        help="optional GUI-created package/class name that must survive export",
+        help="optional GUI-created class name that must survive export",
     )
     parser.add_argument(
         "--json-out", type=Path, help="write the full structural inventory as JSON"

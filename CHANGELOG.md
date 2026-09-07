@@ -15,6 +15,15 @@ All notable public changes to this repository are documented here.
 - Canonical regression now runs on pull requests targeting `main` in addition to pushes on `main`.
 - Canonical XMI contract regression tests now lock the corrected metric optionality and semantic-status vocabulary.
 
+### Validation
+- 31 pytest tests pass on the correction branch.
+- ISO coverage: 93/93.
+- NIST coverage: 106/106.
+- Broken links, duplicate/dangling rows, schema/XMI violations, contract violations, and reciprocal-crosswalk violations: 0.
+- Seeded structural scenarios: 11/11 detected.
+- Canonical exact-byte SHA-256 verification passes for all manifest entries.
+- Corrected external-tool Papyrus/Enterprise Architect round-trip evidence remains pending before v0.2.1 release freeze.
+
 ## [0.2.0] - 2026-09-07
 
 ### Added

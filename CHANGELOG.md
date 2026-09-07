@@ -15,7 +15,7 @@ All notable public changes to this repository are documented here.
 - Reference mappings and validation assets use neutral canonical file names.
 - Quantitative metrics are optional when no direct measurement role exists for a standards row.
 - NIST informative-reference differences are reported as external-comparator differences rather than semantic validation errors.
-- Public documentation describes the study as one canonical artifact rather than as a sequence of internal development states.
+- Public documentation describes the canonical study artifact and its reproducibility boundary.
 
 ### Validation
 - 28 pytest tests pass.

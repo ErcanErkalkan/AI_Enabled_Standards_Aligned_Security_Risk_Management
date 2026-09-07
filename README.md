@@ -17,7 +17,7 @@ The NIST informative-reference set is treated as an external comparator rather t
 
 ## Validation snapshot
 
-The canonical software tree is checked in GitHub Actions on Ubuntu with CPython 3.13. The clean regression verifies the canonical SHA-256 manifest and reports:
+The published v0.2.0 software tree was checked in GitHub Actions on Ubuntu with CPython 3.13. Its clean regression verified the canonical SHA-256 manifest and reported:
 
 - `28 passed` in the pytest suite;
 - ISO coverage: `93/93`;
@@ -28,6 +28,8 @@ The canonical software tree is checked in GitHub Actions on Ubuntu with CPython 
 - contract violations: `0`;
 - reciprocal crosswalk violations: `0`;
 - seeded structural defect scenarios: `11/11` detected with structured findings.
+
+The unreleased v0.2.1 correction line adds explicit UML association-multiplicity and `MappingStatus` contract checks. Its validation snapshot will replace the published values above only after the corrected XMI, checksum manifest, external-tool round trips, and release package are finalized.
 
 ## Repository layout
 
@@ -59,4 +61,4 @@ See [`software/RUN.md`](software/RUN.md) for the full execution guide.
 
 - GitHub repository: <https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management>
 - Author ORCID: <https://orcid.org/0000-0001-9259-7112>
-- Version-specific archive DOI: to be recorded after the current public release is minted.
+- Published v0.2.0 archive DOI: <https://doi.org/10.5281/zenodo.22643003>

@@ -59,6 +59,4 @@ See [`software/RUN.md`](software/RUN.md) for the full execution guide.
 
 - GitHub repository: <https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management>
 - Author ORCID: <https://orcid.org/0000-0001-9259-7112>
-- Historical software archive: <https://doi.org/10.5281/zenodo.19928296>
-
-A new version-specific archive identifier should be recorded only after the corresponding public release is minted.
+- Version-specific archive DOI: to be recorded after the current public release is minted.

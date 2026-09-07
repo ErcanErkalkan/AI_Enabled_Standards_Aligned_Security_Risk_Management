@@ -14,6 +14,7 @@ All notable public changes to this repository are documented here.
 ### Changed
 - Canonical regression now runs on pull requests targeting `main` in addition to pushes on `main`.
 - Canonical XMI contract regression tests now lock the corrected metric optionality and semantic-status vocabulary.
+- Added a reproducible Papyrus/Enterprise Architect rerun protocol and structural preservation oracle for the corrected XMI.
 
 ### Validation
 - 31 pytest tests pass on the correction branch.
@@ -21,6 +22,8 @@ All notable public changes to this repository are documented here.
 - NIST coverage: 106/106.
 - Broken links, duplicate/dangling rows, schema/XMI violations, contract violations, and reciprocal-crosswalk violations: 0.
 - Seeded structural scenarios: 11/11 detected.
+- Canonical interoperability oracle self-check: PASS on the corrected XMI inventory (2 packages, 4 primitive types, 7 enumerations, 28 classes, 79 attributes, 27 associations/54 ends, 6 generalizations, 7 constraints).
+- Corrected canonical XMI SHA-256: `d1da069ab8b5ed543f4118679d01fa9c78c50de8d67debdb3c8c6dd365e01fac`.
 - Canonical exact-byte SHA-256 verification passes for all manifest entries.
 - Corrected external-tool Papyrus/Enterprise Architect round-trip evidence remains pending before v0.2.1 release freeze.
 
@@ -43,7 +46,10 @@ All notable public changes to this repository are documented here.
 - 28 pytest tests pass.
 - ISO coverage: 93/93.
 - NIST coverage: 106/106.
-- Broken links, duplicate/dangling rows, schema/XMI violations, contract violations, and reciprocal-crosswalk violations: 0.
+- Broken links, duplicate/dangling rows or catalog IDs: 0.
+- Schema/XMI violations: 0.
+- Contract violations: 0.
+- Reciprocal crosswalk violations: 0.
 - Seeded structural scenarios: 11/11 detected.
 
 ## [0.1.0] - 2026-04-11

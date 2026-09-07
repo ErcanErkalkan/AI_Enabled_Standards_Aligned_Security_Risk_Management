@@ -4,6 +4,19 @@ All notable public changes to this repository are documented here.
 
 ## [Unreleased]
 
+### Fixed
+- Corrected the authoritative UML/XMI optionality contract so standards rows, GQM questions, and evidence requirements are not forced to reference quantitative metrics.
+- Changed `StandardToMetric.metrics` to `0..*`, `QuestionToMetric.metrics` to `0..*`, `MetricToEvidenceRequirement.metrics` to `0..*`, and `StandardToMeasurementConcept.measurementConcept` to `0..1`.
+- Aligned `MappingStatus` with the active semantic-assessment vocabulary: `notAssessed`, `acceptable`, `minorAdjustment`, `majorAdjustment`, `rejected`, and `deferred`.
+- Replaced revision/submission-history wording in the authoritative XMI comment with a standalone technical contract description.
+- Extended XMI inspection and validation to enforce canonical association multiplicities and enumeration literals.
+
+### Changed
+- Canonical regression now runs on pull requests targeting `main` in addition to pushes on `main`.
+- Canonical XMI contract regression tests now lock the corrected metric optionality and semantic-status vocabulary.
+
+## [0.2.0] - 2026-09-07
+
 ### Added
 - Canonical 28-class UML/XMI model.
 - Final 199-row standards/evidence mapping with 211 reciprocal ISO–NIST pairs.

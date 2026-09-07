@@ -34,7 +34,7 @@ Create a dedicated output directory per tool and retain:
 1. exact canonical input XMI and SHA-256;
 2. tool name, exact version/build, OS, and export dialect/options;
 3. screenshot after import showing the model/package tree;
-4. one GUI-created test-only sentinel named `RoundTripSentinel_v021` (package or class);
+4. one GUI-created test-only **class** named `RoundTripSentinel_v021`;
 5. screenshot showing the sentinel in the model editor/tree;
 6. raw exported XMI, without hand editing;
 7. SHA-256 of the raw export;
@@ -42,7 +42,7 @@ Create a dedicated output directory per tool and retain:
 9. any secondary diagnostic oracle output; and
 10. a short result note distinguishing structural preservation, constraint preservation/loss, and metadata/serialization rewriting.
 
-The sentinel is test-only and must not be merged into the canonical XMI.
+The sentinel is test-only and must not be merged into the canonical XMI. Because it is a class, an export checked with `--sentinel RoundTripSentinel_v021` is expected to contain 29 classes (the canonical 28 plus the sentinel) while all other canonical inventory counts remain unchanged.
 
 ## Papyrus rerun
 
@@ -51,7 +51,7 @@ Use the same installed Papyrus line as the prior experiment if available (previo
 1. Import/open the corrected canonical XMI as a UML model.
 2. Confirm that both `TraceabilityCore` and `SecurityContext` are visible.
 3. Confirm that the four corrected multiplicities and the six `MappingStatus` literals are visible where the UI exposes them.
-4. Create `RoundTripSentinel_v021` through the GUI.
+4. Create the `RoundTripSentinel_v021` **class** through the GUI.
 5. Save/export through the normal UML/XMI path.
 6. Run the strict oracle:
 
@@ -63,7 +63,7 @@ python software/tools/check_interop_export.py \
   --json-out papyrus_v021_oracle.json
 ```
 
-A strict PASS requires the canonical inventory, all seven constraints, the four corrected association ends, `MappingStatus`, and the GUI sentinel to survive. Namespace/version metadata or internal XMI IDs may be rewritten by the tool; byte identity is not required.
+A strict PASS requires the canonical inventory plus the single sentinel class, all seven constraints, the four corrected association ends, `MappingStatus`, and the GUI sentinel to survive. Namespace/version metadata or internal XMI IDs may be rewritten by the tool; byte identity is not required.
 
 ## Enterprise Architect rerun
 
@@ -73,9 +73,9 @@ Use the same installed EA line as the prior experiment if available (previously 
 2. Import the corrected canonical XMI through the UML 2.5.1 / XMI 2.5.1 import path.
 3. Confirm that both normative packages are present.
 4. Inspect the four corrected multiplicities and `MappingStatus` where the UI exposes them.
-5. Create `RoundTripSentinel_v021` through the GUI.
+5. Create the `RoundTripSentinel_v021` **class** through the GUI.
 6. Export the imported model/package through the UML 2.5.1 / XMI 2.5.1 publishing path.
-7. Run the same strict oracle with `--expected-constraints 7`.
+7. Run the same strict oracle with `--expected-constraints 7` and the sentinel argument.
 
 If the prior 7/7 constraint-loss behavior recurs, keep the strict result as **FAIL**; do not relabel it as a strict PASS. A second command may then be run with `--expected-constraints 0` only to characterize whether the remaining structural inventory and corrected mapping-critical contracts survived despite the constraint loss. Archive both reports. This separates a tool-specific constraint-portability boundary from loss of the corrected v0.2.1 mapping contract.
 
@@ -85,7 +85,7 @@ The corrected v0.2.1 manuscript may state tested structural portability only aft
 
 - Papyrus strict report is archived;
 - EA strict report is archived, including any constraint-loss result;
-- both raw exports contain the GUI sentinel;
+- both raw exports contain the GUI sentinel class;
 - the four corrected multiplicities and `MappingStatus` survive both exports;
 - any tool-specific constraint loss is reported explicitly rather than normalized away; and
 - the exact input commit, XMI SHA-256, exports, oracle JSON files, and screenshots are included in the evidence package.

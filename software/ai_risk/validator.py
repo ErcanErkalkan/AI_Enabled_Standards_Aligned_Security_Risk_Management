@@ -44,7 +44,9 @@ def _duplicate_ids(frame: pd.DataFrame, file_name: str, column: str = "id") -> l
     return [f"{file_name}: duplicate {column} {value}" for value in sorted(set(values[duplicated]))]
 
 
-def _official_reference_maps(nist_df: pd.DataFrame, iso_ids: set[str]) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
+def _official_reference_maps(
+    nist_df: pd.DataFrame, iso_ids: set[str]
+) -> tuple[dict[str, set[str]], dict[str, set[str]]]:
     nist_to_iso: dict[str, set[str]] = {}
     if {"id", "linked_iso_ids"}.issubset(nist_df.columns):
         for _, row in nist_df.iterrows():
@@ -57,16 +59,16 @@ def _official_reference_maps(nist_df: pd.DataFrame, iso_ids: set[str]) -> tuple[
 
 
 def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> dict[str, object]:
-    """Validate the structural contract of the published R1 reference artifacts.
+    """Validate the structural contract of the canonical reference artifacts.
 
-    The human-adjudicated R1 crosswalk is not required to equal NIST informative
-    references.  Official-reference differences are reported as a comparator,
+    The study crosswalk is not required to equal NIST informative references.
+    Informative-reference differences are reported as an external comparator,
     while reciprocal consistency, source-catalog membership, GQM uniqueness,
     UML anchors, metric IDs, titles, duplicate tokens, and XMI parseability are
     structural validation criteria.
 
-    Empty ``metric_ids`` are valid in R1: quantitative metrics are optional when
-    no direct measurement role exists for a standards row.
+    Empty ``metric_ids`` are valid: quantitative metrics are optional when no
+    direct measurement role exists for a standards row.
     """
     started = perf_counter()
     root = Path(root)
@@ -79,9 +81,11 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
         path = data_dir / file_name
         try:
             frames[file_name] = pd.read_csv(path, dtype=str).fillna("")
-        except Exception as exc:  # structured file/schema failure rather than an uncaught crash
+        except Exception as exc:
             frames[file_name] = pd.DataFrame()
-            schema_violations.append(f"{file_name}: unable to read ({type(exc).__name__}: {exc})")
+            schema_violations.append(
+                f"{file_name}: unable to read ({type(exc).__name__}: {exc})"
+            )
 
     iso_df = frames["iso27001_2022_annexA.csv"]
     nist_df = frames["nist_csf_2_0_subcats.csv"]
@@ -93,7 +97,9 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             continue
         missing = _missing_columns(frame, file_name)
         if missing:
-            schema_violations.append(f"{file_name}: missing required columns {','.join(missing)}")
+            schema_violations.append(
+                f"{file_name}: missing required columns {','.join(missing)}"
+            )
 
     xmi_errors: list[str] = []
     uml_class_names: set[str] = set()
@@ -101,27 +107,44 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
         inspection = inspect_xmi(data_dir / "uml_schema.xmi")
         uml_class_names = set(inspection.class_names)
         if inspection.root_local_name != "XMI":
-            xmi_errors.append(f"uml_schema.xmi: unexpected root element {inspection.root_local_name or '(empty)'}")
+            xmi_errors.append(
+                f"uml_schema.xmi: unexpected root element {inspection.root_local_name or '(empty)'}"
+            )
         if not uml_class_names:
             xmi_errors.append("uml_schema.xmi: no UML classes detected")
     except (ET.ParseError, OSError, ValueError) as exc:
-        xmi_errors.append(f"uml_schema.xmi: parse failure ({type(exc).__name__}: {exc})")
+        xmi_errors.append(
+            f"uml_schema.xmi: parse failure ({type(exc).__name__}: {exc})"
+        )
     schema_violations.extend(xmi_errors)
 
     catalog_violations: list[str] = []
     catalog_violations.extend(_duplicate_ids(iso_df, "iso27001_2022_annexA.csv"))
     catalog_violations.extend(_duplicate_ids(nist_df, "nist_csf_2_0_subcats.csv"))
-    catalog_violations.extend(_duplicate_ids(metric_df, "metric_catalog.csv", "metric_id"))
+    catalog_violations.extend(
+        _duplicate_ids(metric_df, "metric_catalog.csv", "metric_id")
+    )
 
     iso_ids = set(iso_df.get("id", pd.Series(dtype=str)).astype(str))
     nist_ids = set(nist_df.get("id", pd.Series(dtype=str)).astype(str))
     metric_ids = set(metric_df.get("metric_id", pd.Series(dtype=str)).astype(str))
     all_known_ids = iso_ids | nist_ids
+
     title_lookup: dict[tuple[str, str], str] = {}
     if {"id", "title"}.issubset(iso_df.columns):
-        title_lookup.update({("ISO27001:2022", str(r["id"])): str(r["title"]) for _, r in iso_df.iterrows()})
+        title_lookup.update(
+            {
+                ("ISO27001:2022", str(r["id"])): str(r["title"])
+                for _, r in iso_df.iterrows()
+            }
+        )
     if {"id", "title"}.issubset(nist_df.columns):
-        title_lookup.update({("NIST-CSF-2.0", str(r["id"])): str(r["title"]) for _, r in nist_df.iterrows()})
+        title_lookup.update(
+            {
+                ("NIST-CSF-2.0", str(r["id"])): str(r["title"])
+                for _, r in nist_df.iterrows()
+            }
+        )
 
     broken_links: list[str] = []
     duplicate_or_dangling: list[str] = list(catalog_violations)
@@ -132,13 +155,22 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
     required_mapping_cols = REQUIRED_COLUMNS["mapping_iso_csf_gqm.csv"]
     mapping_ready = required_mapping_cols.issubset(mapping_df.columns)
     if mapping_ready:
-        duplicate_rows = mapping_df.duplicated(subset=["framework", "id"], keep=False)
+        duplicate_rows = mapping_df.duplicated(
+            subset=["framework", "id"], keep=False
+        )
         for _, row in mapping_df.loc[duplicate_rows].iterrows():
-            duplicate_or_dangling.append(f"Duplicate mapping row: {row['framework']}::{row['id']}")
+            duplicate_or_dangling.append(
+                f"Duplicate mapping row: {row['framework']}::{row['id']}"
+            )
 
         nonblank_gqm = mapping_df["gqm_ref"].astype(str).str.strip().ne("")
-        duplicated_gqm = mapping_df.loc[nonblank_gqm, "gqm_ref"].duplicated(keep=False)
-        for value in sorted(set(mapping_df.loc[nonblank_gqm].loc[duplicated_gqm, "gqm_ref"].astype(str))):
+        duplicated_gqm = (
+            mapping_df.loc[nonblank_gqm, "gqm_ref"].duplicated(keep=False)
+        )
+        duplicated_values = mapping_df.loc[nonblank_gqm].loc[
+            duplicated_gqm, "gqm_ref"
+        ].astype(str)
+        for value in sorted(set(duplicated_values)):
             duplicate_or_dangling.append(f"Duplicate GQM reference: {value}")
 
         row_lookup: dict[tuple[str, str], set[str]] = {}
@@ -150,7 +182,9 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             uml_class = str(row["uml_class"]).strip()
 
             if framework not in VALID_FRAMEWORKS:
-                contract_violations.append(f"{row_id or '(missing id)'}: invalid framework {framework or '(blank)'}")
+                contract_violations.append(
+                    f"{row_id or '(missing id)'}: invalid framework {framework or '(blank)'}"
+                )
                 continue
             if not row_id:
                 contract_violations.append("(missing id): blank mapping id")
@@ -160,62 +194,123 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             if not gqm_ref:
                 contract_violations.append(f"{row_id}: empty GQM reference")
 
-            expected_catalog = iso_ids if framework == "ISO27001:2022" else nist_ids
-            opposite_catalog = nist_ids if framework == "ISO27001:2022" else iso_ids
+            expected_catalog = (
+                iso_ids if framework == "ISO27001:2022" else nist_ids
+            )
+            opposite_catalog = (
+                nist_ids if framework == "ISO27001:2022" else iso_ids
+            )
             if row_id not in expected_catalog:
-                duplicate_or_dangling.append(f"Rogue mapping row: {framework}::{row_id}")
+                duplicate_or_dangling.append(
+                    f"Rogue mapping row: {framework}::{row_id}"
+                )
             expected_title = title_lookup.get((framework, row_id))
-            if expected_title is not None and _normalize_text(row_title) != _normalize_text(expected_title):
-                contract_violations.append(f"{row_id}: normalized title/catalog mismatch")
+            if (
+                expected_title is not None
+                and _normalize_text(row_title) != _normalize_text(expected_title)
+            ):
+                contract_violations.append(
+                    f"{row_id}: normalized title/catalog mismatch"
+                )
 
-            row_metric_ids = flatten_metric_ids(str(row["metric_ids"])) if str(row["metric_ids"]).strip() else []
+            raw_metrics = str(row["metric_ids"]).strip()
+            row_metric_ids = (
+                flatten_metric_ids(raw_metrics) if raw_metrics else []
+            )
             if len(row_metric_ids) != len(set(row_metric_ids)):
-                contract_violations.append(f"{row_id}: duplicate metric token")
-            missing_metrics = sorted({value for value in row_metric_ids if value not in metric_ids})
+                contract_violations.append(
+                    f"{row_id}: duplicate metric token"
+                )
+            missing_metrics = sorted(
+                {value for value in row_metric_ids if value not in metric_ids}
+            )
             if missing_metrics:
-                broken_links.append(f"{row_id}: missing metrics {','.join(missing_metrics)}")
+                broken_links.append(
+                    f"{row_id}: missing metrics {','.join(missing_metrics)}"
+                )
 
             if not uml_class:
                 broken_links.append(f"{row_id}: empty UML class")
             elif uml_class not in uml_class_names:
-                broken_links.append(f"{row_id}: unknown UML class {uml_class}")
+                broken_links.append(
+                    f"{row_id}: unknown UML class {uml_class}"
+                )
 
             linked_ids = _split_tokens(row["linked_ids"])
             if len(linked_ids) != len(set(linked_ids)):
-                contract_violations.append(f"{row_id}: duplicate link token")
-            missing_linked = sorted({value for value in linked_ids if value not in all_known_ids})
+                contract_violations.append(
+                    f"{row_id}: duplicate link token"
+                )
+            missing_linked = sorted(
+                {value for value in linked_ids if value not in all_known_ids}
+            )
             if missing_linked:
-                broken_links.append(f"{row_id}: dangling linked ids {','.join(missing_linked)}")
-            wrong_side = sorted({value for value in linked_ids if value in all_known_ids and value not in opposite_catalog})
+                broken_links.append(
+                    f"{row_id}: dangling linked ids {','.join(missing_linked)}"
+                )
+            wrong_side = sorted(
+                {
+                    value
+                    for value in linked_ids
+                    if value in all_known_ids and value not in opposite_catalog
+                }
+            )
             if wrong_side:
-                contract_violations.append(f"{row_id}: same-framework linked ids {','.join(wrong_side)}")
+                contract_violations.append(
+                    f"{row_id}: same-framework linked ids {','.join(wrong_side)}"
+                )
             row_lookup[(framework, row_id)] = set(linked_ids)
 
-        iso_mapping_ids = {row_id for framework, row_id in row_lookup if framework == "ISO27001:2022"}
-        nist_mapping_ids = {row_id for framework, row_id in row_lookup if framework == "NIST-CSF-2.0"}
+        iso_mapping_ids = {
+            row_id
+            for framework, row_id in row_lookup
+            if framework == "ISO27001:2022"
+        }
+        nist_mapping_ids = {
+            row_id
+            for framework, row_id in row_lookup
+            if framework == "NIST-CSF-2.0"
+        }
         iso_missing = sorted(iso_ids - iso_mapping_ids)
         nist_missing = sorted(nist_ids - nist_mapping_ids)
         if iso_missing:
-            duplicate_or_dangling.append(f"Missing ISO rows: {','.join(iso_missing)}")
+            duplicate_or_dangling.append(
+                f"Missing ISO rows: {','.join(iso_missing)}"
+            )
         if nist_missing:
-            duplicate_or_dangling.append(f"Missing NIST rows: {','.join(nist_missing)}")
+            duplicate_or_dangling.append(
+                f"Missing NIST rows: {','.join(nist_missing)}"
+            )
 
         for (framework, row_id), links in row_lookup.items():
-            target_framework = "NIST-CSF-2.0" if framework == "ISO27001:2022" else "ISO27001:2022"
+            target_framework = (
+                "NIST-CSF-2.0"
+                if framework == "ISO27001:2022"
+                else "ISO27001:2022"
+            )
             for linked_id in sorted(links):
                 if linked_id not in all_known_ids:
                     continue
                 reciprocal = row_lookup.get((target_framework, linked_id))
                 if reciprocal is None or row_id not in reciprocal:
-                    reciprocal_violations.append(f"{row_id}<->{linked_id}: missing reciprocal link")
+                    reciprocal_violations.append(
+                        f"{row_id}<->{linked_id}: missing reciprocal link"
+                    )
 
-        official_nist_to_iso, official_iso_to_nist = _official_reference_maps(nist_df, iso_ids)
+        official_nist_to_iso, official_iso_to_nist = _official_reference_maps(
+            nist_df, iso_ids
+        )
         for (framework, row_id), found in row_lookup.items():
-            expected = official_iso_to_nist.get(row_id, set()) if framework == "ISO27001:2022" else official_nist_to_iso.get(row_id, set())
+            expected = (
+                official_iso_to_nist.get(row_id, set())
+                if framework == "ISO27001:2022"
+                else official_nist_to_iso.get(row_id, set())
+            )
             if found != expected:
                 informative_reference_differences.append(
-                    f"{row_id}: informative-reference set {','.join(sorted(expected)) or '(none)'}; "
-                    f"R1 set {','.join(sorted(found)) or '(none)'}"
+                    f"{row_id}: informative-reference set "
+                    f"{','.join(sorted(expected)) or '(none)'}; "
+                    f"study set {','.join(sorted(found)) or '(none)'}"
                 )
     else:
         iso_mapping_ids, nist_mapping_ids = set(), set()
@@ -230,17 +325,26 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
         "schema_violations": len(set(schema_violations)),
         "contract_violations": len(set(contract_violations)),
         "reciprocal_crosswalk_violations": len(set(reciprocal_violations)),
-        # Backward-compatible comparator keys. These are not semantic errors in R1.
-        "informative_reference_crosswalk_mismatches": len(informative_reference_differences),
-        "semantic_crosswalk_mismatches": len(informative_reference_differences),
-        "informative_reference_crosswalk_differences": len(informative_reference_differences),
+        "informative_reference_crosswalk_mismatches": len(
+            informative_reference_differences
+        ),
+        "semantic_crosswalk_mismatches": len(
+            informative_reference_differences
+        ),
+        "informative_reference_crosswalk_differences": len(
+            informative_reference_differences
+        ),
         "broken_link_details": sorted(set(broken_links)),
         "duplicate_or_dangling_details": sorted(set(duplicate_or_dangling)),
         "schema_violation_details": sorted(set(schema_violations)),
         "contract_violation_details": sorted(set(contract_violations)),
         "reciprocal_crosswalk_details": sorted(set(reciprocal_violations)),
-        "semantic_crosswalk_mismatch_details": sorted(informative_reference_differences),
-        "informative_reference_crosswalk_difference_details": sorted(informative_reference_differences),
+        "semantic_crosswalk_mismatch_details": sorted(
+            informative_reference_differences
+        ),
+        "informative_reference_crosswalk_difference_details": sorted(
+            informative_reference_differences
+        ),
         "elapsed_seconds": perf_counter() - started,
     }
 
@@ -254,7 +358,8 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             f"Schema/XMI violations: {summary['schema_violations']}",
             f"Contract violations: {summary['contract_violations']}",
             f"Reciprocal crosswalk violations: {summary['reciprocal_crosswalk_violations']}",
-            f"NIST informative-reference differences (comparator, not error): {summary['informative_reference_crosswalk_differences']}",
+            "NIST informative-reference differences "
+            f"(comparator, not error): {summary['informative_reference_crosswalk_differences']}",
             f"Elapsed: {summary['elapsed_seconds']:.3f} s",
         ]
         sections = [
@@ -262,8 +367,14 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             ("Broken links", summary["broken_link_details"]),
             ("Duplicate/dangling", summary["duplicate_or_dangling_details"]),
             ("Contract violations", summary["contract_violation_details"]),
-            ("Reciprocal crosswalk violations", summary["reciprocal_crosswalk_details"]),
-            ("Informative-reference differences", summary["informative_reference_crosswalk_difference_details"]),
+            (
+                "Reciprocal crosswalk violations",
+                summary["reciprocal_crosswalk_details"],
+            ),
+            (
+                "Informative-reference differences",
+                summary["informative_reference_crosswalk_difference_details"],
+            ),
         ]
         for title, details in sections:
             if details:

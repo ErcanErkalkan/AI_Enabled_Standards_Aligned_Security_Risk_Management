@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Deterministic structural-defect smoke test for the promoted R1 validator."""
+"""Deterministic structural-defect smoke test for the canonical validator."""
 from __future__ import annotations
 
 import shutil
@@ -73,11 +73,24 @@ def _inject_title_mismatch(root: Path) -> None:
 
 
 def _inject_rogue_row(root: Path) -> None:
-    f = _load_mapping(root); rogue = f.iloc[[0]].copy(); rogue.loc[:, "id"] = "A.9.99"; rogue.loc[:, "linked_ids"] = ""; rogue.loc[:, "gqm_ref"] = "GQM-ROGUE-001"; f = pd.concat([f, rogue], ignore_index=True); _write_mapping(root, f)
+    f = _load_mapping(root)
+    rogue = f.iloc[[0]].copy()
+    rogue.loc[:, "id"] = "A.9.99"
+    rogue.loc[:, "linked_ids"] = ""
+    rogue.loc[:, "gqm_ref"] = "GQM-ROGUE-001"
+    f = pd.concat([f, rogue], ignore_index=True)
+    _write_mapping(root, f)
 
 
 def _inject_asymmetric_link(root: Path) -> None:
-    f = _load_mapping(root); i = _first_linked_index(f); source = f.loc[i, "id"]; target = f.loc[i, "linked_ids"].split(";")[0]; target_index = int(f.index[f["id"].eq(target)][0]); tokens = [x for x in f.loc[target_index, "linked_ids"].split(";") if x and x != source]; f.loc[target_index, "linked_ids"] = ";".join(tokens); _write_mapping(root, f)
+    f = _load_mapping(root)
+    i = _first_linked_index(f)
+    source = f.loc[i, "id"]
+    target = f.loc[i, "linked_ids"].split(";")[0]
+    target_index = int(f.index[f["id"].eq(target)][0])
+    tokens = [x for x in f.loc[target_index, "linked_ids"].split(";") if x and x != source]
+    f.loc[target_index, "linked_ids"] = ";".join(tokens)
+    _write_mapping(root, f)
 
 
 def _inject_malformed_xmi(root: Path) -> None:
@@ -101,9 +114,19 @@ SCENARIOS: list[tuple[str, Callable[[Path], None], str]] = [
 
 def _assert_clean_baseline() -> None:
     s = validate_reference_artifacts(ROOT, write_log=False)
-    fatal = {k: s[k] for k in ["broken_links", "duplicate_or_dangling", "schema_violations", "contract_violations", "reciprocal_crosswalk_violations"] if s[k] != 0}
+    fatal = {
+        k: s[k]
+        for k in [
+            "broken_links",
+            "duplicate_or_dangling",
+            "schema_violations",
+            "contract_violations",
+            "reciprocal_crosswalk_violations",
+        ]
+        if s[k] != 0
+    }
     if fatal:
-        raise SystemExit(f"Clean R1 baseline has validator findings: {fatal}")
+        raise SystemExit(f"Clean canonical baseline has validator findings: {fatal}")
 
 
 def main() -> None:

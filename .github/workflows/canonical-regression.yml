@@ -1,17 +1,16 @@
-name: SCICO R1 canonical regression
+name: Canonical regression
 
 on:
   push:
     branches:
       - main
-      - scico-r1-canonical-promotion
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  pytest:
+  validate:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -27,8 +26,8 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.lock
           python -m pip install pytest
-      - name: Verify canonical R1 exact bytes
-        run: sha256sum -c software/R1_CANONICAL_SHA256SUMS.txt
+      - name: Verify canonical exact bytes
+        run: sha256sum -c software/CANONICAL_SHA256SUMS.txt
       - name: Full pytest suite
         working-directory: software
         run: python -m pytest -q

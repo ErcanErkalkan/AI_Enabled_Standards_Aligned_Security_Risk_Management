@@ -35,7 +35,7 @@ def main() -> None:
         "reciprocal_crosswalk_violations",
     ]
     if any(int(summary[key]) != 0 for key in fatal_keys):
-        raise SystemExit("R1 structural validation failed.")
+        raise SystemExit("Canonical structural validation failed.")
 
 
 if __name__ == "__main__":

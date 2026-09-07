@@ -16,7 +16,7 @@ def _rows(name: str):
         return list(csv.DictReader(handle))
 
 
-def test_r1_static_mapping_is_complete_symmetric_and_structurally_clean():
+def test_static_mapping_is_complete_symmetric_and_structurally_clean():
     summary = validate_reference_artifacts(ROOT, write_log=False)
     assert summary["iso_coverage"] == 93
     assert summary["nist_coverage"] == 106
@@ -25,11 +25,10 @@ def test_r1_static_mapping_is_complete_symmetric_and_structurally_clean():
     assert summary["schema_violations"] == 0
     assert summary["contract_violations"] == 0
     assert summary["reciprocal_crosswalk_violations"] == 0
-    # Informative references are an external comparator, not R1 semantic ground truth.
     assert summary["informative_reference_crosswalk_differences"] >= 0
 
 
-def test_r1_metrics_are_optional_and_match_semantic_freeze_counts():
+def test_metrics_are_optional_and_match_canonical_counts():
     rows = _rows("mapping_iso_csf_gqm.csv")
     assert len(rows) == 199
     with_metrics = [row for row in rows if row["metric_ids"].strip()]
@@ -39,14 +38,15 @@ def test_r1_metrics_are_optional_and_match_semantic_freeze_counts():
     assert all(row["uml_class"] == "EvidenceRequirement" for row in rows)
 
 
-def test_r1_gqm_freeze_counts():
-    goals = _rows("gqm_goals_r1.csv")
-    questions = _rows("gqm_questions_r1.csv")
-    assert len(goals) == 199
-    assert len(questions) == 257
+def test_gqm_references_are_complete_and_unique():
+    rows = _rows("mapping_iso_csf_gqm.csv")
+    refs = [row["gqm_ref"].strip() for row in rows]
+    assert len(refs) == 199
+    assert all(refs)
+    assert len(set(refs)) == 199
 
 
-def test_authoritative_xmi_contains_r1_contract_classes():
+def test_authoritative_xmi_contains_contract_classes():
     classes = parse_uml_class_names(DATA / "uml_schema.xmi")
     assert len(classes) == 28
     for name in ["EvidenceRequirement", "EvidenceItem", "ProvenanceRecord", "StandardRow", "Asset", "Risk"]:

@@ -8,18 +8,18 @@ The repository contains the executable `ai_risk` package and machine-readable re
 
 - 93 ISO/IEC 27001:2022 Annex A controls;
 - 106 NIST CSF 2.0 subcategories;
-- 199 standards rows and 211 reciprocal ISO–NIST pairs;
+- 199 standards rows and 211 reciprocal ISO-NIST pairs;
 - 199 GQM references in the canonical mapping; the full 257-question GQM catalog is distributed with the supplementary evidence package;
 - a 28-class UML/XMI model;
 - a structural validator and deterministic seeded-fault checks.
 
 The NIST informative-reference set is treated as an external comparator rather than semantic ground truth.
 
-## Validation snapshot
+## Current validated release: v0.2.1
 
-The published v0.2.0 software tree remains the immutable historical release. Its GitHub Actions clean regression reported `28 passed` and the v0.2.0 archive remains available under the DOI below.
+Version `v0.2.1` is the current corrected and archived software release. It was created from merge commit `6109d9a4ce26e3445ca6d34e3b36812ce7e35ae1`; the merged tree is identical to the CI-validated PR head `5e05c160ee48f0210ce8eb9635479aa5e6ea8758`.
 
-The unreleased v0.2.1 correction candidate has now completed automated and external-tool validation on the correction branch. At the pinned corrected commit `0d29aaf98bbb3e4d0532e708642a0df67045e563`:
+Automated validation for the released tree reports:
 
 - `31 passed` in the pytest suite;
 - ISO coverage: `93/93`;
@@ -34,9 +34,11 @@ The unreleased v0.2.1 correction candidate has now completed automated and exter
 - exact-byte canonical SHA-256 verification: PASS;
 - corrected canonical XMI SHA-256: `d1da069ab8b5ed543f4118679d01fa9c78c50de8d67debdb3c8c6dd365e01fac`.
 
-Corrected-XMI GUI round trips were also completed in Papyrus Desktop 2025-06 and Enterprise Architect 17.2.1721. Both preserve the corrected mapping-critical multiplicities, `MappingStatus`, GUI sentinel, and tested structural inventory under documented serializer normalization. Papyrus preserves all seven UML/OCL constraints. Enterprise Architect preserves 0/7 constraints, which remains an explicit tool-specific portability limitation. Raw strict-oracle failures are retained rather than relabeled; see [`software/docs/INTEROP_RESULT_v0.2.1.md`](software/docs/INTEROP_RESULT_v0.2.1.md).
+Corrected-XMI GUI round trips were completed in Papyrus Desktop 2025-06 and Enterprise Architect 17.2.1721 using the corrected XMI pinned at commit `0d29aaf98bbb3e4d0532e708642a0df67045e563`. Both preserve the corrected mapping-critical multiplicities, `MappingStatus`, GUI sentinel, and tested structural inventory under documented serializer normalization. Papyrus preserves all seven UML/OCL constraints. Enterprise Architect preserves `0/7` constraints, which remains an explicit tool-specific portability limitation. Raw strict-oracle failures are retained rather than relabeled; see [`software/docs/INTEROP_RESULT_v0.2.1.md`](software/docs/INTEROP_RESULT_v0.2.1.md).
 
-The v0.2.1 correction is still unreleased. Release metadata, final package checksums, tag/release assets, and the new archive DOI must be finalized before this candidate replaces the published v0.2.0 snapshot.
+The released software archive is available at Zenodo DOI [`10.5281/zenodo.22659063`](https://doi.org/10.5281/zenodo.22659063).
+
+The published `v0.2.0` release remains immutable historical scientific evidence and is not overwritten by the corrected release.
 
 ## Repository layout
 
@@ -66,6 +68,9 @@ See [`software/RUN.md`](software/RUN.md) for the full execution guide.
 
 ## Persistent identifiers
 
+- Current release: `v0.2.1`
+- Current software archive DOI: <https://doi.org/10.5281/zenodo.22659063>
+- Historical v0.2.0 DOI: <https://doi.org/10.5281/zenodo.22643003>
+- Historical v0.1.0 DOI: <https://doi.org/10.5281/zenodo.19928296>
 - GitHub repository: <https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management>
 - Author ORCID: <https://orcid.org/0000-0001-9259-7112>
-- Published v0.2.0 archive DOI: <https://doi.org/10.5281/zenodo.22643003>

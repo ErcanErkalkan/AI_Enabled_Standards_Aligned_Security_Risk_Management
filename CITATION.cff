@@ -13,18 +13,23 @@ authors:
     affiliation: Marmara University
     orcid: "https://orcid.org/0000-0001-9259-7112"
 abstract: >-
-  Reproducible research artifact for leakage-safe IoT telemetry evaluation,
-  standards traceability, UML/XMI-based evidence management, auditable security
-  risk scoring, and cost-aware control portfolio optimization aligned with
-  ISO/IEC 27001:2022 and NIST CSF 2.0.
+  Reproducible software artifact for standards-traceable security evidence
+  management across ISO/IEC 27001:2022 and NIST CSF 2.0. The artifact provides
+  UML/XMI traceability, GQM evidence intent, provenance-aware evidence structures,
+  structural validation, reproducible reporting, and an IoT telemetry case-study
+  profile. Tested interoperability is limited to structural portability across
+  the documented Papyrus and Enterprise Architect versions; lossless or general
+  UML/OCL interoperability is not claimed.
 keywords:
   - cybersecurity
-  - risk-management
-  - intrusion-detection
-  - iot
+  - security-evidence-management
   - iso-27001
   - nist-csf
   - uml
   - xmi
   - traceability
-  - evidence-management
+  - gqm
+  - provenance
+  - structural-validation
+  - reproducibility
+  - iot-telemetry

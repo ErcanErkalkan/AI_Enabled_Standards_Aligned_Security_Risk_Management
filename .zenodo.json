@@ -27,12 +27,5 @@
     "reproducibility",
     "iot-telemetry"
   ],
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management/tree/v0.2.1",
-      "relation": "isSupplementTo",
-      "resource_type": "software"
-    }
-  ],
   "upload_type": "software"
 }

@@ -1,6 +1,7 @@
 {
   "title": "AI-Enabled Standards-Aligned Security Risk Management",
   "description": "Reproducible software artifact for standards-traceable security evidence management across ISO/IEC 27001:2022 and NIST CSF 2.0. The artifact provides UML/XMI traceability, GQM evidence intent, provenance-aware evidence structures, structural validation, reproducible reporting, and an IoT telemetry case-study profile. Tested interoperability is limited to structural portability across the documented Papyrus and Enterprise Architect versions; lossless or general UML/OCL interoperability is not claimed.",
+  "notes": "Version 0.2.1 corrects the authoritative UML/XMI optionality contract for StandardToMetric.metrics, QuestionToMetric.metrics, MetricToEvidenceRequirement.metrics, and StandardToMeasurementConcept.measurementConcept; aligns MappingStatus with the active six-literal semantic-assessment vocabulary; and records corrected-XMI round-trip evidence from Papyrus and Enterprise Architect. Papyrus preserves the tested structure and 7/7 UML/OCL constraints under UML-default-aware normalization. Enterprise Architect preserves the tested structural contract under wrapper normalization but preserves 0/7 UML/OCL constraints; this remains an explicit tool-specific portability limitation.",
   "creators": [
     {
       "name": "Erkalkan, Ercan",

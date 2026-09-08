@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this repository, please cite the software metadata below."
 type: software
 title: "AI-Enabled Standards-Aligned Security Risk Management"
-version: "0.2.0"
+version: "0.2.1"
 repository-code: "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
 url: "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
 license: MIT

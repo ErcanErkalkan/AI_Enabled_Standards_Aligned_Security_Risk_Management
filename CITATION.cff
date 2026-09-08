@@ -3,8 +3,10 @@ message: "If you use this repository, please cite the software metadata below."
 type: software
 title: "AI-Enabled Standards-Aligned Security Risk Management"
 version: "0.2.1"
+date-released: 2026-09-08
+doi: "10.5281/zenodo.22659063"
 repository-code: "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
-url: "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management"
+url: "https://doi.org/10.5281/zenodo.22659063"
 license: MIT
 authors:
   - family-names: Erkalkan

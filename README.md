@@ -17,9 +17,11 @@ The NIST informative-reference set is treated as an external comparator rather t
 
 ## Validation snapshot
 
-The published v0.2.0 software tree was checked in GitHub Actions on Ubuntu with CPython 3.13. Its clean regression verified the canonical SHA-256 manifest and reported:
+The published v0.2.0 software tree remains the immutable historical release. Its GitHub Actions clean regression reported `28 passed` and the v0.2.0 archive remains available under the DOI below.
 
-- `28 passed` in the pytest suite;
+The unreleased v0.2.1 correction candidate has now completed automated and external-tool validation on the correction branch. At the pinned corrected commit `0d29aaf98bbb3e4d0532e708642a0df67045e563`:
+
+- `31 passed` in the pytest suite;
 - ISO coverage: `93/93`;
 - NIST coverage: `106/106`;
 - broken links: `0`;
@@ -27,9 +29,14 @@ The published v0.2.0 software tree was checked in GitHub Actions on Ubuntu with 
 - schema/XMI violations: `0`;
 - contract violations: `0`;
 - reciprocal crosswalk violations: `0`;
-- seeded structural defect scenarios: `11/11` detected with structured findings.
+- seeded structural defect scenarios: `11/11` detected with structured findings;
+- canonical interoperability-oracle self-check: PASS;
+- exact-byte canonical SHA-256 verification: PASS;
+- corrected canonical XMI SHA-256: `d1da069ab8b5ed543f4118679d01fa9c78c50de8d67debdb3c8c6dd365e01fac`.
 
-The unreleased v0.2.1 correction line adds explicit UML association-multiplicity and `MappingStatus` contract checks. Its validation snapshot will replace the published values above only after the corrected XMI, checksum manifest, external-tool round trips, and release package are finalized.
+Corrected-XMI GUI round trips were also completed in Papyrus Desktop 2025-06 and Enterprise Architect 17.2.1721. Both preserve the corrected mapping-critical multiplicities, `MappingStatus`, GUI sentinel, and tested structural inventory under documented serializer normalization. Papyrus preserves all seven UML/OCL constraints. Enterprise Architect preserves 0/7 constraints, which remains an explicit tool-specific portability limitation. Raw strict-oracle failures are retained rather than relabeled; see [`software/docs/INTEROP_RESULT_v0.2.1.md`](software/docs/INTEROP_RESULT_v0.2.1.md).
+
+The v0.2.1 correction is still unreleased. Release metadata, final package checksums, tag/release assets, and the new archive DOI must be finalized before this candidate replaces the published v0.2.0 snapshot.
 
 ## Repository layout
 

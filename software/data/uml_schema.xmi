@@ -2,7 +2,7 @@
 <xmi:XMI xmlns:uml="http://www.omg.org/spec/UML/20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmi:version="2.5.1">
   <uml:Model xmi:id="SETM_Model" name="StandardsTraceableSecurityEvidenceModel">
     <ownedComment xmi:type="uml:Comment" xmi:id="SETM_Comment_contract">
-      <body>Revision contract: UML 2.5.1 class model serialized as XMI 2.5.1. TraceabilityCore is the normative trace/evidence package; SecurityContext preserves the RQ1 asset/threat/vulnerability/event/impact/risk/control context from the submitted scope. The base mapping CSV supplies row identifiers, metric IDs, one measurement-concept class name, one GQM reference, and linked standards IDs; evidence/semantic status and detailed GQM question text are enrichment fields. Tool interoperability and executable OCL conformance are evaluated separately.</body>
+      <body>UML 2.5.1 / XMI 2.5.1 technical contract. TraceabilityCore defines standards, GQM, evidence, provenance, validation, and export structures; SecurityContext defines contextual security entities. The seven-column base mapping supplies framework, identifier, title, optional metric identifiers, the EvidenceRequirement row anchor, a GQM reference, and linked standards identifiers; evidence status, semantic-assessment status, and detailed GQM question text are enrichment fields. Tool interoperability and executable OCL conformance are evaluated separately.</body>
     </ownedComment>
     <packagedElement xmi:type="uml:Package" xmi:id="SETM_Package_Core" name="TraceabilityCore">
       <packagedElement xmi:type="uml:PrimitiveType" xmi:id="PT_String" name="String" />
@@ -21,11 +21,12 @@
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_EvidenceStatus_externallySupplied" name="externallySupplied" />
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_MappingStatus" name="MappingStatus">
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_unreviewed" name="unreviewed" />
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_accepted" name="accepted" />
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_minorRevision" name="minorRevision" />
-        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_majorRevision" name="majorRevision" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_notAssessed" name="notAssessed" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_acceptable" name="acceptable" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_minorAdjustment" name="minorAdjustment" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_majorAdjustment" name="majorAdjustment" />
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_rejected" name="rejected" />
+        <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_MappingStatus_deferred" name="deferred" />
       </packagedElement>
       <packagedElement xmi:type="uml:Enumeration" xmi:id="Enum_TraceRelationType" name="TraceRelationType">
         <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="Lit_TraceRelationType_equivalent" name="equivalent" />
@@ -417,14 +418,14 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_QuestionToMetric_GQMQuestion_up" value="*" />
         </ownedEnd>
         <ownedEnd xmi:type="uml:Property" xmi:id="End_QuestionToMetric_MetricDefinition" name="metrics" type="Class_MetricDefinition" association="Assoc_QuestionToMetric">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_QuestionToMetric_MetricDefinition_low" value="1" />
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_QuestionToMetric_MetricDefinition_low" value="0" />
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_QuestionToMetric_MetricDefinition_up" value="*" />
         </ownedEnd>
       </packagedElement>
       <packagedElement xmi:type="uml:Association" xmi:id="Assoc_MetricToEvidenceRequirement" name="MetricToEvidenceRequirement" memberEnd="End_MetricToEvidenceRequirement_MetricDefinition End_MetricToEvidenceRequirement_EvidenceRequirement">
-        <ownedEnd xmi:type="uml:Property" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition" name="metric" type="Class_MetricDefinition" association="Assoc_MetricToEvidenceRequirement">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_low" value="1" />
-          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_up" value="1" />
+        <ownedEnd xmi:type="uml:Property" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition" name="metrics" type="Class_MetricDefinition" association="Assoc_MetricToEvidenceRequirement">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_low" value="0" />
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_MetricToEvidenceRequirement_MetricDefinition_up" value="*" />
         </ownedEnd>
         <ownedEnd xmi:type="uml:Property" xmi:id="End_MetricToEvidenceRequirement_EvidenceRequirement" name="evidenceRequirements" type="Class_EvidenceRequirement" association="Assoc_MetricToEvidenceRequirement">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_MetricToEvidenceRequirement_EvidenceRequirement_low" value="0" />
@@ -507,7 +508,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMetric_StandardRow_up" value="*" />
         </ownedEnd>
         <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMetric_MetricDefinition" name="metrics" type="Class_MetricDefinition" association="Assoc_StandardToMetric">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMetric_MetricDefinition_low" value="1" />
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMetric_MetricDefinition_low" value="0" />
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMetric_MetricDefinition_up" value="*" />
         </ownedEnd>
       </packagedElement>
@@ -517,7 +518,7 @@
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMeasurementConcept_StandardRow_up" value="*" />
         </ownedEnd>
         <ownedEnd xmi:type="uml:Property" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept" name="measurementConcept" type="Class_MeasurementConcept" association="Assoc_StandardToMeasurementConcept">
-          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept_low" value="1" />
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept_low" value="0" />
           <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="End_StandardToMeasurementConcept_MeasurementConcept_up" value="1" />
         </ownedEnd>
       </packagedElement>

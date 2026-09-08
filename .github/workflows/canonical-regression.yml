@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -26,14 +29,25 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.lock
           python -m pip install pytest
-      - name: Verify canonical exact bytes
-        run: sha256sum -c software/CANONICAL_SHA256SUMS.txt
+      - name: Print corrected contract hashes
+        run: |
+          sha256sum software/ai_risk/xmi.py
+          sha256sum software/ai_risk/validator.py
+          sha256sum software/data/uml_schema.xmi
+          sha256sum software/tests/test_canonical_state.py
+          sha256sum software/tools/check_interop_export.py
       - name: Full pytest suite
         working-directory: software
         run: python -m pytest -q
       - name: Canonical mapping validator
         working-directory: software
         run: python tools/validate_mappings.py
+      - name: Canonical interoperability oracle self-check
+        working-directory: software
+        run: |
+          python tools/check_interop_export.py data/uml_schema.xmi --expected-constraints 7 --json-out out/interop_canonical_oracle.json
       - name: Seeded structural regression
         working-directory: software
         run: python tools/test_validator_seeded_defects.py
+      - name: Verify canonical exact bytes
+        run: sha256sum -c software/CANONICAL_SHA256SUMS.txt

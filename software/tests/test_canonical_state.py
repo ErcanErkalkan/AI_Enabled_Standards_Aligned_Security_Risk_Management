@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 from ai_risk.validator import validate_reference_artifacts
-from ai_risk.xmi import parse_uml_class_names
+from ai_risk.xmi import inspect_xmi, parse_uml_class_names
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -51,6 +51,44 @@ def test_authoritative_xmi_contains_contract_classes():
     assert len(classes) == 28
     for name in ["EvidenceRequirement", "EvidenceItem", "ProvenanceRecord", "StandardRow", "Asset", "Risk"]:
         assert name in classes
+
+
+def test_authoritative_xmi_enforces_optional_metric_contract():
+    inspection = inspect_xmi(DATA / "uml_schema.xmi")
+    ends = {
+        (end.association_name, end.end_name): (end.lower, end.upper, end.type_id)
+        for end in inspection.association_ends
+    }
+    assert ends[("StandardToMetric", "metrics")] == ("0", "*", "Class_MetricDefinition")
+    assert ends[("QuestionToMetric", "metrics")] == ("0", "*", "Class_MetricDefinition")
+    assert ends[("MetricToEvidenceRequirement", "metrics")] == ("0", "*", "Class_MetricDefinition")
+    assert ends[("StandardToMeasurementConcept", "measurementConcept")] == (
+        "0",
+        "1",
+        "Class_MeasurementConcept",
+    )
+
+
+def test_mapping_status_vocabulary_matches_semantic_protocol():
+    inspection = inspect_xmi(DATA / "uml_schema.xmi")
+    enumerations = dict(inspection.enumerations)
+    assert enumerations["MappingStatus"] == (
+        "notAssessed",
+        "acceptable",
+        "minorAdjustment",
+        "majorAdjustment",
+        "rejected",
+        "deferred",
+    )
+
+
+def test_authoritative_xmi_comment_is_standalone_and_current():
+    text = (DATA / "uml_schema.xmi").read_text(encoding="utf-8")
+    assert "Revision contract:" not in text
+    assert "submitted scope" not in text
+    assert "one measurement-concept class name" not in text
+    assert "EvidenceRequirement row anchor" in text
+    assert "optional metric identifiers" in text
 
 
 def test_namespace_safe_parser_accepts_legacy_and_omg_namespace_variants(tmp_path: Path):

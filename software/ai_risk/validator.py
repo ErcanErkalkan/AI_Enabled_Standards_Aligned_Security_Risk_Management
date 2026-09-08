@@ -21,6 +21,25 @@ REQUIRED_COLUMNS = {
 }
 VALID_FRAMEWORKS = {"ISO27001:2022", "NIST-CSF-2.0"}
 
+EXPECTED_XMI_ASSOCIATION_ENDS = {
+    ("StandardToMetric", "metrics"): ("0", "*", "Class_MetricDefinition"),
+    ("QuestionToMetric", "metrics"): ("0", "*", "Class_MetricDefinition"),
+    ("MetricToEvidenceRequirement", "metrics"): ("0", "*", "Class_MetricDefinition"),
+    ("StandardToMeasurementConcept", "measurementConcept"): (
+        "0",
+        "1",
+        "Class_MeasurementConcept",
+    ),
+}
+EXPECTED_MAPPING_STATUS = (
+    "notAssessed",
+    "acceptable",
+    "minorAdjustment",
+    "majorAdjustment",
+    "rejected",
+    "deferred",
+)
+
 
 def _split_tokens(raw_value: object) -> list[str]:
     if raw_value is None or pd.isna(raw_value):
@@ -58,13 +77,46 @@ def _official_reference_maps(
     return nist_to_iso, iso_to_nist
 
 
+def _xmi_contract_violations(inspection) -> list[str]:
+    """Return canonical UML/XMI contract drift as ordinary contract findings."""
+    violations: list[str] = []
+    ends = {
+        (end.association_name, end.end_name): (end.lower, end.upper, end.type_id)
+        for end in inspection.association_ends
+    }
+    for key, expected in EXPECTED_XMI_ASSOCIATION_ENDS.items():
+        found = ends.get(key)
+        association_name, end_name = key
+        if found is None:
+            violations.append(
+                f"uml_schema.xmi: missing association end {association_name}.{end_name}"
+            )
+        elif found != expected:
+            violations.append(
+                "uml_schema.xmi: association end "
+                f"{association_name}.{end_name} expected {expected[0]}..{expected[1]} "
+                f"type {expected[2]}, found {found[0]}..{found[1]} type {found[2]}"
+            )
+
+    enumerations = dict(inspection.enumerations)
+    mapping_status = enumerations.get("MappingStatus")
+    if mapping_status != EXPECTED_MAPPING_STATUS:
+        violations.append(
+            "uml_schema.xmi: MappingStatus vocabulary expected "
+            f"{','.join(EXPECTED_MAPPING_STATUS)}, found "
+            f"{','.join(mapping_status or ()) or '(missing)'}"
+        )
+    return violations
+
+
 def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> dict[str, object]:
     """Validate the structural contract of the canonical reference artifacts.
 
     The study crosswalk is not required to equal NIST informative references.
     Informative-reference differences are reported as an external comparator,
     while reciprocal consistency, source-catalog membership, GQM uniqueness,
-    UML anchors, metric IDs, titles, duplicate tokens, and XMI parseability are
+    UML anchors, metric IDs, titles, duplicate tokens, XMI parseability,
+    canonical association multiplicities and MappingStatus vocabulary are
     structural validation criteria.
 
     Empty ``metric_ids`` are valid: quantitative metrics are optional when no
@@ -102,6 +154,7 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             )
 
     xmi_errors: list[str] = []
+    xmi_contract_violations: list[str] = []
     uml_class_names: set[str] = set()
     try:
         inspection = inspect_xmi(data_dir / "uml_schema.xmi")
@@ -112,6 +165,7 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
             )
         if not uml_class_names:
             xmi_errors.append("uml_schema.xmi: no UML classes detected")
+        xmi_contract_violations.extend(_xmi_contract_violations(inspection))
     except (ET.ParseError, OSError, ValueError) as exc:
         xmi_errors.append(
             f"uml_schema.xmi: parse failure ({type(exc).__name__}: {exc})"
@@ -148,7 +202,7 @@ def validate_reference_artifacts(root: str | Path, write_log: bool = True) -> di
 
     broken_links: list[str] = []
     duplicate_or_dangling: list[str] = list(catalog_violations)
-    contract_violations: list[str] = []
+    contract_violations: list[str] = list(xmi_contract_violations)
     reciprocal_violations: list[str] = []
     informative_reference_differences: list[str] = []
 

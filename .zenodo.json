@@ -8,8 +8,10 @@
       "orcid": "0000-0001-9259-7112"
     }
   ],
+  "version": "0.2.1",
   "access_right": "open",
-  "license": "MIT",
+  "license": "mit",
+  "language": "eng",
   "keywords": [
     "cybersecurity",
     "security-evidence-management",
@@ -26,8 +28,8 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management",
-      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management/tree/v0.2.1",
+      "relation": "isSupplementTo",
       "resource_type": "software"
     }
   ],

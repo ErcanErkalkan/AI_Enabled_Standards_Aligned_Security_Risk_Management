@@ -1,0 +1,21 @@
+name: R018 research data lineage and typed XMI smoke
+on:
+  pull_request:
+    paths:
+      - "research/r018/**"
+      - "software/RUN.md"
+      - "README.md"
+      - ".github/workflows/r018-lineage.yml"
+  workflow_dispatch:
+jobs:
+  r018-lineage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Verify 211 to 212 research lineage and source checksums
+        run: python research/r018/verify_repo_lineage.py
+      - name: Verify typed XMI class-model mutation smoke
+        run: python research/r018/typed/test_typed_repo_smoke.py

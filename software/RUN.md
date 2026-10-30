@@ -102,10 +102,10 @@ The public case-study profile does not constitute deployment certification. Devi
 python -m pytest -q --basetemp .pytest_tmp
 ```
 
-Expected result:
+Expected result (frozen v0.2.1 CI snapshot; current runs may differ):
 
 ```text
-28 passed
+31 passed
 ```
 
 The GitHub Actions workflow additionally verifies the canonical SHA-256 manifest, runs the mapping validator, and executes all 11 structural-fault scenarios.
@@ -121,3 +121,16 @@ The neutral supplementary evidence package stores the final semantic mapping, co
 ## Output snapshot manifest
 
 Generated profile outputs are not Git-tracked source files. For archival use, generate an explicit SHA-256 manifest for the selected output snapshot before packaging.
+
+## R0.18 derived research data and additional typed smoke suite
+
+The frozen v0.2.1 software inputs retain **211 reciprocal undirected crosswalk pairs**, whereas the separate coordinator-ratified R0.16 derived data snapshot used in the R0.18 manuscript contains **212 pairs / 424 reciprocal directed links**. Do not replace or relabel the canonical inputs. See [`../research/r018/README.md`](../research/r018/README.md) for source hashes, accepted pair deltas, and the restricted scope of human ratings.
+
+From the repository root, run the extra *working-study* checks separately:
+
+```bash
+python research/r018/verify_repo_lineage.py
+python research/r018/typed/test_typed_repo_smoke.py
+```
+
+These checks are not part of the historical `31 passed` workflow, and must not be added to that historical test count. The archived 12-test typed checker, 55/55 extended-validator experiment and GUI tool exports are separate evidence sets. The extra typed smoke suite checks class/attribute/association/generalization structure only; it does not establish OCL execution, instance-model portability or human semantic certification.

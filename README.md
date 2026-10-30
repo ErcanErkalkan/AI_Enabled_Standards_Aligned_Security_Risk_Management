@@ -74,3 +74,7 @@ See [`software/RUN.md`](software/RUN.md) for the full execution guide.
 - Historical v0.1.0 DOI: <https://doi.org/10.5281/zenodo.19928296>
 - GitHub repository: <https://github.com/ErcanErkalkan/AI_Enabled_Standards_Aligned_Security_Risk_Management>
 - Author ORCID: <https://orcid.org/0000-0001-9259-7112>
+
+## R0.18 derived research evidence (distinct from released v0.2.1 software)
+
+The original public software baseline remains immutable: 199 standards rows and **211** reciprocal crosswalk pairs. The newer, coordinator-ratified research snapshot contains **199 rows and 212 undirected pairs (424 reciprocal directed links)**; this is a *separate derived dataset* rather than a new canonical software build. Its three accepted pair operations and checksums are documented at [`research/r018/README.md`](research/r018/README.md), with a standalone consistency script and additional typed-checker smoke tests. R0.18's 15-control follow-up is a targeted GQM question repair study, not an independent validation of all 199 controls. The published v0.2.1 DOI above should not be represented as an R0.18 data-release DOI.

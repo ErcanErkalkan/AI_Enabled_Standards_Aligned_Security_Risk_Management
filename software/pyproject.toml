@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ai-risk"
-version = "0.1.0"
+version = "0.2.1"
 description = "Leakage-safe, standards-aligned AI security risk management artifact for reproducible research."
 readme = "README.md"
 requires-python = ">=3.11"

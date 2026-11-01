@@ -1,0 +1,75 @@
+\clearpage
+\section{Reproducible UML diagram reading guide and source-derived relation ledger}
+\label{sec:uml-ledger}
+The full 28-class association diagram is also available as a print-size A2 vector foldout (\texttt{STAGE12\_CANONICAL\_UML\_A2\_VECTOR\_FOLDOUT.pdf}). Figure~\ref{fig:uml} is a navigation overview, not a source for fine-grained association semantics. All class names, local attribute counts, endpoint multiplicities and generalizations in the following tables are derived from the archived canonical XMI; no tool exchange or evidence-populated instance was rerun.
+\subsection{Class and inheritance inventory}
+\begingroup\small
+\begin{longtable}{@{}llr@{}}
+\caption{28 classes and local attribute counts parsed from canonical XMI.}\label{tab:xmi-class-ledger}\\
+\toprule Package & UML class & Attributes\\ \midrule\endfirsthead
+\toprule Package & UML class & Attributes\\ \midrule\endhead
+Traceability\allowbreak{}Core & Security\allowbreak{}Requirement & 3 \\
+Traceability\allowbreak{}Core & Standard\allowbreak{}Row & 6 \\
+Traceability\allowbreak{}Core & GQMGoal & 2 \\
+Traceability\allowbreak{}Core & GQMQuestion & 2 \\
+Traceability\allowbreak{}Core & Metric\allowbreak{}Definition & 5 \\
+Traceability\allowbreak{}Core & Evidence\allowbreak{}Requirement & 3 \\
+Traceability\allowbreak{}Core & Evidence\allowbreak{}Item & 6 \\
+Traceability\allowbreak{}Core & Provenance\allowbreak{}Record & 6 \\
+Traceability\allowbreak{}Core & Trace\allowbreak{}Link & 4 \\
+Traceability\allowbreak{}Core & Validation\allowbreak{}Run & 4 \\
+Traceability\allowbreak{}Core & Validation\allowbreak{}Finding & 6 \\
+Traceability\allowbreak{}Core & Export\allowbreak{}View & 4 \\
+Traceability\allowbreak{}Core & Measurement\allowbreak{}Concept & 0 \\
+Traceability\allowbreak{}Core & Asset\allowbreak{}Value & 1 \\
+Traceability\allowbreak{}Core & Event\allowbreak{}Potential & 1 \\
+Traceability\allowbreak{}Core & Impact\allowbreak{}Level & 3 \\
+Traceability\allowbreak{}Core & Risk\allowbreak{}Reduction\allowbreak{}Level & 1 \\
+Traceability\allowbreak{}Core & Cost\allowbreak{}Metrics & 2 \\
+Traceability\allowbreak{}Core & Human\allowbreak{}Factor\allowbreak{}Metric & 1 \\
+Security\allowbreak{}Context & Asset & 2 \\
+Security\allowbreak{}Context & Threat & 2 \\
+Security\allowbreak{}Context & Vulnerability & 2 \\
+Security\allowbreak{}Context & Event & 2 \\
+Security\allowbreak{}Context & Impact & 2 \\
+Security\allowbreak{}Context & Risk & 2 \\
+Security\allowbreak{}Context & Risk\allowbreak{}Treatment & 2 \\
+Security\allowbreak{}Context & Security\allowbreak{}Objective & 2 \\
+Security\allowbreak{}Context & Control\allowbreak{}Implementation & 3 \\
+\bottomrule\end{longtable}\endgroup
+The six class inheritance edges are: \texttt{Asset\allowbreak{}Value} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}, \texttt{Event\allowbreak{}Potential} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}, \texttt{Impact\allowbreak{}Level} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}, \texttt{Risk\allowbreak{}Reduction\allowbreak{}Level} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}, \texttt{Cost\allowbreak{}Metrics} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}, \texttt{Human\allowbreak{}Factor\allowbreak{}Metric} $ightarrow$ 	exttt{Measurement\allowbreak{}Concept}.
+\subsection{Named association and role/multiplicity ledger}
+\begingroup\footnotesize\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.34\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}>{\raggedright\arraybackslash}p{0.29\textwidth}@{}}
+\caption{All 27 relations with both owned ends from XMI. The listed multiplicity belongs to the corresponding owned end, not to an inferred arrow direction.}\label{tab:xmi-association-ledger}\\
+\toprule Association & End 1: class / role [mult.] & End 2: class / role [mult.]\\ \midrule\endfirsthead
+\toprule Association & End 1 & End 2\\ \midrule\endhead
+Requirement\allowbreak{}To\allowbreak{}Standard & Security\allowbreak{}Requirement / requirements [0..*] & Standard\allowbreak{}Row / standards [1..*] \\
+Standard\allowbreak{}To\allowbreak{}Goal & Standard\allowbreak{}Row / standard\allowbreak{}Row [1..1] & GQMGoal / gqm\allowbreak{}Goal [1..1] \\
+Goal\allowbreak{}To\allowbreak{}Question & GQMGoal / goal [1..1] & GQMQuestion / questions [0..*] \\
+Question\allowbreak{}To\allowbreak{}Metric & GQMQuestion / questions [0..*] & Metric\allowbreak{}Definition / metrics [0..*] \\
+Metric\allowbreak{}To\allowbreak{}Evidence\allowbreak{}Requirement & Metric\allowbreak{}Definition / metrics [0..*] & Evidence\allowbreak{}Requirement / evidence\allowbreak{}Requirements [0..*] \\
+Evidence\allowbreak{}Requirement\allowbreak{}To\allowbreak{}Item & Evidence\allowbreak{}Requirement / evidence\allowbreak{}Requirements [0..*] & Evidence\allowbreak{}Item / evidence\allowbreak{}Items [0..*] \\
+Evidence\allowbreak{}To\allowbreak{}Provenance & Evidence\allowbreak{}Item / evidence\allowbreak{}Items [1..*] & Provenance\allowbreak{}Record / provenance [1..1] \\
+Trace\allowbreak{}Source & Standard\allowbreak{}Row / source\allowbreak{}Standard [1..1] & Trace\allowbreak{}Link / outgoing\allowbreak{}Trace\allowbreak{}Links [0..*] \\
+Trace\allowbreak{}Target & Standard\allowbreak{}Row / target\allowbreak{}Standard [1..1] & Trace\allowbreak{}Link / incoming\allowbreak{}Trace\allowbreak{}Links [0..*] \\
+Run\allowbreak{}To\allowbreak{}Finding & Validation\allowbreak{}Run / validation\allowbreak{}Run [1..1] & Validation\allowbreak{}Finding / findings [0..*] \\
+Export\allowbreak{}To\allowbreak{}Evidence & Export\allowbreak{}View / exports [0..*] & Evidence\allowbreak{}Item / evidence\allowbreak{}Items [0..*] \\
+Export\allowbreak{}To\allowbreak{}Standard & Export\allowbreak{}View / exports [0..*] & Standard\allowbreak{}Row / standard\allowbreak{}Rows [0..*] \\
+Standard\allowbreak{}To\allowbreak{}Metric & Standard\allowbreak{}Row / standard\allowbreak{}Rows [0..*] & Metric\allowbreak{}Definition / metrics [0..*] \\
+Standard\allowbreak{}To\allowbreak{}Measurement\allowbreak{}Concept & Standard\allowbreak{}Row / standard\allowbreak{}Rows [0..*] & Measurement\allowbreak{}Concept / measurement\allowbreak{}Concept [0..1] \\
+Security\allowbreak{}Objective\allowbreak{}To\allowbreak{}Requirement & Security\allowbreak{}Objective / objectives [0..*] & Security\allowbreak{}Requirement / requirements [0..*] \\
+Requirement\allowbreak{}To\allowbreak{}Control\allowbreak{}Implementation & Security\allowbreak{}Requirement / requirements [0..*] & Control\allowbreak{}Implementation / control\allowbreak{}Implementations [0..*] \\
+Control\allowbreak{}Implementation\allowbreak{}To\allowbreak{}Standard & Control\allowbreak{}Implementation / control\allowbreak{}Implementations [0..*] & Standard\allowbreak{}Row / standards [0..*] \\
+Evidence\allowbreak{}To\allowbreak{}Control\allowbreak{}Implementation & Evidence\allowbreak{}Item / evidence\allowbreak{}Items [0..*] & Control\allowbreak{}Implementation / control\allowbreak{}Implementations [0..*] \\
+Evidence\allowbreak{}To\allowbreak{}Event & Evidence\allowbreak{}Item / evidence\allowbreak{}Items [0..*] & Event / events [0..*] \\
+Asset\allowbreak{}To\allowbreak{}Vulnerability & Asset / assets [0..*] & Vulnerability / vulnerabilities [0..*] \\
+Threat\allowbreak{}To\allowbreak{}Vulnerability & Threat / threats [0..*] & Vulnerability / vulnerabilities [0..*] \\
+Threat\allowbreak{}To\allowbreak{}Event & Threat / threats [0..*] & Event / events [0..*] \\
+Event\allowbreak{}To\allowbreak{}Impact & Event / events [0..*] & Impact / impacts [0..*] \\
+Impact\allowbreak{}To\allowbreak{}Risk & Impact / impacts [0..*] & Risk / risks [0..*] \\
+Asset\allowbreak{}To\allowbreak{}Risk & Asset / assets [0..*] & Risk / risks [0..*] \\
+Risk\allowbreak{}To\allowbreak{}Treatment & Risk / risks [0..*] & Risk\allowbreak{}Treatment / treatments [0..*] \\
+Treatment\allowbreak{}To\allowbreak{}Control\allowbreak{}Implementation & Risk\allowbreak{}Treatment / treatments [0..*] & Control\allowbreak{}Implementation / control\allowbreak{}Implementations [0..*] \\
+\bottomrule\end{longtable}\endgroup
+\noindent\textbf{Interpretation limit.} The archived XMI defines this table. Source-to-evidence flow lines in a compact diagram are not direct populated assessment instances, and the Enterprise Architect export did not retain any of the seven OCL bodies. The table does not constitute a newly performed GUI or OCL-validation experiment.

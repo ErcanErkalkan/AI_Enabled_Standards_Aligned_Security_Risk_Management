@@ -1,0 +1,377 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \def\href#1#2{#2} \def\path#1{#1}\fi
+
+\bibitem{Gotel1994Traceability}
+O.~C.~Z. Gotel, A.~C.~W. Finkelstein, An analysis of the requirements
+  traceability problem, in: Proceedings of the First International Conference
+  on Requirements Engineering, 1994, pp. 94--101.
+\newblock \href {https://doi.org/10.1109/ICRE.1994.292398}
+  {\path{doi:10.1109/ICRE.1994.292398}}.
+
+\bibitem{RameshJarke2001Traceability}
+B.~Ramesh, M.~Jarke, Toward reference models of requirements traceability, IEEE
+  Transactions on Software Engineering 27~(1) (2001) 58--93.
+\newblock \href {https://doi.org/10.1109/32.895989}
+  {\path{doi:10.1109/32.895989}}.
+
+\bibitem{PanesarWalawege2013IST}
+R.~K. Panesar-Walawege, M.~Sabetzadeh, L.~Briand, Supporting the verification
+  of compliance to safety standards via model-driven engineering: Approach,
+  tool-support and empirical validation, Information and Software Technology
+  55~(5) (2013) 836--864.
+\newblock \href {https://doi.org/10.1016/j.infsof.2012.11.009}
+  {\path{doi:10.1016/j.infsof.2012.11.009}}.
+
+\bibitem{DelaVara2016IST}
+J.~L. {de la Vara}, A.~Ruiz, K.~Attwood, H.~Espinoza, R.~K. Panesar-Walawege,
+  A.~Lopez, I.~{del Rio}, T.~Kelly, Model-based specification of safety
+  compliance needs for critical systems: A holistic generic metamodel,
+  Information and Software Technology 72 (2016) 16--30.
+\newblock \href {https://doi.org/10.1016/j.infsof.2015.11.008}
+  {\path{doi:10.1016/j.infsof.2015.11.008}}.
+
+\bibitem{DelaVara2022SoSyM}
+J.~L. {de la Vara}, A.~S. Garc{\'{i}}a, J.~Valero, C.~Ayora, Model-based
+  assurance evidence management for safety-critical systems, Software and
+  Systems Modeling 21~(6) (2022).
+\newblock \href {https://doi.org/10.1007/s10270-021-00957-z}
+  {\path{doi:10.1007/s10270-021-00957-z}}.
+
+\bibitem{NIST_OSCAL_2026}
+{National Institute of Standards and Technology},
+  \href{https://csrc.nist.gov/Projects/Open-Security-Controls-Assessment-Language}{Open
+  security controls assessment language ({OSCAL})}, NIST Computer Security
+  Resource Center, updated 26 August 2026; accessed 5 September 2026 (2026).
+\newline\urlprefix\url{https://csrc.nist.gov/Projects/Open-Security-Controls-Assessment-Language}
+
+\bibitem{Basili2014GQM}
+V.~R. Basili, A.~Trendowicz, M.~Kowalczyk, J.~Heidrich, C.~Seaman, J.~Muench,
+  D.~Rombach, Aligning Organizations Through Measurement: The GQM+Strategies
+  Approach, Springer, Cham, 2014.
+\newblock \href {https://doi.org/10.1007/978-3-319-05047-8}
+  {\path{doi:10.1007/978-3-319-05047-8}}.
+
+\bibitem{MilicevicGoeken2011}
+D.~Milicevic, M.~Goeken,
+  \href{https://aisel.aisnet.org/amcis2011_submissions/376/}{Model driven
+  information security management -- evaluating and applying the meta model of
+  iso 27001}, AMCIS 2011 Proceedings, paper 376 (2011).
+\newline\urlprefix\url{https://aisel.aisnet.org/amcis2011_submissions/376/}
+
+\bibitem{DelaVara2020IST}
+J.~L. {de la Vara}, B.~Mar{\'{i}}n, C.~Ayora, G.~Giachetti, An empirical
+  evaluation of the use of models to improve the understanding of safety
+  compliance needs, Information and Software Technology 126 (2020) 106351.
+\newblock \href {https://doi.org/10.1016/j.infsof.2020.106351}
+  {\path{doi:10.1016/j.infsof.2020.106351}}.
+
+\bibitem{OMG_SACM23}
+{Object Management Group}, \href{https://www.omg.org/spec/SACM/2.3}{Structured
+  assurance case metamodel (sacm), version 2.3}, OMG formal specification
+  (2023).
+\newline\urlprefix\url{https://www.omg.org/spec/SACM/2.3}
+
+\bibitem{DelaVara2017SACM}
+J.~L. {de la Vara}, G.~G{\'{e}}nova, J.~M. {\'{A}}lvarez-Rodr{\'{i}}guez,
+  J.~Llorens, An analysis of safety evidence management with the structured
+  assurance case metamodel, Computer Standards and Interfaces 50 (2017)
+  179--198.
+\newblock \href {https://doi.org/10.1016/j.csi.2016.10.002}
+  {\path{doi:10.1016/j.csi.2016.10.002}}.
+
+\bibitem{NIST_OSCAL_ControlMapping_Online}
+{National Institute of Standards and Technology},
+  \href{https://pages.nist.gov/OSCAL/learn/concepts/layer/control/mapping/}{{OSCAL}
+  control mapping model: Concepts and relationships}, {NIST OSCAL
+  Documentation}, accessed 30 October 2026 (2026).
+\newline\urlprefix\url{https://pages.nist.gov/OSCAL/learn/concepts/layer/control/mapping/}
+
+\bibitem{ElMarzak2026}
+Y.~El~Marzak, L.~Moudoubah, A.~Chahid, S.~Faris, K.~Mansouri, Designing an
+  ontology-based framework for iso 27002-based information security risk
+  management, Engineering, Technology and Applied Science Research 16~(1)
+  (2026) 31741--31747.
+\newblock \href {https://doi.org/10.48084/etasr.15794}
+  {\path{doi:10.48084/etasr.15794}}.
+
+\bibitem{Nair2015IST}
+S.~Nair, J.~L. {de la Vara}, M.~Sabetzadeh, D.~Falessi, Evidence management for
+  compliance of critical systems with safety standards: A survey on the state
+  of practice, Information and Software Technology 60 (2015) 1--15.
+\newblock \href {https://doi.org/10.1016/j.infsof.2014.12.002}
+  {\path{doi:10.1016/j.infsof.2014.12.002}}.
+
+\bibitem{HaleGamble2019SecurityHierarchy}
+M.~L. Hale, R.~F. Gamble, Semantic hierarchies for extracting, modeling, and
+  connecting compliance requirements in information security control standards,
+  Requirements Engineering 24 (2019) 365--402.
+\newblock \href {https://doi.org/10.1007/s00766-017-0287-5}
+  {\path{doi:10.1007/s00766-017-0287-5}}.
+
+\bibitem{Philippou2020Symbiosis}
+E.~Philippou, S.~Frey, A.~Rashid, Contextualising and aligning security metrics
+  and business objectives: A {GQM}-based methodology, Computers \& Security 88
+  (2020) 101634.
+\newblock \href {https://doi.org/10.1016/j.cose.2019.101634}
+  {\path{doi:10.1016/j.cose.2019.101634}}.
+
+\bibitem{NourEldin2026QuestionScope}
+A.~Nour~Eldin, M.~Sellami, W.~Gaaloul,
+  \href{https://arxiv.org/abs/2602.10149}{Exploring semantic labeling
+  strategies for third-party cybersecurity risk assessment questionnaires},
+  preprint, 9 February 2026 (2026).
+\newblock \href {http://arxiv.org/abs/2602.10149} {\path{arXiv:2602.10149}}.
+\newline\urlprefix\url{https://arxiv.org/abs/2602.10149}
+
+\bibitem{NIST_OLIR_218}
+{National Institute of Standards and Technology},
+  \href{https://csrc.nist.gov/projects/olir/informative-reference-catalog/details?referenceId=218}{{OLIR}:
+  Iso/iec-27001:2022-to-nist-cybersecurity-framework-v2.0 informative reference
+  details}, NIST Computer Security Resource Center, final v1.0.0;
+  Comprehensive: Yes; posted 9 July 2026; accessed 5 September 2026 (2026).
+\newline\urlprefix\url{https://csrc.nist.gov/projects/olir/informative-reference-catalog/details?referenceId=218}
+
+\bibitem{ISO27001_2022}
+{International Organization for Standardization},
+  \href{https://www.iso.org/standard/27001}{{ISO/IEC 27001:2022 Information
+  security, cybersecurity and privacy protection -- Information security
+  management systems -- Requirements}}, International Standard, Edition 3,
+  published October 2022 (2022).
+\newline\urlprefix\url{https://www.iso.org/standard/27001}
+
+\bibitem{ISO27005_2022}
+{International Organization for Standardization},
+  \href{https://www.iso.org/standard/80585.html}{{ISO/IEC 27005:2022
+  Information security, cybersecurity and privacy protection -- Guidance on
+  managing information security risks}}, International Standard, Edition 4,
+  published October 2022 (2022).
+\newline\urlprefix\url{https://www.iso.org/standard/80585.html}
+
+\bibitem{NIST_CSF_2_0}
+C.~Pascoe, S.~Quinn, K.~Scarfone,
+  \href{https://doi.org/10.6028/NIST.CSWP.29}{{The NIST Cybersecurity Framework
+  (CSF) 2.0}} (2024).
+\newblock \href {https://doi.org/10.6028/NIST.CSWP.29}
+  {\path{doi:10.6028/NIST.CSWP.29}}.
+\newline\urlprefix\url{https://doi.org/10.6028/NIST.CSWP.29}
+
+\bibitem{NIST_SP800_37_R2}
+{Joint Task Force}, \href{https://doi.org/10.6028/NIST.SP.800-37r2}{{Risk
+  Management Framework for Information Systems and Organizations: A System Life
+  Cycle Approach for Security and Privacy}}, Tech. Rep. NIST Special
+  Publication 800-37 Revision 2, National Institute of Standards and Technology
+  (2018).
+\newblock \href {https://doi.org/10.6028/NIST.SP.800-37r2}
+  {\path{doi:10.6028/NIST.SP.800-37r2}}.
+\newline\urlprefix\url{https://doi.org/10.6028/NIST.SP.800-37r2}
+
+\bibitem{NIST_OLIR_FAQ}
+{National Institute of Standards and Technology},
+  \href{https://csrc.nist.gov/Projects/olir/faqs}{National online informative
+  references program: Frequently asked questions}, NIST Computer Security
+  Resource Center, accessed 5 September 2026 (2026).
+\newline\urlprefix\url{https://csrc.nist.gov/Projects/olir/faqs}
+
+\bibitem{Hallerstede2014SCP_TraceReqSpec}
+S.~Hallerstede, M.~Jastram, L.~Ladenberger, A method and tool for tracing
+  requirements into specifications, Science of Computer Programming 82 (2014)
+  2--21.
+\newblock \href {https://doi.org/10.1016/j.scico.2013.03.008}
+  {\path{doi:10.1016/j.scico.2013.03.008}}.
+
+\bibitem{Sadovykh2024SCP_MBRE}
+A.~Sadovykh, B.~Said, D.~Truscan, H.~Bruneliere, An iterative approach for
+  model-based requirements engineering in large collaborative projects: A
+  detailed experience report, Science of Computer Programming 232 (2024)
+  103047.
+\newblock \href {https://doi.org/10.1016/j.scico.2023.103047}
+  {\path{doi:10.1016/j.scico.2023.103047}}.
+
+\bibitem{Santiago2012MDETraceSLR}
+I.~Santiago, {\'A}.~Jim{\'e}nez~Rielo, J.~M. Vara, V.~de~Castro, V.~A. Bollati,
+  E.~Marcos, Model-driven engineering as a new landscape for traceability
+  management: A systematic literature review, Information and Software
+  Technology 54~(12) (2012) 1340--1356.
+\newblock \href {https://doi.org/10.1016/j.infsof.2012.07.008}
+  {\path{doi:10.1016/j.infsof.2012.07.008}}.
+
+\bibitem{Firesmith2003SecurityRequirements}
+D.~G. Firesmith, Engineering security requirements, Journal of Object
+  Technology 2~(1) (2003) 53--68.
+\newblock \href {https://doi.org/10.5381/jot.2003.2.1.c6}
+  {\path{doi:10.5381/jot.2003.2.1.c6}}.
+
+\bibitem{Haley2008SecurityRequirements}
+C.~B. Haley, R.~C. Laney, J.~D. Moffett, B.~Nuseibeh, Security requirements
+  engineering: A framework for representation and analysis, IEEE Transactions
+  on Software Engineering 34~(1) (2008) 133--153.
+\newblock \href {https://doi.org/10.1109/TSE.2007.70754}
+  {\path{doi:10.1109/TSE.2007.70754}}.
+
+\bibitem{TekinerdoganErata2020SCICO}
+B.~Tekinerdogan, F.~Erata, Automated reasoning framework for traceability
+  management of system of systems, Science of Computer Programming 191 (2020)
+  102416.
+\newblock \href {https://doi.org/10.1016/j.scico.2020.102416}
+  {\path{doi:10.1016/j.scico.2020.102416}}.
+
+\bibitem{Hutchinson2014SCP_MDEIndustry}
+J.~R. Hutchinson, J.~Whittle, M.~Rouncefield, Model-driven engineering
+  practices in industry: Social, organizational and managerial factors that
+  lead to success or failure, Science of Computer Programming 89 (2014)
+  144--161.
+\newblock \href {https://doi.org/10.1016/j.scico.2013.03.017}
+  {\path{doi:10.1016/j.scico.2013.03.017}}.
+
+\bibitem{SanchezCuadrado2014SCP_SmallMDE}
+J.~S{\'a}nchez~Cuadrado, J.~L. C{\'a}novas~Izquierdo, J.~Garc{\'i}a~Molina,
+  Applying model-driven engineering in small software enterprises, Science of
+  Computer Programming 89 (2014) 176--198.
+\newblock \href {https://doi.org/10.1016/j.scico.2013.04.007}
+  {\path{doi:10.1016/j.scico.2013.04.007}}.
+
+\bibitem{Davies2015SCP_FormalMDE}
+J.~Davies, D.~Milward, C.-W. Wang, J.~Welch, Formal model-driven engineering of
+  critical information systems, Science of Computer Programming 103 (2015)
+  88--113.
+\newblock \href {https://doi.org/10.1016/j.scico.2014.11.004}
+  {\path{doi:10.1016/j.scico.2014.11.004}}.
+
+\bibitem{Calegari2015SCP_Institution}
+D.~Calegari, T.~Mossakowski, N.~Szasz, Institution-based foundations for
+  verification in the context of model-driven engineering, Science of Computer
+  Programming 107--108 (2015) 41--63.
+\newblock \href {https://doi.org/10.1016/j.scico.2015.02.006}
+  {\path{doi:10.1016/j.scico.2015.02.006}}.
+
+\bibitem{Calegari2016SCP_Heterogeneous}
+D.~Calegari, N.~Szasz, Heterogeneous verification in the context of model
+  driven engineering, Science of Computer Programming 126 (2016) 3--30.
+\newblock \href {https://doi.org/10.1016/j.scico.2016.02.003}
+  {\path{doi:10.1016/j.scico.2016.02.003}}.
+
+\bibitem{JimenezRielo2015SCP_MeTAGeM}
+{\'A}.~Jim{\'e}nez~Rielo, J.~M. Vara, V.~A. Bollati, E.~Marcos,
+  {MeTAGeM-Trace}: Improving trace generation in model transformation by
+  leveraging the role of transformation models, Science of Computer Programming
+  98~(Part 1) (2015) 3--27.
+\newblock \href {https://doi.org/10.1016/j.scico.2014.09.003}
+  {\path{doi:10.1016/j.scico.2014.09.003}}.
+
+\bibitem{Jouault2008SCP_ATL}
+F.~Jouault, F.~Allilaire, J.~B{\'e}zivin, I.~Kurtev, {ATL}: A model
+  transformation tool, Science of Computer Programming 72~(1--2) (2008) 31--39.
+\newblock \href {https://doi.org/10.1016/j.scico.2007.08.002}
+  {\path{doi:10.1016/j.scico.2007.08.002}}.
+
+\bibitem{Muram2019SCP_Containment}
+F.~U. Muram, H.~Tran, U.~Zdun, Supporting automated containment checking of
+  software behavioural models using model transformations and model checking,
+  Science of Computer Programming 174 (2019) 38--71.
+\newblock \href {https://doi.org/10.1016/j.scico.2019.01.005}
+  {\path{doi:10.1016/j.scico.2019.01.005}}.
+
+\bibitem{DaviesEtAl2020SCICO}
+J.~Davies, J.~Welch, D.~Milward, S.~Harris, A formal, scalable approach to
+  semantic interoperability, Science of Computer Programming 192 (2020) 102426.
+\newblock \href {https://doi.org/10.1016/j.scico.2020.102426}
+  {\path{doi:10.1016/j.scico.2020.102426}}.
+
+\bibitem{Tuma2023SecurityCompliance}
+K.~Tuma, S.~Peldszus, D.~Str{\"u}ber, R.~Scandariato, J.~J{\"u}rjens, Checking
+  security compliance between models and code, Software and Systems Modeling
+  22~(1) (2023) 273--296.
+\newblock \href {https://doi.org/10.1007/s10270-022-00991-5}
+  {\path{doi:10.1007/s10270-022-00991-5}}.
+
+\bibitem{KellyWeaver2004GSN}
+T.~Kelly, R.~Weaver, The goal structuring notation -- a safety argument
+  notation, in: Proceedings of the Dependable Systems and Networks Workshop on
+  Assurance Cases, 2004, p.~6.
+
+\bibitem{Apruzzese2022}
+G.~Apruzzese, P.~Laskov, E.~Montes~de Oca, W.~Mallouli, L.~Brdalo~Rapa, A.~V.
+  Grammatopoulos, F.~Di~Franco, The role of machine learning in cybersecurity,
+  Digital Threats: Research and Practice 4~(1) (2023).
+\newblock \href {https://doi.org/10.1145/3545574} {\path{doi:10.1145/3545574}}.
+
+\bibitem{Li2024_ESWA_LightIDS}
+Z.~Li, W.~Yao, A two-stage lightweight approach for intrusion detection in
+  internet of things, Expert Systems with Applications 257 (2024) 124965.
+\newblock \href {https://doi.org/10.1016/j.eswa.2024.124965}
+  {\path{doi:10.1016/j.eswa.2024.124965}}.
+
+\bibitem{RunesonHost2009CaseStudy}
+P.~Runeson, M.~H{\"o}st, Guidelines for conducting and reporting case study
+  research in software engineering, Empirical Software Engineering 14 (2009)
+  131--164.
+\newblock \href {https://doi.org/10.1007/s10664-008-9102-8}
+  {\path{doi:10.1007/s10664-008-9102-8}}.
+
+\bibitem{Wohlin2012Experimentation}
+C.~Wohlin, P.~Runeson, M.~H{\"o}st, M.~C. Ohlsson, B.~Regnell, A.~Wessl{\'e}n,
+  Experimentation in Software Engineering, 1st Edition, Springer Berlin,
+  Heidelberg, 2012.
+\newblock \href {https://doi.org/10.1007/978-3-642-29044-2}
+  {\path{doi:10.1007/978-3-642-29044-2}}.
+
+\bibitem{Schmidt2006MDE}
+D.~C. Schmidt, Guest editor's introduction: Model-driven engineering, Computer
+  39~(2) (2006) 25--31.
+\newblock \href {https://doi.org/10.1109/MC.2006.58}
+  {\path{doi:10.1109/MC.2006.58}}.
+
+\bibitem{OMG_UML_251}
+{Object Management Group}, \href{https://www.omg.org/spec/UML/2.5.1}{{OMG
+  Unified Modeling Language (OMG UML), Version 2.5.1}}, Formal specification
+  (2017).
+\newline\urlprefix\url{https://www.omg.org/spec/UML/2.5.1}
+
+\bibitem{OMG_XMI_251}
+{Object Management Group}, \href{https://www.omg.org/spec/XMI/2.5.1}{{XML
+  Metadata Interchange (XMI), Version 2.5.1}}, Formal specification (2015).
+\newline\urlprefix\url{https://www.omg.org/spec/XMI/2.5.1}
+
+\bibitem{Eclipse_UML2_50_XMI}
+{Eclipse UML2 Project},
+  \href{https://wiki.eclipse.org/MDT/UML2/UML2_5.0_Migration_Guide}{{UML2 5.0
+  Migration Guide: XMI Interchange}}, Eclipse project documentation (2014).
+\newline\urlprefix\url{https://wiki.eclipse.org/MDT/UML2/UML2_5.0_Migration_Guide}
+
+\bibitem{Pauloweit_OLIR218_Repo}
+J.~Pauloweit,
+  \href{https://github.com/JoergPauloweit/ISO27001-NIST-Mapping}{Iso27001-nist-mapping:
+  Public resource linked from nist olir reference 218}, GitHub repository,
+  workbook `Cybersecurity Framework v2.0 Concept Crosswalk Template Version 2
+  Pauloweit.xlsx'; accessed 5 September 2026 (2026).
+\newline\urlprefix\url{https://github.com/JoergPauloweit/ISO27001-NIST-Mapping}
+
+\bibitem{NIST_IR_8278r1}
+N.~Keller, S.~Quinn, K.~Scarfone, M.~Smith, V.~Johnson,
+  \href{https://csrc.nist.gov/pubs/ir/8278/r1/final}{National online
+  informative references ({OLIR}) program: Overview, benefits, and use}, Tech.
+  Rep. NIST IR 8278 Rev. 1, National Institute of Standards and Technology
+  (Feb. 2024).
+\newblock \href {https://doi.org/10.6028/NIST.IR.8278r1}
+  {\path{doi:10.6028/NIST.IR.8278r1}}.
+\newline\urlprefix\url{https://csrc.nist.gov/pubs/ir/8278/r1/final}
+
+\bibitem{Neto2023_CICIoT2023}
+E.~C.~P. Neto, S.~Dadkhah, R.~Ferreira, A.~Zohourian, R.~Lu, A.~A. Ghorbani,
+  {CICIoT2023}: A real-time dataset and benchmark for large-scale attacks in
+  iot environment, Sensors 23~(13) (2023) 5941.
+\newblock \href {https://doi.org/10.3390/s23135941}
+  {\path{doi:10.3390/s23135941}}.
+
+\bibitem{CICIoT2023_Web}
+{Canadian Institute for Cybersecurity},
+  \href{https://www.unb.ca/cic/datasets/iotdataset-2023.html}{{CIC IoT Dataset
+  2023}}, Dataset website, accessed for the reported public telemetry profile
+  (2023).
+\newline\urlprefix\url{https://www.unb.ca/cic/datasets/iotdataset-2023.html}
+
+\end{thebibliography}

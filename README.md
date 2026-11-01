@@ -2,6 +2,12 @@
 
 A model-based software engineering framework for standards-traceable security evidence management. The artifact binds ISO/IEC 27001:2022 and NIST CSF 2.0 requirements to evidence, GQM intent, UML/XMI structures, telemetry-derived measurements where applicable, and auditable validation outputs.
 
+## Current research article (single active source)
+
+The current research manuscript is maintained only under [paper/](paper/) on the `main` branch. Its neutral LaTeX source, compiled PDF, bibliography, three manuscript figures, technical input tables and integrity manifest are versioned together. The paper uses a general academic format and preserves the complete recorded evidence and limitations.
+
+Earlier working copies and feature-branch outputs are historical provenance, not alternative active articles. The frozen `v0.2.1` software release is a historical executable baseline; later 211/212/192 mapping datasets are identified by their evidence state and are not silently interchanged. Private assessor materials, restricted normative text and unavailable raw source data are not included in this public repository.
+
 ## Scope
 
 The repository contains the executable `ai_risk` package and machine-readable reference artifacts used by the study:

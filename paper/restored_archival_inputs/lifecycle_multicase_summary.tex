@@ -1,0 +1,24 @@
+\begingroup
+\scriptsize
+\setlength{\tabcolsep}{2.1pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{longtable}{>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{3.3cm}>{\raggedright\arraybackslash}p{2.5cm}}
+\caption{Five-case proof-of-concept lifecycle trace exercise for the supporting lifecycle demonstration. The final column reports canonical-trace resolution / injected-defect detection / repaired-trace resolution.}
+\label{tab:lifecycle-multicase}\\
+\toprule
+\textbf{Case} & \textbf{Requirement focus} & \textbf{Representative ISO / NIST binding} & \textbf{Evidence mode in public profile} & \textbf{Baseline / defect / repair}\\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Case} & \textbf{Requirement focus} & \textbf{Representative ISO / NIST binding} & \textbf{Evidence mode in public profile} & \textbf{Baseline / defect / repair}\\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+LC-AUTH-01 & Secure authentication / anomalous access & A.8.5 / PR.AA-03 & Telemetry observation available & PASS / DETECTED / PASS\\
+LC-MON-02 & Continuous monitoring / adverse events & A.8.16 / DE.CM-09 & Telemetry observation available & PASS / DETECTED / PASS\\
+LC-IR-03 & Incident-response traceability & A.5.26 / RS.MA-02 & Extension-only evidence hook & PASS / DETECTED / PASS\\
+LC-PHY-04 & Physical security monitoring & A.7.4 / DE.CM-02 & Extension-only evidence hook & PASS / DETECTED / PASS\\
+LC-AWR-05 & Awareness and training & A.6.3 / PR.AT-01 & Extension-only evidence hook & PASS / DETECTED / PASS\\
+\end{longtable}
+\endgroup
